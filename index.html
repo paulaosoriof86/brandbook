@@ -772,6 +772,205 @@ body{padding-left:0!important}
 .hero-h1{font-family:var(--fd);font-size:clamp(3rem,9vw,6.5rem);color:var(--wht);line-height:.9;margin-bottom:.3rem}
 .hero-h1 em{color:var(--yellow);font-style:normal}
 .hero-h2{font-family:var(--fd);font-size:clamp(.95rem,2.2vw,1.6rem);color:rgba(255,255,255,.82);margin-bottom:1.75rem;letter-spacing:.05em}
+
+/* ==========================================================
+   FASE 2 — Content Branding, Calendario, Herramientas
+   ========================================================== */
+
+/* Fase 2 transition banner */
+.f2-banner{
+  background:var(--blk);color:var(--wht);padding:3rem 2rem;
+  text-align:center;border-top:4px solid var(--yellow);
+}
+.f2-banner-inner{max-width:900px;margin:0 auto}
+.f2-banner-fase{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--yellow);color:var(--blk);
+  font-family:var(--fm);font-size:.65rem;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;
+  padding:4px 14px;border-radius:100px;margin-bottom:1rem;
+}
+.f2-banner-h{font-family:var(--fd);font-size:clamp(1.5rem,3vw,2.5rem);margin-bottom:.5rem}
+.f2-banner-p{font-size:.9rem;color:rgba(255,255,255,.65);max-width:640px;margin:0 auto;line-height:1.65}
+
+/* Content Branding */
+#contentbranding{background:var(--wht)}
+.cb-intro{max-width:1200px;margin:0 auto;padding:0 2rem 2rem}
+.cb-key-insight{
+  background:var(--yellow);border-radius:var(--r12);padding:1.5rem 2rem;
+  margin-bottom:2rem;
+}
+.cb-key-insight p{font-size:.95rem;font-weight:800;line-height:1.6}
+.cb-key-insight span{font-family:var(--fm);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;opacity:.65;display:block;margin-bottom:.4rem}
+
+/* Paradigma */
+.cb-paradigma{
+  max-width:1200px;margin:0 auto;padding:0 2rem 2rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:start;
+}
+
+/* Pilares */
+.cb-pilares{max-width:1200px;margin:0 auto;padding:0 2rem 2rem}
+.pilares-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:1.5rem}
+.pilar-card{border-radius:var(--r16);overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.1);transition:.3s}
+.pilar-card:hover{transform:translateY(-4px)}
+.pilar-slide{width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#0f0f0f}
+.pilar-body{padding:1.5rem}
+.pilar-label{font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.35rem}
+.pilar-h{font-family:var(--fd);font-size:1.15rem;margin-bottom:.25rem}
+.pilar-tagline{font-weight:800;font-size:.9rem;margin-bottom:.5rem}
+.pilar-desc{font-size:.82rem;color:#555;line-height:1.6;margin-bottom:.75rem}
+.pilar-core{font-size:.75rem;font-family:var(--fm);padding:.4rem .75rem;border-radius:4px;background:rgba(0,0,0,.06);display:inline-block}
+
+/* Pilar colors */
+.pilar-1 .pilar-body{background:#fff9e6;border-top:4px solid var(--yellow)}
+.pilar-1 .pilar-label{color:#b8940a}
+.pilar-2 .pilar-body{background:#fff0ec;border-top:4px solid var(--coral)}
+.pilar-2 .pilar-label{color:var(--coral)}
+.pilar-3 .pilar-body{background:#f5f0ff;border-top:4px solid var(--purple)}
+.pilar-3 .pilar-label{color:var(--purple)}
+.pilar-4 .pilar-body{background:#f0f9ff;border-top:4px solid #0ea5e9}
+.pilar-4 .pilar-label{color:#0369a1}
+
+/* Evidencias content branding */
+.cb-evidencias{max-width:1200px;margin:0 auto;padding:0 2rem 3rem}
+.ev3-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1.5rem}
+.ev3-card{background:var(--blk);border-radius:var(--r12);overflow:hidden;transition:.3s}
+.ev3-card:hover{transform:translateY(-4px)}
+.ev3-img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;max-height:340px}
+.ev3-img.wide{aspect-ratio:16/9;max-height:220px}
+.ev3-body{padding:1.1rem}
+.ev3-label{font-family:var(--fm);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.25rem}
+.ev3-h{font-family:var(--fd);font-size:.95rem;color:var(--wht);margin-bottom:.3rem}
+.ev3-obs{font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.5}
+.ev3-pilar{display:inline-block;font-size:.65rem;font-weight:800;padding:2px 10px;border-radius:100px;margin-top:.5rem}
+
+/* Nota metodológica fase 2 */
+.nota-meto{
+  max-width:1200px;margin:0 auto;padding:0 2rem 2rem;
+}
+.nota-meto-inner{
+  background:#f8f8f8;border-radius:var(--r12);
+  border-left:4px solid var(--red);padding:1.25rem 1.5rem;
+}
+.nota-meto-inner p:first-child{
+  font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--red);margin-bottom:.4rem;
+}
+.nota-meto-inner p:last-child{font-size:.82rem;line-height:1.7;color:#555}
+
+/* Calendario */
+#calendario{background:var(--dark);color:var(--wht)}
+#calendario .s-h{color:var(--wht)}
+#calendario .s-d{color:rgba(255,255,255,.6)}
+.cal-intro{max-width:1200px;margin:0 auto;padding:0 2rem 2rem}
+.cal-slide-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;margin-bottom:2.5rem}
+.cal-context{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:1.75rem}
+.cal-context h4{font-family:var(--fd);font-size:1.1rem;color:var(--yellow);margin-bottom:.65rem}
+.cal-context p{font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.65;margin-bottom:.75rem}
+.cal-ritmo{background:var(--yellow);color:var(--blk);border-radius:var(--r8);padding:.85rem 1.1rem;font-size:.82rem;font-weight:800;line-height:1.5}
+
+/* Calendar table */
+.cal-table-wrap{max-width:1200px;margin:0 auto;padding:0 2rem 3rem;overflow-x:auto}
+.cal-table{width:100%;border-collapse:collapse;min-width:900px;font-size:.8rem}
+.cal-table th{
+  padding:.75rem .85rem;text-align:left;
+  font-family:var(--fm);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+  background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);
+  border-bottom:2px solid rgba(255,255,255,.1);
+}
+.cal-table td{
+  padding:.9rem .85rem;vertical-align:top;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  color:rgba(255,255,255,.85);line-height:1.5;
+}
+.cal-table tr:hover td{background:rgba(255,255,255,.04)}
+.cal-day{font-family:var(--fd);font-size:.95rem;white-space:nowrap}
+.cal-pilar-badge{
+  display:inline-block;padding:3px 10px;border-radius:100px;
+  font-size:.68rem;font-weight:800;white-space:nowrap;
+}
+.cal-formato{font-family:var(--fm);font-size:.72rem;color:rgba(255,255,255,.55)}
+.cal-canal{font-family:var(--fm);font-size:.68rem;font-weight:700}
+.cal-copy{font-style:italic;font-size:.8rem;color:rgba(255,255,255,.7)}
+
+/* Pilar badges colors */
+.bp-juego{background:rgba(255,213,0,.2);color:var(--yellow)}
+.bp-comunidad{background:rgba(243,111,115,.2);color:var(--coral)}
+.bp-entrete{background:rgba(75,46,145,.3);color:#c4b5fd}
+.bp-kidults{background:rgba(45,45,45,.6);color:#d1d5db;border:1px solid rgba(255,255,255,.15)}
+.bp-fans{background:rgba(75,46,145,.25);color:#a78bfa}
+.bp-emocional{background:rgba(249,115,22,.2);color:#fdba74}
+.bp-sintesis{background:rgba(227,0,11,.2);color:#fca5a5}
+
+/* LatAm context */
+.cal-latam{max-width:1200px;margin:0 auto 3rem;padding:0 2rem}
+.latam-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.25rem}
+.latam-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:1.25rem}
+.latam-num{font-family:var(--fd);font-size:2rem;color:var(--yellow);line-height:1;margin-bottom:.3rem}
+.latam-h{font-family:var(--fd);font-size:.95rem;margin-bottom:.25rem}
+.latam-p{font-size:.8rem;color:rgba(255,255,255,.65);line-height:1.5}
+
+/* Herramientas */
+#herramientas{background:var(--gray)}
+.hta-ecosistema{max-width:1200px;margin:0 auto;padding:0 2rem 2rem}
+.hta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:1.5rem}
+.hta-card{background:var(--wht);border-radius:var(--r16);overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:.3s}
+.hta-card:hover{transform:translateY(-4px)}
+.hta-head{padding:1.25rem 1.5rem;display:flex;align-items:center;gap:.85rem}
+.hta-icon{font-size:1.75rem}
+.hta-hname{font-family:var(--fd);font-size:1.15rem}
+.hta-hrole{font-size:.72rem;font-family:var(--fm);letter-spacing:.1em;text-transform:uppercase;opacity:.65}
+.hta-body{padding:0 1.5rem 1.5rem}
+.hta-desc{font-size:.85rem;color:#555;line-height:1.65;margin-bottom:.9rem}
+.hta-items{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.hta-items li{font-size:.8rem;color:#444;display:flex;align-items:flex-start;gap:.5rem;line-height:1.45}
+.hta-items li::before{content:'→';color:var(--red);font-size:.75rem;flex-shrink:0;margin-top:1px}
+.hta-card.figma .hta-head{background:linear-gradient(135deg,#7c3aed,#4B2E91);color:var(--wht)}
+.hta-card.notion .hta-head{background:var(--blk);color:var(--wht)}
+.hta-card.github .hta-head{background:var(--red);color:var(--wht)}
+.hta-card.ghpages .hta-head{background:var(--yellow);color:var(--blk)}
+
+/* Flujo colaborativo */
+.hta-flujo{max-width:1200px;margin:0 auto;padding:0 2rem 2rem}
+.flujo-steps{display:flex;align-items:center;gap:0;margin-top:1.5rem;overflow-x:auto;padding-bottom:.5rem}
+.flujo-step{
+  background:var(--wht);border-radius:var(--r12);padding:1.25rem;
+  min-width:220px;box-shadow:0 3px 14px rgba(0,0,0,.07);flex-shrink:0;
+}
+.flujo-arrow{font-size:1.5rem;color:var(--red);padding:0 .5rem;flex-shrink:0}
+.flujo-n{font-family:var(--fd);font-size:1.8rem;color:var(--yellow);line-height:1;margin-bottom:.2rem}
+.flujo-h{font-family:var(--fd);font-size:.95rem;margin-bottom:.3rem}
+.flujo-p{font-size:.78rem;color:#555;line-height:1.5}
+
+/* Cierre Fase 2 */
+.f2-cierre{
+  background:var(--blk);color:var(--wht);padding:4rem 2rem;
+  text-align:center;border-top:4px solid var(--yellow);
+}
+.f2-cierre-inner{max-width:900px;margin:0 auto}
+.f2-cierre h2{font-family:var(--fd);font-size:clamp(1.5rem,3vw,2.5rem);margin-bottom:1rem}
+.f2-cierre h2 em{color:var(--yellow);font-style:normal}
+.f2-cierre-pills{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:1.5rem}
+.f2-cierre-pill{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  color:rgba(255,255,255,.85);padding:.6rem 1.25rem;border-radius:100px;
+  font-size:.82rem;font-weight:700;
+}
+
+/* Responsive Fase 2 */
+@media(max-width:900px){
+  .cb-paradigma,.pilares-grid,.cal-slide-row,.hta-grid,.latam-grid{grid-template-columns:1fr}
+  .ev3-grid{grid-template-columns:1fr}
+  .flujo-steps{flex-direction:column;align-items:stretch}
+  .flujo-arrow{transform:rotate(90deg);text-align:center}
+  .flujo-step{min-width:unset}
+}
+@media(max-width:600px){
+  .cal-table{font-size:.72rem}
+  .cal-table th,.cal-table td{padding:.6rem .5rem}
+}
+
 </style>
 </head>
 <body>
@@ -792,6 +991,9 @@ body{padding-left:0!important}
     <li><a href="#voztono" class="nl">Voz & Tono</a></li>
     <li><a href="#hallazgos" class="nl">Hallazgos</a></li>
     <li><a href="#cierre" class="nl">Cierre</a></li>
+    <li><a href="#contentbranding" class="nl">Contenido</a></li>
+    <li><a href="#calendario" class="nl">Calendario</a></li>
+    <li><a href="#herramientas" class="nl">Gestión</a></li>
   </ul>
   <button class="nav-tog" id="navTog"><span></span><span></span><span></span></button>
 </nav>
@@ -808,6 +1010,9 @@ body{padding-left:0!important}
   <a href="#voztono" class="sb-a"><span class="sb-num">06</span>Voz & Tono</a>
   <a href="#hallazgos" class="sb-a"><span class="sb-num">08</span>Hallazgos</a>
   <a href="#cierre" class="sb-a"><span class="sb-num">09</span>Cierre</a>
+  <a href="#contentbranding" class="sb-a"><span class="sb-num">10</span>Content Branding</a>
+  <a href="#calendario" class="sb-a"><span class="sb-num">11</span>Calendario</a>
+  <a href="#herramientas" class="sb-a"><span class="sb-num">12</span>Herramientas</a>
 </nav>
 <button id="sb-btn" onclick="document.getElementById('sb').classList.toggle('open')">☰ Índice</button>
 
@@ -928,13 +1133,6 @@ body{padding-left:0!important}
       </div>
     </div>
   </div>
-  <!-- Nota metodológica — Uso académico de imágenes -->
-  <div style="max-width:1200px;margin:0 auto 0;padding:0 2rem 2rem">
-    <div style="background:#f4f4f4;border-radius:12px;border-left:4px solid #E3000B;padding:1.5rem 1.75rem">
-      <p style="font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:#E3000B;margin-bottom:.6rem">Nota metodológica — Uso académico de imágenes</p>
-      <p style="font-size:.85rem;line-height:1.7;color:#444">Las imágenes utilizadas en este Brand Book Digital corresponden a capturas y referencias visuales observadas en el ecosistema digital público de LEGO, principalmente en su sitio web oficial y en perfiles públicos de redes sociales. Se emplean únicamente con fines académicos, de análisis visual e ingeniería inversa de marca. Este proyecto no es oficial, no tiene fines comerciales y LEGO® es una marca registrada de sus respectivos titulares.</p>
-    </div>
-  </div>
 </section>
 
 <!-- ============================================================
@@ -943,7 +1141,7 @@ body{padding-left:0!important}
 <section id="tesis">
   <div class="sh rev">
     <div class="s-tag y">02 — Tesis Estratégica</div>
-    <h2 class="s-h" style="color:var(--wht)">Idea central del análisis</h2>
+    <h2 class="s-h" style="color:var(--wht)">La Gran <em style="color:var(--yellow);font-style:normal">Idea</em></h2>
     <p class="s-d w">La lectura estratégica fundamental que orienta todo el Brand Book Digital.</p>
   </div>
 
@@ -1009,7 +1207,7 @@ body{padding-left:0!important}
 <section id="brandcore">
   <div class="sh rev">
     <div class="s-tag">03 — Brand Core</div>
-    <h2 class="s-h">Base estratégica de la marca</h2>
+    <h2 class="s-h">El Corazón <span style="color:var(--red)">Estratégico</span></h2>
     <p class="s-d">Inspirar y formar a los constructores del mañana. El núcleo que orienta absolutamente toda decisión de marca.</p>
   </div>
 
@@ -1028,7 +1226,7 @@ body{padding-left:0!important}
         <div class="ac" style="text-align:center;background:var(--blk);color:var(--wht)">
           <div style="width:140px;height:140px;border-radius:50%;border:4px solid var(--yellow);background:rgba(255,213,0,.08);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:.88rem;color:var(--yellow);text-align:center;padding:1rem;line-height:1.3;margin:0 auto 1rem">Inspirar el desarrollo creativo</div>
           <div class="ac-tag" style="color:rgba(255,255,255,.4)">Propósito de Marca</div>
-          <h3 class="ac-h" style="color:var(--wht)">Elemento visual constante</h3>
+          <h3 class="ac-h" style="color:var(--wht)">El ancla inmutable</h3>
           <p class="ac-p">Cada decisión digital de LEGO — desde la interfaz hasta la narrativa — parte de este propósito. No es declarativo: es funcional.</p>
         </div>
         <div class="ac" style="background:var(--red);color:var(--wht);overflow:hidden">
@@ -1062,9 +1260,9 @@ body{padding-left:0!important}
         </div>
       </div>
       <div>
-        <div class="dref dk">Diapositiva 10 — Rasgos principales de LEGO en digital</div>
+        <div class="dref dk">Diapositiva 10 — El ADN Digital: valores vs. priorización</div>
         <div class="df">
-          <img src="assets/slide_10.jpg" alt="Rasgos principales de LEGO en digital: valores vs. priorización — Diapositiva 10">
+          <img src="assets/slide_10.jpg" alt="El ADN Digital de LEGO: valores oficiales vs. priorización — Diapositiva 10">
           <div class="df-overlay"><span class="df-label">ADN Digital — Valores vs. Priorización</span></div>
         </div>
       </div>
@@ -1078,17 +1276,17 @@ body{padding-left:0!important}
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
         <div class="ac">
           <div class="ac-tag">Evidencia 01 — Imaginación y Creatividad</div>
-          <h3 class="ac-h">Juego libre y exploración</h3>
+          <h3 class="ac-h">El juego libre como base</h3>
           <p class="ac-p">El juego libre es fundamental para el desarrollo de la imaginación. La creatividad combina la lógica con la espontaneidad: una habilidad esencial del siglo XXI.</p>
         </div>
         <div class="ac">
           <div class="ac-tag">Evidencia 02 — Diversión y Aprendizaje</div>
-          <h3 class="ac-h">Aprender probando y construyendo</h3>
+          <h3 class="ac-h">La experimentación como camino</h3>
           <p class="ac-p">La diversión es la felicidad que surge de experimentar. Aprender implica curiosidad, experimentación y colaboración: construimos, deconstruimos, reconstruimos.</p>
         </div>
         <div class="ac">
           <div class="ac-tag">Evidencia 03 — Cuidado y Calidad</div>
-          <h3 class="ac-h">Calidad y mejora constante</h3>
+          <h3 class="ac-h">Mejora continua como promesa</h3>
           <p class="ac-p">Cuidar significa marcar una diferencia positiva. "Solo lo mejor es suficiente": calidad que habla por sí sola y se gana la recomendación orgánica.</p>
         </div>
       </div>
@@ -1142,7 +1340,7 @@ body{padding-left:0!important}
       <div style="display:flex;flex-direction:column;gap:1rem;">
         <div class="ac">
           <div class="ac-tag">La Dinámica Digital del Creador</div>
-          <h3 class="ac-h">Construir, personalizar y compartir</h3>
+          <h3 class="ac-h">Construye → Hazlo tuyo → Compártelo → Vuelve a crearlo</h3>
           <p class="ac-p">En lugar de "Compra esto", la lógica digital de LEGO es: el usuario recibe un sistema abierto (bricks + instrucciones + comunidad), lo activa creativamente y produce outputs múltiples e irrepetibles.</p>
         </div>
         <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1)">
@@ -1166,7 +1364,7 @@ body{padding-left:0!important}
 <section id="audiencias">
   <div class="sh rev">
     <div class="s-tag">04 — Audiencias Estratégicas</div>
-    <h2 class="s-h">Una misma marca para distintos públicos</h2>
+    <h2 class="s-h">Un Sistema, <span style="color:var(--red)">Múltiples</span> Posibilidades</h2>
     <p class="s-d">Cómo el Brand Core se traduce según la etapa de vida del usuario.</p>
   </div>
 
@@ -1371,7 +1569,7 @@ body{padding-left:0!important}
       <div style="display:flex;flex-direction:column;gap:.85rem">
         <div class="ac">
           <div class="ac-tag">Análisis estratégico</div>
-          <h3 class="ac-h">El logo como punto de reconocimiento</h3>
+          <h3 class="ac-h">El logo como sistema, no como imagen</h3>
           <p class="ac-p">LEGO no fragmenta su logotipo por audiencia. Cambia el ambiente visual que lo rodea. Funciona en header móvil, avatar de Instagram (23.5M seguidores), favicon de navegador y espectacular. La proporción 1:1 garantiza reconocimiento instantáneo en cualquier formato.</p>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem">
@@ -1495,7 +1693,7 @@ body{padding-left:0!important}
 <section id="voztono">
   <div class="sh rev">
     <div class="s-tag">06 — Tono, Voz & Narrativa</div>
-    <h2 class="s-h">Voz y tono de la marca</h2>
+    <h2 class="s-h">La <span style="color:var(--red)">Voz</span> que une todo</h2>
     <p class="s-d">La misma voz, modulada inteligentemente para el contexto de cada plataforma.</p>
   </div>
 
@@ -1528,7 +1726,7 @@ body{padding-left:0!important}
   <!-- Voz vs Tono -->
   <div class="vt-diff rev">
     <div class="vd">
-      <div class="vd-l">Una voz constante con tonos distintos</div>
+      <div class="vd-l">La VOZ — ADN Inalterable</div>
       <div class="vd-h">Personalidad constante</div>
       <div class="vd-p">La voz es el "quién es" LEGO como comunicador. Siempre lúdica, inspiradora y cercana. No cambia nunca, en ningún canal ni audiencia.</div>
     </div>
@@ -1684,15 +1882,15 @@ body{padding-left:0!important}
 <section id="hallazgos">
   <div class="sh rev">
     <div class="s-tag">08 — Hallazgos Principales</div>
-    <h2 class="s-h">Hallazgos <span style="color:var(--red)">principales</span></h2>
-    <p class="s-d">Un análisis sobre cómo LEGO construye coherencia de marca en el ecosistema digital.</p>
+    <h2 class="s-h">El Secreto <span style="color:var(--red)">del Sistema</span></h2>
+    <p class="s-d">Por qué LEGO domina verdaderamente el ecosistema digital.</p>
   </div>
 
   <!-- Diapo 38 — Hero protagónica -->
   <div class="hall-hero rev">
-    <div class="dref dk">Diapositiva 38 — Hallazgos principales del análisis</div>
+    <div class="dref dk">Diapositiva 38 — Hallazgos Principales: El Secreto del Sistema</div>
     <div class="hall-slide-wrap">
-      <img src="assets/slide_38.jpg" alt="Hallazgos principales — Diapositiva 38">
+      <img src="assets/slide_38.jpg" alt="Hallazgos principales: el secreto del sistema — Diapositiva 38">
     </div>
   </div>
 
@@ -1700,12 +1898,12 @@ body{padding-left:0!important}
     <div class="hall-title">Análisis de los 6 Hallazgos</div>
     <div class="hall-sub">Basado en la auditoría visual e ingeniería inversa del ecosistema digital oficial de LEGO.</div>
     <div class="hall-grid rev">
-      <div class="hc"><div class="hc-ico"><svg viewBox="0 0 60 52" fill="none"><polygon points="4,16 30,4 56,16 30,28" fill="#ff2222"/><polygon points="4,16 4,42 30,54 30,28" fill="#a00008"/><polygon points="30,28 30,54 56,42 56,16" fill="#cc0008"/><ellipse cx="20" cy="16" rx="9" ry="4.5" fill="#E3000B"/><ellipse cx="20" cy="16" rx="7" ry="3.5" fill="#ff5555"/><ellipse cx="20" cy="16" rx="4" ry="2" fill="#ff2222" opacity=".5"/><ellipse cx="40" cy="16" rx="9" ry="4.5" fill="#E3000B"/><ellipse cx="40" cy="16" rx="7" ry="3.5" fill="#ff5555"/><ellipse cx="40" cy="16" rx="4" ry="2" fill="#ff2222" opacity=".5"/></svg></div><h4 class="hc-h">Brand Core aplicado en digital</h4><p class="hc-d">Imaginación, creatividad y aprendizaje orientan absolutamente toda decisión UI/UX. El propósito no es declarativo: es funcional en cada punto de contacto digital.</p></div>
-      <div class="hc"><div class="hc-ico"><svg viewBox="0 0 60 52" fill="none"><polygon points="4,16 30,4 56,16 30,28" fill="#6644bb"/><polygon points="4,16 4,42 30,54 30,28" fill="#33207a"/><polygon points="30,28 30,54 56,42 56,16" fill="#4d33a0"/><ellipse cx="20" cy="16" rx="9" ry="4.5" fill="#4B2E91"/><ellipse cx="20" cy="16" rx="7" ry="3.5" fill="#9977ee"/><ellipse cx="20" cy="16" rx="4" ry="2" fill="#6644bb" opacity=".5"/><ellipse cx="40" cy="16" rx="9" ry="4.5" fill="#4B2E91"/><ellipse cx="40" cy="16" rx="7" ry="3.5" fill="#9977ee"/><ellipse cx="40" cy="16" rx="4" ry="2" fill="#6644bb" opacity=".5"/></svg></div><h4 class="hc-h">Usuario como parte activa de la marca</h4><p class="hc-d">Como "El Creador", LEGO convierte a los usuarios en creadores activos. LEGO Ideas: el fan se convierte en diseñador oficial. El consumidor es el activo.</p></div>
+      <div class="hc"><div class="hc-ico"><svg viewBox="0 0 60 52" fill="none"><polygon points="4,16 30,4 56,16 30,28" fill="#ff2222"/><polygon points="4,16 4,42 30,54 30,28" fill="#a00008"/><polygon points="30,28 30,54 56,42 56,16" fill="#cc0008"/><ellipse cx="20" cy="16" rx="9" ry="4.5" fill="#E3000B"/><ellipse cx="20" cy="16" rx="7" ry="3.5" fill="#ff5555"/><ellipse cx="20" cy="16" rx="4" ry="2" fill="#ff2222" opacity=".5"/><ellipse cx="40" cy="16" rx="9" ry="4.5" fill="#E3000B"/><ellipse cx="40" cy="16" rx="7" ry="3.5" fill="#ff5555"/><ellipse cx="40" cy="16" rx="4" ry="2" fill="#ff2222" opacity=".5"/></svg></div><h4 class="hc-h">Brand Core Vivo</h4><p class="hc-d">Imaginación, creatividad y aprendizaje orientan absolutamente toda decisión UI/UX. El propósito no es declarativo: es funcional en cada punto de contacto digital.</p></div>
+      <div class="hc"><div class="hc-ico"><svg viewBox="0 0 60 52" fill="none"><polygon points="4,16 30,4 56,16 30,28" fill="#6644bb"/><polygon points="4,16 4,42 30,54 30,28" fill="#33207a"/><polygon points="30,28 30,54 56,42 56,16" fill="#4d33a0"/><ellipse cx="20" cy="16" rx="9" ry="4.5" fill="#4B2E91"/><ellipse cx="20" cy="16" rx="7" ry="3.5" fill="#9977ee"/><ellipse cx="20" cy="16" rx="4" ry="2" fill="#6644bb" opacity=".5"/><ellipse cx="40" cy="16" rx="9" ry="4.5" fill="#4B2E91"/><ellipse cx="40" cy="16" rx="7" ry="3.5" fill="#9977ee"/><ellipse cx="40" cy="16" rx="4" ry="2" fill="#6644bb" opacity=".5"/></svg></div><h4 class="hc-h">Arquetipo Participativo</h4><p class="hc-d">Como "El Creador", LEGO convierte a los usuarios en creadores activos. LEGO Ideas: el fan se convierte en diseñador oficial. El consumidor es el activo.</p></div>
       <div class="hc"><div class="hc-ico"><svg viewBox="0 0 60 52" fill="none"><polygon points="4,16 30,4 56,16 30,28" fill="#333333"/><polygon points="4,16 4,42 30,54 30,28" fill="#000000"/><polygon points="30,28 30,54 56,42 56,16" fill="#1a1a1a"/><ellipse cx="20" cy="16" rx="9" ry="4.5" fill="#222222"/><ellipse cx="20" cy="16" rx="7" ry="3.5" fill="#555555"/><ellipse cx="20" cy="16" rx="4" ry="2" fill="#333333" opacity=".5"/><ellipse cx="40" cy="16" rx="9" ry="4.5" fill="#222222"/><ellipse cx="40" cy="16" rx="7" ry="3.5" fill="#555555"/><ellipse cx="40" cy="16" rx="4" ry="2" fill="#333333" opacity=".5"/></svg></div><h4 class="hc-h">Anclaje Visual Fuerte</h4><p class="hc-d">Una marca que no necesita logos alternativos. Su versión maestra es perfecta desde espectaculares hasta favicons. El logo LEGO es inmutable en todo el ecosistema.</p></div>
-      <div class="hc"><div class="hc-ico"><svg viewBox="0 0 60 52" fill="none"><polygon points="4,16 30,4 56,16 30,28" fill="#ffe033"/><polygon points="4,16 4,42 30,54 30,28" fill="#c9a800"/><polygon points="30,28 30,54 56,42 56,16" fill="#e6bf00"/><ellipse cx="20" cy="16" rx="9" ry="4.5" fill="#FFD500"/><ellipse cx="20" cy="16" rx="7" ry="3.5" fill="#fff066"/><ellipse cx="20" cy="16" rx="4" ry="2" fill="#ffe033" opacity=".5"/><ellipse cx="40" cy="16" rx="9" ry="4.5" fill="#FFD500"/><ellipse cx="40" cy="16" rx="7" ry="3.5" fill="#fff066"/><ellipse cx="40" cy="16" rx="4" ry="2" fill="#ffe033" opacity=".5"/></svg></div><h4 class="hc-h">Identidad visual flexible</h4><p class="hc-d">Navegación emocional a través de atmósferas cromáticas manteniendo coherencia estructural. El color modula la atmósfera; el logo ancla la identidad.</p></div>
-      <div class="hc"><div class="hc-ico"><svg viewBox="0 0 60 52" fill="none"><polygon points="4,16 30,4 56,16 30,28" fill="#ff4444"/><polygon points="4,16 4,42 30,54 30,28" fill="#8b0000"/><polygon points="30,28 30,54 56,42 56,16" fill="#b00000"/><ellipse cx="20" cy="16" rx="9" ry="4.5" fill="#cc0000"/><ellipse cx="20" cy="16" rx="7" ry="3.5" fill="#ff7777"/><ellipse cx="20" cy="16" rx="4" ry="2" fill="#ff4444" opacity=".5"/><ellipse cx="40" cy="16" rx="9" ry="4.5" fill="#cc0000"/><ellipse cx="40" cy="16" rx="7" ry="3.5" fill="#ff7777"/><ellipse cx="40" cy="16" rx="4" ry="2" fill="#ff4444" opacity=".5"/></svg></div><h4 class="hc-h">Voz coherente y tono adaptable</h4><p class="hc-d">Personalidad constante (lúdica, inspiradora, cercana), adaptada estratégicamente al contexto de cada plataforma. La voz es el ADN; el tono es el ecualizador.</p></div>
-      <div class="hc"><div class="hc-ico"><svg viewBox="0 0 60 52" fill="none"><polygon points="4,16 30,4 56,16 30,28" fill="#448866"/><polygon points="4,16 4,42 30,54 30,28" fill="#1e3b30"/><polygon points="30,28 30,54 56,42 56,16" fill="#2d5544"/><ellipse cx="20" cy="16" rx="9" ry="4.5" fill="#315C4A"/><ellipse cx="20" cy="16" rx="7" ry="3.5" fill="#77bb99"/><ellipse cx="20" cy="16" rx="4" ry="2" fill="#448866" opacity=".5"/><ellipse cx="40" cy="16" rx="9" ry="4.5" fill="#315C4A"/><ellipse cx="40" cy="16" rx="7" ry="3.5" fill="#77bb99"/><ellipse cx="40" cy="16" rx="4" ry="2" fill="#448866" opacity=".5"/></svg></div><h4 class="hc-h">Narrativa centrada en el usuario</h4><p class="hc-d">La marca entrega las herramientas; el éxito es la capacidad creativa descubierta por el usuario. El héroe es siempre el usuario; LEGO es siempre el guía.</p></div>
+      <div class="hc"><div class="hc-ico"><svg viewBox="0 0 60 52" fill="none"><polygon points="4,16 30,4 56,16 30,28" fill="#ffe033"/><polygon points="4,16 4,42 30,54 30,28" fill="#c9a800"/><polygon points="30,28 30,54 56,42 56,16" fill="#e6bf00"/><ellipse cx="20" cy="16" rx="9" ry="4.5" fill="#FFD500"/><ellipse cx="20" cy="16" rx="7" ry="3.5" fill="#fff066"/><ellipse cx="20" cy="16" rx="4" ry="2" fill="#ffe033" opacity=".5"/><ellipse cx="40" cy="16" rx="9" ry="4.5" fill="#FFD500"/><ellipse cx="40" cy="16" rx="7" ry="3.5" fill="#fff066"/><ellipse cx="40" cy="16" rx="4" ry="2" fill="#ffe033" opacity=".5"/></svg></div><h4 class="hc-h">Sistemas Visuales Dinámicos</h4><p class="hc-d">Navegación emocional a través de atmósferas cromáticas manteniendo coherencia estructural. El color modula la atmósfera; el logo ancla la identidad.</p></div>
+      <div class="hc"><div class="hc-ico"><svg viewBox="0 0 60 52" fill="none"><polygon points="4,16 30,4 56,16 30,28" fill="#ff4444"/><polygon points="4,16 4,42 30,54 30,28" fill="#8b0000"/><polygon points="30,28 30,54 56,42 56,16" fill="#b00000"/><ellipse cx="20" cy="16" rx="9" ry="4.5" fill="#cc0000"/><ellipse cx="20" cy="16" rx="7" ry="3.5" fill="#ff7777"/><ellipse cx="20" cy="16" rx="4" ry="2" fill="#ff4444" opacity=".5"/><ellipse cx="40" cy="16" rx="9" ry="4.5" fill="#cc0000"/><ellipse cx="40" cy="16" rx="7" ry="3.5" fill="#ff7777"/><ellipse cx="40" cy="16" rx="4" ry="2" fill="#ff4444" opacity=".5"/></svg></div><h4 class="hc-h">Voz Coherente, Tono Ágil</h4><p class="hc-d">Personalidad constante (lúdica, inspiradora, cercana), adaptada estratégicamente al contexto de cada plataforma. La voz es el ADN; el tono es el ecualizador.</p></div>
+      <div class="hc"><div class="hc-ico"><svg viewBox="0 0 60 52" fill="none"><polygon points="4,16 30,4 56,16 30,28" fill="#448866"/><polygon points="4,16 4,42 30,54 30,28" fill="#1e3b30"/><polygon points="30,28 30,54 56,42 56,16" fill="#2d5544"/><ellipse cx="20" cy="16" rx="9" ry="4.5" fill="#315C4A"/><ellipse cx="20" cy="16" rx="7" ry="3.5" fill="#77bb99"/><ellipse cx="20" cy="16" rx="4" ry="2" fill="#448866" opacity=".5"/><ellipse cx="40" cy="16" rx="9" ry="4.5" fill="#315C4A"/><ellipse cx="40" cy="16" rx="7" ry="3.5" fill="#77bb99"/><ellipse cx="40" cy="16" rx="4" ry="2" fill="#448866" opacity=".5"/></svg></div><h4 class="hc-h">Storytelling Invertido</h4><p class="hc-d">La marca entrega las herramientas; el éxito es la capacidad creativa descubierta por el usuario. El héroe es siempre el usuario; LEGO es siempre el guía.</p></div>
       </div>
     </div>
 </section>
@@ -1716,7 +1914,7 @@ body{padding-left:0!important}
 <section id="cierre">
   <div class="sh rev">
     <div class="s-tag y">09 — Cierre Ejecutivo</div>
-    <h2 class="s-h" style="color:var(--wht)">Coherencia <em style="color:var(--yellow);font-style:normal">flexible de marca</em></h2>
+    <h2 class="s-h" style="color:var(--wht)">Consistencia <em style="color:var(--yellow);font-style:normal">Sin Rigidez</em></h2>
     <p class="s-d w">La conclusión estratégica del Brand Book Digital Estratégico de LEGO.</p>
   </div>
 
@@ -1744,7 +1942,7 @@ body{padding-left:0!important}
 
   <!-- Diapo 39 — Hero full-width (slide limpio sin superposición) -->
   <div class="cierre-39 rev">
-    <img class="c39-img" src="assets/slide_39.jpg" alt="Coherencia flexible de marca">
+    <img class="c39-img" src="assets/slide_39.jpg" alt="Consistencia Sin Rigidez">
   </div>
   <!-- Panel de conclusión bajo la imagen -->
   <div class="rev" style="max-width:1200px;margin:0 auto;padding:1.5rem 2rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start">
@@ -1794,7 +1992,7 @@ body{padding-left:0!important}
 <footer>
   <p>Brand Book Digital Estratégico — LEGO: Construir Posibilidades</p>
   <p>Paula Andrea Osorio Franco · Carné: 20014957 · Maestría en Marketing Digital · Curso: Branding Digital · Universidad Galileo</p>
-  <p style="margin-top:.6rem;font-size:.65rem;opacity:.55">⚠️ Proyecto académico no oficial. Imágenes usadas únicamente como evidencia visual de análisis del ecosistema digital público de LEGO. Los valores HEX/RGB son referenciales de auditoría visual, no guía oficial interna de LEGO. LEGO® es una marca registrada de The LEGO Group.</p>
+  <p style="margin-top:.6rem;font-size:.65rem;opacity:.55">⚠️ Proyecto académico no oficial. LEGO® es una marca registrada de The LEGO Group. Este análisis no representa comunicación oficial de la marca. Los valores HEX/RGB son referenciales de auditoría visual, no guía oficial interna de LEGO.</p>
 </footer>
 
 <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Volver arriba">↑</button>
@@ -1846,5 +2044,585 @@ function copyHex(el,hex){
   });
 }
 </script>
+
+
+<!-- ============================================================
+     FASE 2 — TRANSICIÓN  (Diapos f2_01, f2_02, f2_03)
+     ============================================================ -->
+<div class="f2-banner rev">
+  <div class="f2-banner-inner">
+    <div class="f2-banner-fase">Fase 2 — Ecosistema de Contenido</div>
+    <h2 class="f2-banner-h">De la identidad estática al ecosistema de contenido vivo.</h2>
+    <p class="f2-banner-p">La Fase 2 no sustituye la Fase 1. La complementa y la activa. El contenido no son publicaciones aisladas; funciona como una extensión directa del Brand Core.</p>
+  </div>
+  <div style="max-width:1200px;margin:2rem auto 0;padding:0 2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start">
+    <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.35)">
+      <img src="assets/f2_slide_02.jpg" alt="Tesis de continuidad estratégica: Fase 1 diagnóstico, Fase 2 ecosistema" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+    </div>
+    <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.35)">
+      <img src="assets/f2_slide_03.jpg" alt="Base estratégica y expresión digital" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     10 — CONTENT BRANDING & PILARES  (Diapos f2_05–f2_15)
+     ============================================================ -->
+<section id="contentbranding">
+  <div class="sh rev">
+    <div class="s-tag">10 — Content Branding</div>
+    <h2 class="s-h">Pilares de <span style="color:var(--red)">Contenido</span></h2>
+    <p class="s-d">Cómo la marca aporta valor, entretiene y educa sin depender siempre de la venta directa. Análisis observacional del ecosistema digital de LEGO.</p>
+  </div>
+
+  <!-- Nota metodológica -->
+  <div class="nota-meto rev">
+    <div class="nota-meto-inner">
+      <p>Nota metodológica — Uso académico de imágenes</p>
+      <p>Las imágenes utilizadas en esta sección corresponden a capturas y referencias visuales observadas en el ecosistema digital público de LEGO, principalmente en su sitio web oficial y en perfiles públicos de redes sociales. Se emplean únicamente con fines académicos, de análisis visual e ingeniería inversa de marca. Este proyecto no es oficial, no tiene fines comerciales y LEGO® es una marca registrada de sus respectivos titulares.</p>
+    </div>
+  </div>
+
+  <!-- ¿Qué es el Content Branding? — Diapo f2_05 -->
+  <div class="cb-intro rev">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:start;margin-bottom:2rem">
+      <div>
+        <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 05 — ¿Qué es el Content Branding en LEGO?</div>
+        <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
+          <img src="assets/f2_slide_05.jpg" alt="¿Qué es el Content Branding en LEGO? — Diapositiva 5" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem;justify-content:center">
+        <div class="cb-key-insight">
+          <span>Key Insight — Diapo 05</span>
+          <p>La marca aporta valor, entretiene y educa sin depender siempre de una venta directa. El contenido no solo informa; invita a la acción.</p>
+        </div>
+        <div style="background:var(--wht);border-radius:var(--r12);padding:1.5rem;box-shadow:0 3px 14px rgba(0,0,0,.06)">
+          <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#888;margin-bottom:.5rem">Este análisis muestra que</div>
+          <p style="font-size:.88rem;line-height:1.65;color:#444">LEGO no comunica únicamente desde el producto. Su ecosistema digital se apoya en la posibilidad de imaginar, construir, compartir y participar. El contenido funciona como extensión directa del Brand Core.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paradigma: Narrativa centrada en el usuario — Diapo f2_06 -->
+  <div class="cb-paradigma rev">
+    <div>
+      <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 06 — El paradigma del contenido LEGO</div>
+      <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
+        <img src="assets/f2_slide_06.jpg" alt="Paradigma del contenido LEGO: narrativa centrada en el usuario" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1rem">
+      <div style="background:var(--blk);border-radius:var(--r12);padding:1.75rem;color:var(--wht)">
+        <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.5rem">Narrativa centrada en el usuario</div>
+        <h3 style="font-family:var(--fd);font-size:1.2rem;color:var(--yellow);margin-bottom:.65rem">El producto no es el héroe, es el facilitador.</h3>
+        <p style="font-size:.85rem;color:rgba(255,255,255,.8);line-height:1.65">La marca entretiene e invita a crear antes de vender. El content branding de LEGO funciona porque no depende de la venta de los productos, sino de construir un universo de experiencias alrededor de ellos.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+        <div style="background:#fff9e6;border-radius:var(--r8);padding:1rem;border-left:3px solid var(--yellow)">
+          <div style="font-family:var(--fd);font-size:.85rem;margin-bottom:.25rem">1. Juego y Aprendizaje</div>
+          <div style="font-size:.75rem;color:#555">Construir permite descubrir.</div>
+        </div>
+        <div style="background:#fff0ec;border-radius:var(--r8);padding:1rem;border-left:3px solid var(--coral)">
+          <div style="font-family:var(--fd);font-size:.85rem;margin-bottom:.25rem">2. Comunidad</div>
+          <div style="font-size:.75rem;color:#555">La marca como punto de encuentro.</div>
+        </div>
+        <div style="background:#f5f0ff;border-radius:var(--r8);padding:1rem;border-left:3px solid var(--purple)">
+          <div style="font-family:var(--fd);font-size:.85rem;margin-bottom:.25rem">3. Entretenimiento</div>
+          <div style="font-size:.75rem;color:#555">Historias antes que ventas.</div>
+        </div>
+        <div style="background:#f0f9ff;border-radius:var(--r8);padding:1rem;border-left:3px solid #0ea5e9">
+          <div style="font-family:var(--fd);font-size:.85rem;margin-bottom:.25rem">4. Conexión Emocional</div>
+          <div style="font-size:.75rem;color:#555">Adaptación a momentos de vida.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Síntesis: 4 Pilares — Diapo f2_07 -->
+  <div class="cb-pilares rev">
+    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.75rem">Diapositiva 07 — Síntesis Estratégica: Los 4 Pilares de Contenido</div>
+    <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14);margin-bottom:2rem">
+      <img src="assets/f2_slide_07.jpg" alt="Síntesis estratégica: los 4 pilares de contenido — Diapositiva 7" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#0f0f0f">
+    </div>
+
+    <!-- Los 4 pilares en detalle — Diapos f2_11, f2_12, f2_13, f2_14 -->
+    <h3 style="font-family:var(--fd);font-size:1.4rem;margin-bottom:.25rem">Los 4 Pilares en Detalle</h3>
+    <p style="font-size:.85rem;color:#666;margin-bottom:1.5rem">Cada pilar respaldado por su diapositiva fuente y evidencia observada.</p>
+    <div class="pilares-grid">
+
+      <!-- Pilar 1 -->
+      <div class="pilar-card pilar-1">
+        <img class="pilar-slide" src="assets/f2_slide_11.jpg" alt="Pilar 1: Juego y Aprendizaje — Diapositiva 11">
+        <div class="pilar-body">
+          <div class="pilar-label">Pilar 1 · Diapo 11</div>
+          <div class="pilar-h">Juego y Aprendizaje</div>
+          <div class="pilar-tagline">Construir para descubrir.</div>
+          <p class="pilar-desc">El juego como una forma natural de aprender, experimentar y desarrollar creatividad. No se comunica como una clase formal. A veces aprender empieza con una pieza. Construir permite probar, equivocarse y volver a intentarlo.</p>
+          <div class="pilar-core">Conexión con el Core: Imaginación, creatividad y aprendizaje directo.</div>
+        </div>
+      </div>
+
+      <!-- Pilar 2 -->
+      <div class="pilar-card pilar-2">
+        <img class="pilar-slide" src="assets/f2_slide_12.jpg" alt="Pilar 2: Comunidad y Participación — Diapositiva 12">
+        <div class="pilar-body">
+          <div class="pilar-label">Pilar 2 · Diapo 12</div>
+          <div class="pilar-h">Comunidad y Participación</div>
+          <div class="pilar-tagline">Punto de encuentro.</div>
+          <p class="pilar-desc">LEGO invita a asistir y formar parte de espacios creados por fans. Co-creación: "De fan a creador". Las ideas nacen en la comunidad. La marca actúa como plataforma, no solo como fabricante.</p>
+          <div class="pilar-core">Conexión con el Core: Creatividad colaborativa y aprendizaje compartido.</div>
+        </div>
+      </div>
+
+      <!-- Pilar 3 -->
+      <div class="pilar-card pilar-3">
+        <img class="pilar-slide" src="assets/f2_slide_13.jpg" alt="Pilar 3: Entretenimiento de Marca — Diapositiva 13">
+        <div class="pilar-body">
+          <div class="pilar-label">Pilar 3 · Diapo 13</div>
+          <div class="pilar-h">Entretenimiento de Marca</div>
+          <div class="pilar-tagline">Historias antes que ventas.</div>
+          <p class="pilar-desc">El producto no aparece solo como objeto de consumo, sino como parte fundamental de una narrativa. Objetivo: mantener la atención desde la sorpresa, el humor o la historia. La relación con la audiencia es menos transaccional y más basada en la afinidad audiovisual.</p>
+          <div class="pilar-core">Conexión con el Core: Diversión como energía y disfrute.</div>
+        </div>
+      </div>
+
+      <!-- Pilar 4 -->
+      <div class="pilar-card pilar-4">
+        <img class="pilar-slide" src="assets/f2_slide_14.jpg" alt="Pilar 4: Conexión Emocional y Familiar — Diapositiva 14">
+        <div class="pilar-body">
+          <div class="pilar-label">Pilar 4 · Diapo 14</div>
+          <div class="pilar-h">Conexión Emocional y Familiar</div>
+          <div class="pilar-tagline">Creación de recuerdos.</div>
+          <p class="pilar-desc">El producto como herramienta simbólica para compartir momentos de vida y vínculos cotidianos. Refuerza el valor de la familia en el entorno laboral y social. "Construir juntos también es una forma de crear recuerdos."</p>
+          <div class="pilar-core">Conexión con el Core: Cuidado — impacto positivo en comunidad y vínculos.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Evidencias reales — Diapos f2_08, f2_09, f2_10, f2_15 + biblioteca visual -->
+  <div class="cb-evidencias rev">
+    <h3 style="font-family:var(--fd);font-size:1.4rem;margin-bottom:.25rem">Evidencias Observadas</h3>
+    <p style="font-size:.85rem;color:#666;margin-bottom:1.5rem">Capturas reales del ecosistema digital público de LEGO que respaldan el análisis.</p>
+
+    <!-- Evidencia 1 full: Diapo f2_08 -->
+    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 08 — Evidencia principal: La experiencia compartida</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;margin-bottom:2rem">
+      <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
+        <img src="assets/f2_slide_08.jpg" alt="Evidencia principal: la experiencia compartida — Diapositiva 8" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+      </div>
+      <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.08)">
+        <img src="assets/bv_01_brickbuilt_sydney_post.jpg" alt="Post original Brickbuilt Sydney — Biblioteca visual" style="width:100%;display:block;object-fit:cover;max-height:340px">
+        <div style="padding:.75rem 1rem;background:var(--blk);font-size:.72rem;color:rgba(255,255,255,.55);font-family:var(--fm)">Captura original: Post oficial LEGO en Facebook — Brickbuilt Sydney</div>
+      </div>
+    </div>
+
+    <!-- Evidencia 2: Diapo f2_09 -->
+    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 09 — Evidencia secundaria: entretenimiento y vínculo</div>
+    <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14);margin-bottom:2rem">
+      <img src="assets/f2_slide_09.jpg" alt="Evidencia secundaria: entretenimiento y vínculo — Diapositiva 9" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+    </div>
+
+    <!-- 3 evidencias en grid -->
+    <div class="ev3-grid">
+
+      <div class="ev3-card">
+        <img class="ev3-img wide" src="assets/bv_08_disney_main_street_instagram.jpg" alt="LEGO Disney Main Street Instagram — Captura original">
+        <div class="ev3-body">
+          <div class="ev3-label" style="color:var(--yellow)">Pilar 1 — Juego y Aprendizaje</div>
+          <div class="ev3-h">LEGO Disney Main Street</div>
+          <p class="ev3-obs">Observación: La audiencia es invitada a descubrir personajes ocultos, fomentando la participación activa. Ejemplo de exploración visual. 83.4M likes observados.</p>
+          <span class="ev3-pilar" style="background:rgba(255,213,0,.2);color:var(--yellow)">Instagram · Juego visual</span>
+        </div>
+      </div>
+
+      <div class="ev3-card">
+        <img class="ev3-img wide" src="assets/bv_03_entertainment_social_post.jpg" alt="LEGO entretenimiento social — Captura original">
+        <div class="ev3-body">
+          <div class="ev3-label" style="color:#c4b5fd">Pilar 3 — Entretenimiento</div>
+          <div class="ev3-h">Narrativa audiovisual</div>
+          <p class="ev3-obs">Observación: El producto se integra en una narrativa audiovisual. El formato busca sostener la conversación y la expectativa desde la sorpresa y el humor.</p>
+          <span class="ev3-pilar" style="background:rgba(75,46,145,.3);color:#c4b5fd">Facebook · Video narrativo</span>
+        </div>
+      </div>
+
+      <div class="ev3-card">
+        <img class="ev3-img wide" src="assets/bv_05_family_friendly_linkedin.jpg" alt="LEGO Family Friendly LinkedIn — Captura original">
+        <div class="ev3-body">
+          <div class="ev3-label" style="color:#fdba74">Pilar 4 — Conexión Emocional</div>
+          <div class="ev3-h">Family Friendly Workplace</div>
+          <p class="ev3-obs">Observación: En los canales revisados, se prioriza la cultura de cuidado. Refuerza el valor del tiempo compartido, ideal para audiencias de padres y cuidadores.</p>
+          <span class="ev3-pilar" style="background:rgba(249,115,22,.2);color:#fdba74">LinkedIn · Cultura corporativa</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Evidencia digital: ecosistema en acción — Diapo f2_10 -->
+    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin:.5rem 0 .5rem">Diapositiva 10 — Evidencia digital: el ecosistema en acción</div>
+    <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14);margin-bottom:2rem">
+      <img src="assets/f2_slide_10.jpg" alt="Evidencia digital: el ecosistema en acción — Diapositiva 10" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f4f4f4">
+    </div>
+
+    <!-- E-commerce Funcional — Diapo f2_15 -->
+    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 15 — E-commerce funcional: la venta sin perder la marca</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start">
+      <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
+        <img src="assets/f2_slide_15.jpg" alt="E-commerce funcional: la venta sin perder la magia — Diapositiva 15" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f4f4f4">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.85rem;justify-content:center">
+        <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.1)">
+          <img src="assets/bv_07_gift_card_ecommerce.jpg" alt="Gift card LEGO e-commerce — Captura original" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f4f4f4">
+          <div style="padding:.65rem 1rem;background:var(--blk);font-size:.7rem;color:rgba(255,255,255,.55);font-family:var(--fm)">Captura original: tarjetas regalo LEGO.com</div>
+        </div>
+        <div style="background:var(--wht);border-radius:var(--r12);padding:1.25rem;box-shadow:0 3px 14px rgba(0,0,0,.06)">
+          <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#888;margin-bottom:.4rem">Lectura estratégica</div>
+          <p style="font-size:.85rem;line-height:1.65;color:#444">Incluso en los momentos puramente transaccionales (compra de tarjetas de regalo), la narrativa no abandona el Brand Core. No se vende saldo; se vende "la alegría de construir cuando lo deseen."</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     11 — CALENDARIO ESTRATÉGICO  (Diapos f2_16–f2_20)
+     ============================================================ -->
+<section id="calendario">
+  <div class="sh rev">
+    <div class="s-tag y">11 — Calendario Editorial</div>
+    <h2 class="s-h" style="color:var(--wht)">Calendario <em style="color:var(--yellow);font-style:normal">Estratégico</em></h2>
+    <p class="s-d w">Simulación de calendario editorial de una semana completa, adaptada al contexto de Latinoamérica y Guatemala. (Fuente: diapositivas 16, 17, 18, 19)</p>
+  </div>
+
+  <!-- Intro calendario — Diapos f2_16 + f2_17 -->
+  <div class="cal-intro rev">
+    <div class="cal-slide-row">
+      <div>
+        <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem">Diapositiva 16 — El ritmo de la marca: Calendario táctico LATAM</div>
+        <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.4)">
+          <img src="assets/f2_slide_16.jpg" alt="El ritmo de la marca: Calendario táctico LATAM — Diapositiva 16" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+        </div>
+      </div>
+      <div class="cal-context">
+        <h4>El Ritmo de la Marca</h4>
+        <p>Una frecuencia activa que alterna objetivos (educar → entretener → conectar → activar) para no depender de la venta directa. Cada día activa un pilar distinto sin perder coherencia de voz.</p>
+        <div class="cal-ritmo">Ritmo Estratégico: educar → entretener → conectar → activar → co-crear → emocionar → sintetizar</div>
+      </div>
+    </div>
+
+    <!-- Diapo f2_17 -->
+    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem">Diapositiva 17 — Calendario táctico: ensamblando la semana (1 al 7 de junio)</div>
+    <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.4);margin-bottom:2rem">
+      <img src="assets/f2_slide_17.jpg" alt="Calendario táctico ensamblando la semana — Diapositiva 17" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+    </div>
+  </div>
+
+  <!-- Tabla completa del calendario -->
+  <div class="cal-table-wrap rev">
+    <div style="font-family:var(--fm);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem">Simulación semanal completa — 1 al 7 de junio</div>
+    <table class="cal-table">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Pilar</th>
+          <th>Objetivo del post</th>
+          <th>Copy / Idea central</th>
+          <th>Formato</th>
+          <th>Canal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="cal-day">1 Jun</div><div style="font-size:.7rem;color:rgba(255,255,255,.45)">Domingo</div></td>
+          <td><span class="cal-pilar-badge bp-juego">Juego y Aprendizaje</span></td>
+          <td>Mostrar que construir es aprender.</td>
+          <td><div class="cal-copy">"A veces aprender empieza con una pieza. Construir permite probar, equivocarse y volver a intentarlo."</div></td>
+          <td><div class="cal-formato">Carrusel educativo</div></td>
+          <td><div class="cal-canal" style="color:var(--yellow)">IG / FB</div></td>
+        </tr>
+        <tr>
+          <td><div class="cal-day">2 Jun</div><div style="font-size:.7rem;color:rgba(255,255,255,.45)">Lunes</div></td>
+          <td><span class="cal-pilar-badge bp-comunidad">Comunidad</span></td>
+          <td>Invitar a compartir recuerdos.</td>
+          <td><div class="cal-copy">"¿Cuál fue la primera construcción LEGO que recuerdas?"</div></td>
+          <td><div class="cal-formato">Story (Caja de preguntas)</div></td>
+          <td><div class="cal-canal" style="color:var(--coral)">IG Stories</div></td>
+        </tr>
+        <tr>
+          <td><div class="cal-day">3 Jun</div><div style="font-size:.7rem;color:rgba(255,255,255,.45)">Martes</div></td>
+          <td><span class="cal-pilar-badge bp-entrete">Entretenimiento</span></td>
+          <td>Mantener cercanía lúdica.</td>
+          <td><div class="cal-copy">"Una historia pequeña puede empezar con una gran imaginación."</div></td>
+          <td><div class="cal-formato">Reel / Video corto</div></td>
+          <td><div class="cal-canal" style="color:#a78bfa">IG / YT Shorts</div></td>
+        </tr>
+        <tr>
+          <td><div class="cal-day">4 Jun</div><div style="font-size:.7rem;color:rgba(255,255,255,.45)">Miércoles</div></td>
+          <td><span class="cal-pilar-badge bp-kidults">Exploración Kidults</span></td>
+          <td>Conectar desde la pausa creativa.</td>
+          <td><div class="cal-copy">"Construir también puede ser una forma de desconectarse un momento."</div></td>
+          <td><div class="cal-formato">Carrusel Lifestyle</div></td>
+          <td><div class="cal-canal" style="color:#d1d5db">IG / FB</div></td>
+        </tr>
+        <tr>
+          <td><div class="cal-day">5 Jun</div><div style="font-size:.7rem;color:rgba(255,255,255,.45)">Jueves</div></td>
+          <td><span class="cal-pilar-badge bp-fans">Comunidad y Fans</span></td>
+          <td>Reforzar co-creación.</td>
+          <td><div class="cal-copy">"De fan a creador: las mejores ideas nacen en la comunidad."</div></td>
+          <td><div class="cal-formato">Post / UGC (User Generated Content)</div></td>
+          <td><div class="cal-canal" style="color:#a78bfa">FB / Web</div></td>
+        </tr>
+        <tr>
+          <td><div class="cal-day">6 Jun</div><div style="font-size:.7rem;color:rgba(255,255,255,.45)">Viernes</div></td>
+          <td><span class="cal-pilar-badge bp-emocional">Conexión Emocional</span></td>
+          <td>Vínculo de tiempo familiar.</td>
+          <td><div class="cal-copy">"Construir juntos también es una forma de crear recuerdos."</div></td>
+          <td><div class="cal-formato">Mini video familiar</div></td>
+          <td><div class="cal-canal" style="color:#fdba74">FB / IG</div></td>
+        </tr>
+        <tr>
+          <td><div class="cal-day">7 Jun</div><div style="font-size:.7rem;color:rgba(255,255,255,.45)">Sábado</div></td>
+          <td><span class="cal-pilar-badge bp-sintesis">Síntesis de Marca</span></td>
+          <td>Conectar todos los pilares de la semana.</td>
+          <td><div class="cal-copy">"Una semana, muchas formas de construir: jugar, aprender, compartir y crear."</div></td>
+          <td><div class="cal-formato">Carrusel resumen</div></td>
+          <td><div class="cal-canal" style="color:var(--yellow)">IG / FB</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Días detalle — Diapos f2_18 + f2_19 -->
+  <div class="cal-intro rev" style="padding-top:0">
+    <div class="cal-slide-row">
+      <div>
+        <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem">Diapositiva 18 — El ecosistema en acción: días 1–4</div>
+        <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.4)">
+          <img src="assets/f2_slide_18.jpg" alt="El ecosistema en acción: calendario semanal días 1-4 — Diapositiva 18" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+        </div>
+      </div>
+      <div>
+        <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem">Diapositiva 19 — El ecosistema en acción: días 5–7</div>
+        <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.4)">
+          <img src="assets/f2_slide_19.jpg" alt="El ecosistema en acción: calendario semanal días 5-7 — Diapositiva 19" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contexto LatAm — Diapo f2_20 -->
+  <div class="cal-latam rev">
+    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.75rem">Diapositiva 20 — Aterrizaje estratégico: contexto LatAm y Guatemala</div>
+    <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.4);margin-bottom:1.5rem">
+      <img src="assets/f2_slide_20.jpg" alt="Aterrizaje estratégico: contexto LatAm y Guatemala — Diapositiva 20" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
+    </div>
+    <div class="latam-grid">
+      <div class="latam-card">
+        <div class="latam-num">01</div>
+        <div class="latam-h">Lenguaje Cercano</div>
+        <p class="latam-p">La voz lúdica de la marca debe sentirse humana y propia de la región. Evitar traducciones literales; el copy debe reflejar expresiones y ritmo conversacional local sin perder el tono maestro.</p>
+      </div>
+      <div class="latam-card">
+        <div class="latam-num">02</div>
+        <div class="latam-h">Eje en Familia y Comunidad</div>
+        <p class="latam-p">Fuerte enfoque cultural en los vínculos intergeneracionales (abuelos, padres, hijos compartiendo). Destacar el tiempo compartido en fin de semana como motivador clave en la región.</p>
+      </div>
+      <div class="latam-card">
+        <div class="latam-num">03</div>
+        <div class="latam-h">Sincronía Cultural y Comercial</div>
+        <p class="latam-p">Alineación con festividades locales, vacaciones escolares y efemérides relevantes (Día del Niño, Día de la Madre local). Considerar la disponibilidad real del catálogo en Guatemala.</p>
+      </div>
+      <div class="latam-card">
+        <div class="latam-num">04</div>
+        <div class="latam-h">Hábitos de Consumo Digital</div>
+        <p class="latam-p">Facebook e Instagram como los canales dominantes para comunidad y conversión en LatAm. Priorizar formatos visuales de consumo rápido (Reels, Carruseles) optimizados para móvil.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     12 — HERRAMIENTAS DE GESTIÓN  (Diapos f2_21–f2_23, f2_25, f2_26)
+     ============================================================ -->
+<section id="herramientas">
+  <div class="sh rev">
+    <div class="s-tag">12 — Herramientas de Gestión</div>
+    <h2 class="s-h">Gestión <span style="color:var(--red)">Colaborativa</span> de Marca</h2>
+    <p class="s-d">La plataforma donde vive el Brand Book Digital para que cualquier equipo creativo o agencia externa pueda trabajar con la marca manteniendo consistencia visual y verbal.</p>
+  </div>
+
+  <!-- Ecosistema tecnológico — Diapos f2_21 + f2_22 -->
+  <div class="hta-ecosistema rev">
+    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 21 — Ecosistema tecnológico de gestión ágil</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;margin-bottom:2rem">
+      <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
+        <img src="assets/f2_slide_21.jpg" alt="Ecosistema tecnológico de gestión ágil — Diapositiva 21" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
+      </div>
+      <div>
+        <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 22 — Infraestructura de gestión colaborativa</div>
+        <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
+          <img src="assets/f2_slide_22.jpg" alt="Infraestructura de gestión colaborativa — Diapositiva 22" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 herramientas -->
+    <div class="hta-grid">
+
+      <div class="hta-card figma">
+        <div class="hta-head">
+          <div class="hta-icon">🎨</div>
+          <div>
+            <div class="hta-hname">Figma</div>
+            <div class="hta-hrole">Design — Biblioteca Visual</div>
+          </div>
+        </div>
+        <div class="hta-body">
+          <p class="hta-desc">Repositorio vivo de paletas, componentes, estilos y assets gráficos. Mantiene la consistencia del diseño y permite que cualquier equipo creativo trabaje con los mismos recursos visuales.</p>
+          <ul class="hta-items">
+            <li>Paletas cromáticas y tokens de diseño</li>
+            <li>Componentes reutilizables (botones, cards, headers)</li>
+            <li>Guías tipográficas y de uso de logo</li>
+            <li>Biblioteca de íconos y elementos visuales LEGO</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hta-card notion">
+        <div class="hta-head">
+          <div class="hta-icon">📋</div>
+          <div>
+            <div class="hta-hname">Notion</div>
+            <div class="hta-hrole">Planning — Coordinación Editorial</div>
+          </div>
+        </div>
+        <div class="hta-body">
+          <p class="hta-desc">El cerebro que organiza la publicación y los responsables. Registro de pendientes, seguimiento de tareas y aprobación de textos. Organización editorial: tareas, calendario y evidencias.</p>
+          <ul class="hta-items">
+            <li>Calendario editorial con estados de publicación</li>
+            <li>Registro de aprobaciones de contenido</li>
+            <li>Base de datos de evidencias y referencias</li>
+            <li>Seguimiento de cambios por fase del Brand Book</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hta-card github">
+        <div class="hta-head">
+          <div class="hta-icon">💾</div>
+          <div>
+            <div class="hta-hname">GitHub</div>
+            <div class="hta-hrole">Storage — Repositorio Central</div>
+          </div>
+        </div>
+        <div class="hta-body">
+          <p class="hta-desc">Almacenamiento seguro del código HTML, imágenes y control de versiones. Todo el historial del manual vive aquí. Conserva el HTML, imágenes y el control de versiones por fases.</p>
+          <ul class="hta-items">
+            <li>Control de versiones por fase (Fase 1, Fase 2…)</li>
+            <li>Almacenamiento de todos los assets visuales</li>
+            <li>Historial completo de cambios aprobados</li>
+            <li>Rama principal protegida para versión publicada</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hta-card ghpages">
+        <div class="hta-head">
+          <div class="hta-icon">🌐</div>
+          <div>
+            <div class="hta-hname">GitHub Pages</div>
+            <div class="hta-hrole">Live — Sitio Publicado</div>
+          </div>
+        </div>
+        <div class="hta-body">
+          <p class="hta-desc">El manual visible y navegable para cualquier usuario a través de un enlace público. Despliegue público del Brand Book Digital como sitio web vivo y accesible para equipos y agencias.</p>
+          <ul class="hta-items">
+            <li>Publicación instantánea al hacer commit en GitHub</li>
+            <li>URL pública accesible para agencias externas</li>
+            <li>Compatible con cualquier navegador y dispositivo</li>
+            <li>Este mismo sitio: paulaosoriof86.github.io/brandbook</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Arquitectura colaborativa — Diapo f2_23 -->
+  <div class="hta-ecosistema rev">
+    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 23 — Arquitectura colaborativa del Brand Book</div>
+    <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14);margin-bottom:2rem">
+      <img src="assets/f2_slide_23.jpg" alt="Arquitectura colaborativa del Brand Book — Diapositiva 23" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
+    </div>
+  </div>
+
+  <!-- Flujo de trabajo -->
+  <div class="hta-flujo rev">
+    <h3 style="font-family:var(--fd);font-size:1.4rem;margin-bottom:.25rem">Flujo de Trabajo Cíclico</h3>
+    <p style="font-size:.85rem;color:#666;margin-bottom:1.25rem">Cómo el equipo mantiene el ecosistema digital actualizado, vivo y ordenado.</p>
+    <div class="flujo-steps">
+      <div class="flujo-step">
+        <div class="flujo-n">01</div>
+        <div class="flujo-h">Figma</div>
+        <p class="flujo-p">El equipo de diseño actualiza la biblioteca visual: nuevos componentes, variantes de color o ajustes tipográficos.</p>
+      </div>
+      <div class="flujo-arrow">→</div>
+      <div class="flujo-step">
+        <div class="flujo-n">02</div>
+        <div class="flujo-h">Notion</div>
+        <p class="flujo-p">El equipo editorial registra tareas, aprueba textos y coordina publicaciones con fechas y responsables.</p>
+      </div>
+      <div class="flujo-arrow">→</div>
+      <div class="flujo-step">
+        <div class="flujo-n">03</div>
+        <div class="flujo-h">GitHub</div>
+        <p class="flujo-p">El equipo técnico integra los assets de Figma y los textos de Notion, ajusta el HTML y hace commit de la versión actualizada.</p>
+      </div>
+      <div class="flujo-arrow">→</div>
+      <div class="flujo-step">
+        <div class="flujo-n">04</div>
+        <div class="flujo-h">GitHub Pages</div>
+        <p class="flujo-p">El Brand Book Digital se actualiza automáticamente y queda disponible para cualquier equipo o agencia a través del enlace público.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cierre Fase 2 — Diapos f2_25 + f2_26 -->
+  <div class="hta-ecosistema rev">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;margin-bottom:2rem">
+      <div>
+        <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 25 — Cierre estratégico de la Fase 2</div>
+        <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
+          <img src="assets/f2_slide_25.jpg" alt="Cierre estratégico de la Fase 2 — Diapositiva 25" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
+        </div>
+      </div>
+      <div>
+        <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 26 — La síntesis estratégica: un Brand Book Vivo</div>
+        <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
+          <img src="assets/f2_slide_26.jpg" alt="La síntesis estratégica: un Brand Book Vivo — Diapositiva 26" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cierre final Fase 2 -->
+  <div class="f2-cierre rev">
+    <div class="f2-cierre-inner">
+      <h2>"La estrategia solo es efectiva cuando se convierte en <em>contenido, experiencia y gestión colaborativa</em>."</h2>
+      <p style="font-size:.9rem;color:rgba(255,255,255,.65);line-height:1.7;max-width:680px;margin:0 auto">El valor de LEGO no se sostiene solo en su producto, sino en cómo convierte cada canal en una invitación a participar. El Brand Book ya no es un documento estático, sino un organismo digital vivo que traduce la identidad en experiencia diaria.</p>
+      <div class="f2-cierre-pills">
+        <span class="f2-cierre-pill">Contenido Vivo</span>
+        <span class="f2-cierre-pill">Experiencia Coherente</span>
+        <span class="f2-cierre-pill">Gestión Escalable</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
 </body>
 </html>
