@@ -625,7 +625,7 @@ footer{background:#050505;color:rgba(255,255,255,.35);text-align:center;padding:
 body{padding-left:0!important}
 
 /* — 2. Rótulos de diapositivas: invisibles en pantalla — */
-.dref{display:none!important}
+.dref{display:none!important;visibility:hidden!important;height:0!important;overflow:hidden!important;margin:0!important;padding:0!important}
 
 /* — 3. Overlay de frames de diapositiva: solo gradiente sutil, sin texto visible — */
 .df-overlay{background:linear-gradient(transparent 70%,rgba(0,0,0,.45))!important;pointer-events:none}
@@ -1218,7 +1218,7 @@ body{padding-left:0!important}
           <div class="ac-tag" style="color:rgba(255,255,255,.75)">Familias</div>
           <p style="font-size:.82rem;font-weight:800;color:#fff">Posibilidad de compartir tiempo.</p>
         </div>
-        <div class="ac dk" style="padding:1.1rem">
+        <div class="ac dk" style="padding:1.1rem;border-left:none;background:#1A1A1A">
           <div class="ac-tag">Adultos</div>
           <p style="font-size:.82rem;font-weight:700;color:var(--wht)">Pausar, coleccionar y decorar.</p>
         </div>
@@ -2071,18 +2071,17 @@ body{padding-left:0!important}
   <div class="cb-intro rev">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:start;margin-bottom:2rem">
       <div>
-        <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 05 — ¿Qué es el Content Branding en LEGO?</div>
         <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
           <img src="assets/f2_slide_05.jpg" alt="¿Qué es el Content Branding en LEGO? — Diapositiva 5" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:1rem;justify-content:center">
-        <div class="cb-key-insight">
-          <span>Key Insight — Diapo 05</span>
-          <p>La marca aporta valor, entretiene y educa sin depender siempre de una venta directa. El contenido no solo informa; invita a la acción.</p>
+        <div style="background:var(--blk);border-radius:var(--r12);padding:1.5rem 2rem">
+          <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:.6rem">Lectura estratégica</div>
+          <p style="font-size:.92rem;font-weight:800;color:var(--wht);line-height:1.55">El contenido no es apoyo de ventas. Es la marca en acción.</p>
         </div>
         <div style="background:var(--wht);border-radius:var(--r12);padding:1.5rem;box-shadow:0 3px 14px rgba(0,0,0,.06)">
-          <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#888;margin-bottom:.5rem">Este análisis muestra que</div>
+          <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#888;margin-bottom:.5rem">Observación del ecosistema</div>
           <p style="font-size:.88rem;line-height:1.65;color:#444">LEGO no comunica únicamente desde el producto. Su ecosistema digital se apoya en la posibilidad de imaginar, construir, compartir y participar. El contenido funciona como extensión directa del Brand Core.</p>
         </div>
       </div>
@@ -2092,7 +2091,7 @@ body{padding-left:0!important}
   <!-- Paradigma: Narrativa centrada en el usuario — Diapo f2_06 -->
   <div class="cb-paradigma rev">
     <div>
-      <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 06 — El paradigma del contenido LEGO</div>
+      <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 06 — El paradigma del contenido LEGO</div>
       <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
         <img src="assets/f2_slide_06.jpg" alt="Paradigma del contenido LEGO: narrativa centrada en el usuario" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
       </div>
@@ -2126,7 +2125,7 @@ body{padding-left:0!important}
 
   <!-- Síntesis: 4 Pilares — Diapo f2_07 -->
   <div class="cb-pilares rev">
-    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.75rem">Diapositiva 07 — Síntesis Estratégica: Los 4 Pilares de Contenido</div>
+    <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.75rem">Diapositiva 07 — Síntesis Estratégica: Los 4 Pilares de Contenido</div>
     <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14);margin-bottom:2rem">
       <img src="assets/f2_slide_07.jpg" alt="Síntesis estratégica: los 4 pilares de contenido — Diapositiva 7" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#0f0f0f">
     </div>
@@ -2193,7 +2192,7 @@ body{padding-left:0!important}
     <p style="font-size:.85rem;color:#666;margin-bottom:1.5rem">Capturas reales del ecosistema digital público de LEGO que respaldan el análisis.</p>
 
     <!-- Evidencia 1 full: Diapo f2_08 -->
-    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 08 — Evidencia principal: La experiencia compartida</div>
+    <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 08 — Evidencia principal: La experiencia compartida</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;margin-bottom:2rem">
       <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
         <img src="assets/f2_slide_08.jpg" alt="Evidencia principal: la experiencia compartida — Diapositiva 8" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
@@ -2205,7 +2204,7 @@ body{padding-left:0!important}
     </div>
 
     <!-- Evidencia 2: Diapo f2_09 -->
-    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 09 — Evidencia secundaria: entretenimiento y vínculo</div>
+    <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 09 — Evidencia secundaria: entretenimiento y vínculo</div>
     <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14);margin-bottom:2rem">
       <img src="assets/f2_slide_09.jpg" alt="Evidencia secundaria: entretenimiento y vínculo — Diapositiva 9" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
     </div>
@@ -2246,13 +2245,13 @@ body{padding-left:0!important}
     </div>
 
     <!-- Evidencia digital: ecosistema en acción — Diapo f2_10 -->
-    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin:.5rem 0 .5rem">Diapositiva 10 — Evidencia digital: el ecosistema en acción</div>
+    <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin:.5rem 0 .5rem">Diapositiva 10 — Evidencia digital: el ecosistema en acción</div>
     <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14);margin-bottom:2rem">
       <img src="assets/f2_slide_10.jpg" alt="Evidencia digital: el ecosistema en acción — Diapositiva 10" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f4f4f4">
     </div>
 
     <!-- E-commerce Funcional — Diapo f2_15 -->
-    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 15 — E-commerce funcional: la venta sin perder la marca</div>
+    <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 15 — E-commerce funcional: la venta sin perder la marca</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start">
       <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
         <img src="assets/f2_slide_15.jpg" alt="E-commerce funcional: la venta sin perder la magia — Diapositiva 15" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f4f4f4">
@@ -2286,7 +2285,7 @@ body{padding-left:0!important}
   <div class="cal-intro rev">
     <div class="cal-slide-row">
       <div>
-        <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem">Diapositiva 16 — El ritmo de la marca: Calendario táctico LATAM</div>
+        <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem">Diapositiva 16 — El ritmo de la marca: Calendario táctico LATAM</div>
         <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.4)">
           <img src="assets/f2_slide_16.jpg" alt="El ritmo de la marca: Calendario táctico LATAM — Diapositiva 16" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
         </div>
@@ -2299,7 +2298,7 @@ body{padding-left:0!important}
     </div>
 
     <!-- Diapo f2_17 -->
-    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem">Diapositiva 17 — Calendario táctico: ensamblando la semana (1 al 7 de junio)</div>
+    <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem">Diapositiva 17 — Calendario táctico: ensamblando la semana (1 al 7 de junio)</div>
     <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.4);margin-bottom:2rem">
       <img src="assets/f2_slide_17.jpg" alt="Calendario táctico ensamblando la semana — Diapositiva 17" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
     </div>
@@ -2384,13 +2383,13 @@ body{padding-left:0!important}
   <div class="cal-intro rev" style="padding-top:0">
     <div class="cal-slide-row">
       <div>
-        <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem">Diapositiva 18 — El ecosistema en acción: días 1–4</div>
+        <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem">Diapositiva 18 — El ecosistema en acción: días 1–4</div>
         <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.4)">
           <img src="assets/f2_slide_18.jpg" alt="El ecosistema en acción: calendario semanal días 1-4 — Diapositiva 18" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
         </div>
       </div>
       <div>
-        <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem">Diapositiva 19 — El ecosistema en acción: días 5–7</div>
+        <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem">Diapositiva 19 — El ecosistema en acción: días 5–7</div>
         <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.4)">
           <img src="assets/f2_slide_19.jpg" alt="El ecosistema en acción: calendario semanal días 5-7 — Diapositiva 19" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
         </div>
@@ -2400,7 +2399,7 @@ body{padding-left:0!important}
 
   <!-- Contexto LatAm — Diapo f2_20 -->
   <div class="cal-latam rev">
-    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.75rem">Diapositiva 20 — Aterrizaje estratégico: contexto LatAm y Guatemala</div>
+    <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.75rem">Diapositiva 20 — Aterrizaje estratégico: contexto LatAm y Guatemala</div>
     <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.4);margin-bottom:1.5rem">
       <img src="assets/f2_slide_20.jpg" alt="Aterrizaje estratégico: contexto LatAm y Guatemala — Diapositiva 20" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
     </div>
@@ -2441,13 +2440,13 @@ body{padding-left:0!important}
 
   <!-- Ecosistema tecnológico — Diapos f2_21 + f2_22 -->
   <div class="hta-ecosistema rev">
-    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 21 — Ecosistema tecnológico de gestión ágil</div>
+    <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 21 — Ecosistema tecnológico de gestión ágil</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;margin-bottom:2rem">
       <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
         <img src="assets/f2_slide_21.jpg" alt="Ecosistema tecnológico de gestión ágil — Diapositiva 21" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
       </div>
       <div>
-        <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 22 — Infraestructura de gestión colaborativa</div>
+        <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 22 — Infraestructura de gestión colaborativa</div>
         <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
           <img src="assets/f2_slide_22.jpg" alt="Infraestructura de gestión colaborativa — Diapositiva 22" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
         </div>
@@ -2538,7 +2537,7 @@ body{padding-left:0!important}
 
   <!-- Arquitectura colaborativa — Diapo f2_23 -->
   <div class="hta-ecosistema rev">
-    <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 23 — Arquitectura colaborativa del Brand Book</div>
+    <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 23 — Arquitectura colaborativa del Brand Book</div>
     <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14);margin-bottom:2rem">
       <img src="assets/f2_slide_23.jpg" alt="Arquitectura colaborativa del Brand Book — Diapositiva 23" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
     </div>
@@ -2579,13 +2578,13 @@ body{padding-left:0!important}
   <div class="hta-ecosistema rev">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;margin-bottom:2rem">
       <div>
-        <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 25 — Cierre estratégico de la Fase 2</div>
+        <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 25 — Cierre estratégico de la Fase 2</div>
         <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
           <img src="assets/f2_slide_25.jpg" alt="Cierre estratégico de la Fase 2 — Diapositiva 25" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
         </div>
       </div>
       <div>
-        <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 26 — La síntesis estratégica: un Brand Book Vivo</div>
+        <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Diapositiva 26 — La síntesis estratégica: un Brand Book Vivo</div>
         <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
           <img src="assets/f2_slide_26.jpg" alt="La síntesis estratégica: un Brand Book Vivo — Diapositiva 26" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
         </div>
