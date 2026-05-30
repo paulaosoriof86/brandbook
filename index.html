@@ -1015,8 +1015,9 @@ body{padding-left:0!important}
     <li><a href="#cierre" class="nl">Cierre</a></li>
     <li class="nav-divider" aria-hidden="true"></li>
     <li class="nav-phase-label">
-      <span class="nav-phase-tag f2-tag">F2</span>
+      <a href="#fase2" class="nav-phase-tag f2-tag" style="cursor:pointer;text-decoration:none">F2</a>
     </li>
+    <li><a href="#fase2" class="nl f2-nl">Fase 2</a></li>
     <li><a href="#contentbranding" class="nl f2-nl">Contenido</a></li>
     <li><a href="#calendario" class="nl f2-nl">Calendario</a></li>
     <li><a href="#herramientas" class="nl f2-nl">Gestión</a></li>
@@ -1038,9 +1039,10 @@ body{padding-left:0!important}
   <a href="#cierre" class="sb-a"><span class="sb-num">09</span>Cierre</a>
   <div style="height:1px;background:rgba(255,213,0,.25);margin:.6rem .8rem"></div>
   <div class="sb-lbl" style="color:var(--yellow);letter-spacing:.25em">FASE 2</div>
-  <a href="#contentbranding" class="sb-a sb-f2"><span class="sb-num">10</span>Content Branding</a>
-  <a href="#calendario" class="sb-a sb-f2"><span class="sb-num">11</span>Calendario</a>
-  <a href="#herramientas" class="sb-a sb-f2"><span class="sb-num">12</span>Herramientas</a>
+  <a href="#fase2" class="sb-a sb-f2"><span class="sb-num">10</span>Introducción F2</a>
+  <a href="#contentbranding" class="sb-a sb-f2"><span class="sb-num">11</span>Content Branding</a>
+  <a href="#calendario" class="sb-a sb-f2"><span class="sb-num">12</span>Calendario</a>
+  <a href="#herramientas" class="sb-a sb-f2"><span class="sb-num">13</span>Herramientas</a>
 </nav>
 <button id="sb-btn" onclick="document.getElementById('sb').classList.toggle('open')">☰ Índice</button>
 
@@ -2031,7 +2033,7 @@ body{padding-left:0!important}
 <!-- ============================================================
      FASE 2 — TRANSICIÓN  (Diapos f2_01, f2_02, f2_03)
      ============================================================ -->
-<div class="f2-banner rev">
+<section id="fase2" class="f2-banner rev">
   <div class="f2-banner-inner">
     <div class="f2-banner-fase">Fase 2 — Ecosistema de Contenido</div>
     <h2 class="f2-banner-h">De la identidad estática al ecosistema de contenido vivo.</h2>
@@ -2045,7 +2047,7 @@ body{padding-left:0!important}
       <img src="assets/f2_slide_03.jpg" alt="Base estratégica y expresión digital" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
     </div>
   </div>
-</div>
+</section>
 
 <!-- ============================================================
      10 — CONTENT BRANDING & PILARES  (Diapos f2_05–f2_15)
