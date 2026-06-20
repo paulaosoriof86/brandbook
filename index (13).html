@@ -1,0 +1,2921 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEGO — Brand Book digital y propuesta de campaña</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+ --red:#E3000B;--yellow:#FFD500;--blk:#000;--wht:#fff;
+ --coral:#F36F73;--purple:#4B2E91;--teal:#00B8C4;--green:#315C4A;
+ --dark:#1A1A1A;--dark2:#2D2D2D;--gray:#f4f4f4;--gray2:#e8e8e8;
+ --fd:'Black Han Sans',sans-serif;
+ --fb:'Nunito',sans-serif;
+ --fm:'Space Mono',monospace;
+ --r8:8px;--r12:12px;--r16:16px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--gray);color:var(--blk);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{text-decoration:none}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:#111}
+::-webkit-scrollbar-thumb{background:var(--red);border-radius:3px}
+
+#nav{
+ position:fixed;top:0;left:0;right:0;z-index:1000;
+ background:var(--blk);height:54px;
+ display:flex;align-items:center;justify-content:space-between;
+ padding:0 1.5rem;border-bottom:3px solid var(--red);
+}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-brick{
+ width:28px;height:18px;background:var(--red);border-radius:2px;
+ position:relative;
+}
+.nav-brick::before{
+ content:'';position:absolute;top:-5px;left:50%;transform:translateX(-50%);
+ width:18px;height:5px;background:var(--red);border-radius:2px;
+}
+.nav-brand{font-family:var(--fd);color:var(--wht);font-size:.82rem;letter-spacing:.05em}
+.nav-brand em{color:var(--yellow);font-style:normal}
+.nav-links{display:flex;list-style:none}
+.nav-links a{
+ display:block;height:54px;line-height:54px;padding:0.6rem;
+ color:rgba(255,255,255,.6);font-size:.62rem;font-weight:800;
+ letter-spacing:.1em;text-transform:uppercase;
+ border-bottom:3px solid transparent;margin-bottom:-3px;transition:.2s;
+}
+.nav-links a:hover,.nav-links a.act{color:var(--yellow);border-bottom-color:var(--yellow)}
+.nav-tog{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none;padding:8px}
+.nav-tog span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+
+#sb{
+ position:fixed;left:0;top:54px;bottom:0;width:170px;
+ background:rgba(0,0,0,.94);border-right:1px solid rgba(255,255,255,.06);
+ display:none;flex-direction:column;padding:1.25rem 0;z-index:900;overflow-y:auto;
+}
+#sb.open{display:flex}
+.sb-lbl{font-family:var(--fm);font-size:.52rem;letter-spacing:.2em;color:rgba(255,255,255,.28);text-transform:uppercase;padding:.4rem 1.1rem;margin-bottom:.35rem}
+.sb-a{
+ display:block;padding:.38rem 1.1rem;color:rgba(255,255,255,.45);
+ font-size:.68rem;font-weight:700;line-height:1.3;
+ border-left:2px solid transparent;transition:.2s;
+}
+.sb-a:hover,.sb-a.act{color:var(--yellow);border-left-color:var(--yellow)}
+.sb-num{font-family:var(--fm);font-size:.5rem;color:rgba(255,255,255,.22);display:block}
+#sb-btn{
+ position:fixed;top:64px;left:10px;z-index:950;
+ background:var(--blk);color:var(--wht);border:1px solid rgba(255,255,255,.15);
+ border-radius:6px;padding:5px 9px;font-size:.6rem;letter-spacing:.1em;
+ text-transform:uppercase;cursor:pointer;font-family:var(--fm);transition:.2s;display:none;
+}
+#sb-btn:hover{background:var(--red)}
+
+.wrap{max-width:1200px;margin:0 auto;padding:0 2rem}
+.pt{padding-top:54px}
+
+.sh{padding:3.5rem 2rem 1.5rem;max-width:1200px;margin:0 auto}
+.s-tag{
+ display:inline-flex;align-items:center;gap:7px;font-family:var(--fm);
+ font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+ color:var(--red);margin-bottom:.6rem;
+}
+.s-tag::before{content:'';display:block;width:18px;height:3px;background:currentColor;border-radius:2px}
+.s-tag.y{color:var(--yellow)}
+.s-tag.y::before{background:var(--yellow)}
+.s-h{font-family:var(--fd);font-size:clamp(1.8rem,4vw,3rem);line-height:1}
+.s-d{margin-top:.6rem;font-size:.92rem;color:#555;max-width:650px;line-height:1.65}
+.s-d.w{color:rgba(255,255,255,.6)}
+
+.rev{opacity:0;transform:translateY(22px);transition:opacity.55s ease,transform.55s ease}
+.rev.in{opacity:1;transform:none}
+
+.dref{
+ display:inline-block;font-family:var(--fm);font-size:.58rem;
+ letter-spacing:.12em;color:rgba(255,255,255,.4);text-transform:uppercase;
+ margin-bottom:.5rem;
+}
+.dref.dk{color:rgba(0,0,0,.35)}
+
+.sbs{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+.sbs.r{grid-template-columns:1fr 1fr}
+
+.df{
+ border-radius:var(--r12);overflow:hidden;
+ box-shadow:0 8px 32px rgba(0,0,0,.18);
+ position:relative;
+}
+.df img{width:100%;display:block}
+.df-overlay{
+ position:absolute;bottom:0;left:0;right:0;
+ background:linear-gradient(transparent,rgba(0,0,0,.7));
+ padding:.75rem 1rem;
+}
+.df-label{font-family:var(--fm);font-size:.58rem;color:rgba(255,255,255,.55);letter-spacing:.12em;text-transform:uppercase}
+
+.ac{
+ background:var(--wht);border-radius:var(--r12);padding:1.75rem;
+ box-shadow:0 4px 20px rgba(0,0,0,.07);
+ color:var(--blk);
+}
+.ac.dk{background:var(--dark);color:var(--wht)}
+.ac.y{background:var(--yellow)}
+.ac-tag{font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;opacity:.55;margin-bottom:.5rem;color:inherit}
+.ac-h{font-family:var(--fd);font-size:1.2rem;margin-bottom:.6rem;color:inherit}
+.ac-p{font-size:.88rem;line-height:1.65;color:#444}.ac:not(.dk):not([style*="background:#"]).ac-p{color:#444}.ac:not(.dk).ac-h{color:var(--blk)}.ac:not(.dk).ac-tag{color:rgba(0,0,0,.5)}
+.ac.dk.ac-p{color:rgba(255,255,255,.92)}
+.ac.dk.ac-tag{color:rgba(255,255,255,.45)}
+
+#hero{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden}
+.hero-slide{
+ position:absolute;inset:0;
+ background-color:#E3000B;
+ background-image:radial-gradient(circle,rgba(0,0,0,.13) 2.5px,transparent 2.5px);
+ background-size:30px 30px;
+}
+.hero-slide::after{
+ content:'';position:absolute;inset:0;
+ background:radial-gradient(ellipse at 18% 68%,rgba(255,213,0,.11) 0%,transparent 52%),
+ radial-gradient(ellipse at 82% 22%,rgba(255,255,255,.06) 0%,transparent 44%);
+}
+
+.hb-brick{position:absolute;pointer-events:none;z-index:1;opacity:.25}
+@keyframes lf-a{0%,100%{transform:translateY(0) rotate(-14deg)}50%{transform:translateY(-18px) rotate(-10deg)}}
+@keyframes lf-b{0%,100%{transform:translateY(0) rotate(10deg)}50%{transform:translateY(-22px) rotate(14deg)}}
+@keyframes lf-c{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-12px) rotate(-8deg)}}
+@keyframes lf-d{0%,100%{transform:translateY(0) rotate(22deg)}50%{transform:translateY(-16px) rotate(26deg)}}
+@keyframes lf-e{0%,100%{transform:translateY(0) rotate(-18deg)}50%{transform:translateY(-20px) rotate(-14deg)}}
+@keyframes lf-f{0%,100%{transform:translateY(0) rotate(6deg)}50%{transform:translateY(-14px) rotate(9deg)}}
+.hero-body{
+ position:relative;z-index:2;flex:1;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;
+ padding:80px 2rem 4rem;text-align:center;gap:.3rem;
+}
+.hero-fase{
+ display:inline-flex;align-items:center;gap:7px;
+ background:var(--yellow);color:var(--blk);
+ font-family:var(--fm);font-size:.68rem;font-weight:700;
+ letter-spacing:.15em;text-transform:uppercase;
+ padding:5px 16px;border-radius:100px;margin-bottom:1.5rem;
+}
+.hero-h1{
+ font-family:var(--fd);font-size:clamp(3rem,9vw,7rem);
+ color:var(--wht);line-height:.88;margin-bottom:.5rem;
+}
+.hero-h1 em{color:var(--yellow);font-style:normal}
+.hero-h2{
+ font-family:var(--fd);font-size:clamp(1rem,2.5vw,1.7rem);
+ color:rgba(255,255,255,.8);margin-bottom:2rem;letter-spacing:.05em;
+}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:2.5rem}
+.htag{border:2px solid rgba(255,255,255,.35);color:var(--wht);padding:5px 15px;border-radius:100px;font-size:.75rem;font-weight:700}
+.hero-meta{
+ display:flex;flex-wrap:wrap;gap:1.25rem;justify-content:center;
+ padding:1.25rem 1.75rem;background:rgba(0,0,0,.35);
+ border-radius:var(--r12);backdrop-filter:blur(8px);margin-bottom:1.5rem;
+}
+.hm{text-align:center}
+.hm-l{font-size:.58rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.5);font-weight:700}
+.hm-v{font-size:.85rem;font-weight:800;color:var(--wht)}
+.hero-note{font-size:.68rem;color:rgba(255,255,255,.45);max-width:580px;line-height:1.6}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(5px)}}
+
+#intro{background:var(--wht)}
+.intro-pair{
+ display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
+ max-width:1200px;margin:0 auto;padding:0 2rem;
+}
+.intro-trio{
+ display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;
+ max-width:1200px;margin:1.5rem auto 0;padding:0 2rem;
+}
+.intro-map{
+ max-width:1200px;margin:2rem auto 0;padding:0 2rem 4rem;
+}
+.intro-map-inner{
+ background:var(--gray);border-radius:var(--r12);overflow:hidden;
+ box-shadow:0 4px 20px rgba(0,0,0,.07);
+}
+.intro-map-img{width:100%;display:block}
+.intro-map-footer{
+ padding:1rem 1.5rem;background:var(--blk);
+ display:flex;align-items:center;gap:.75rem;
+}
+.intro-map-footer span{font-family:var(--fd);font-size:1rem;color:var(--yellow)}
+.intro-map-footer p{font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.4}
+.eje-card{
+ background:var(--blk);color:var(--wht);border-radius:var(--r12);
+ overflow:hidden;transition:.3s;
+}
+.eje-card:hover{transform:translateY(-5px)}
+.eje-img{width:100%;aspect-ratio:16/9;object-fit:cover;opacity:.7;transition:.3s}
+.eje-card:hover.eje-img{opacity:1}
+.eje-body{padding:1.25rem}
+.eje-num{font-family:var(--fd);font-size:2.5rem;color:var(--yellow);line-height:1;margin-bottom:.3rem}
+.eje-name{font-family:var(--fd);font-size:1rem;margin-bottom:.4rem}
+.eje-desc{font-size:.78rem;opacity:.65;line-height:1.5}
+
+#tesis{background:var(--dark);color:var(--wht)}
+.tesis-hero{
+ position:relative;
+ max-width:1200px;margin:0 auto;padding:0 2rem 2rem;
+}
+.tesis-slide-large{
+ border-radius:var(--r16);overflow:hidden;
+ box-shadow:0 12px 48px rgba(0,0,0,.4);
+ position:relative;
+}
+.tesis-slide-large img{width:100%;display:block}
+.tesis-slide-large.tesis-overlay{
+ position:absolute;inset:0;
+ background:linear-gradient(to right,rgba(0,0,0,.75) 40%,transparent);
+ display:flex;flex-direction:column;justify-content:center;padding:3rem;
+}
+.tq{font-family:var(--fd);font-size:clamp(1.6rem,3.5vw,2.8rem);color:var(--wht);line-height:1.05;margin-bottom:1.25rem}
+.tq em{color:var(--yellow);font-style:normal}
+.tbox{
+ background:rgba(255,213,0,.12);border:1px solid rgba(255,213,0,.25);
+ border-radius:var(--r8);padding:1.1rem 1.25rem;
+ font-size:.85rem;line-height:1.65;color:rgba(255,255,255,.82);
+ max-width:480px;margin-bottom:1.25rem;
+}
+.t-pills{display:flex;flex-wrap:wrap;gap:7px}
+.tp{border:1px solid rgba(255,213,0,.3);background:rgba(255,213,0,.1);color:var(--yellow);padding:4px 13px;border-radius:100px;font-size:.74rem;font-weight:700}
+.tesis-pair{
+ display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
+ max-width:1200px;margin:2rem auto 0;padding:0 2rem 4rem;align-items:start;
+}
+
+#brandcore{background:var(--wht)}
+.bc-seq{max-width:1200px;margin:0 auto;padding:0 2rem}
+.bc-module{
+ display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;
+ align-items:center;margin-bottom:3rem;
+}
+.bc-module.flip{direction:rtl}
+.bc-module.flip>*{direction:ltr}
+.bc-propósito{
+ background:var(--blk);border-radius:var(--r16);padding:0;overflow:hidden;
+ margin-bottom:3rem;
+}
+.bp-img{width:100%;display:block;opacity:.8}
+.bp-body{padding:2rem 2.5rem;background:var(--blk);color:var(--wht)}
+.bp-ring{
+ display:inline-flex;align-items:center;justify-content:center;
+ width:160px;height:160px;border-radius:50%;
+ border:4px solid var(--yellow);background:rgba(255,213,0,.08);
+ font-family:var(--fd);font-size:.88rem;color:var(--yellow);
+ text-align:center;padding:1.25rem;line-height:1.3;
+ margin-bottom:1.25rem;
+}
+.bp-h{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,2rem);color:var(--wht);margin-bottom:.5rem}
+.bp-p{font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65}
+.bc-adn{background:var(--gray);border-radius:var(--r16);padding:2rem;margin-bottom:3rem}
+.adn-title{font-family:var(--fd);font-size:1.3rem;margin-bottom:1rem}
+.vals-row{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--gray2);border-radius:var(--r8);overflow:hidden;margin-bottom:1.5rem}
+.val-c{background:var(--wht);padding:1.25rem.75rem;text-align:center;cursor:default;transition:.25s}
+.val-c:hover{background:var(--red);color:var(--wht)}
+.val-c:hover.vn,.val-c:hover.vd{color:rgba(255,255,255,.85)}
+.vi{font-size:1.6rem;margin-bottom:.35rem}
+.vn{font-family:var(--fd);font-size:.82rem;margin-bottom:.2rem}
+.vd{font-size:.65rem;color:#777;line-height:1.4}
+.prio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
+.pc{background:var(--wht);border-radius:var(--r8);padding:1.1rem}
+.pc.y{background:var(--yellow)}
+.pc-n{font-family:var(--fd);font-size:.95rem;margin-bottom:.3rem}
+.pc-d{font-size:.78rem;color:#444;line-height:1.5}
+.sup-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:.75rem}
+.spc{border-left:3px solid var(--red);padding-left:.9rem;background:var(--wht);border-radius:0 var(--r8) var(--r8) 0;padding:1rem 1rem 1rem.9rem}
+.spc-n{font-family:var(--fd);font-size:.88rem;margin-bottom:.2rem}
+.spc-d{font-size:.75rem;color:#555;line-height:1.45}
+
+#audiencias{background:var(--gray)}
+
+.aud-overview{
+ max-width:1200px;margin:0 auto;padding:0 2rem 2rem;
+}
+
+.aud-block{margin-bottom:4rem}
+.aud-block-header{
+ display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;
+}
+.aud-dot{width:20px;height:20px;border-radius:50%;flex-shrink:0}
+.aud-h2{font-family:var(--fd);font-size:1.8rem}
+.aud-sbs{
+ display:grid;grid-template-columns:1.1fr.9fr;gap:1.5rem;align-items:center;
+}
+.aud-sbs.flip{grid-template-columns:.9fr 1.1fr;align-items:center}
+.aud-info{display:flex;flex-direction:column;gap:.85rem;justify-content:center}
+.aud-promise{border-radius:var(--r12);padding:1.5rem}
+.aud-promise h4{font-family:var(--fd);font-size:1.1rem;margin-bottom:.4rem}
+.aud-promise p{font-size:.88rem;line-height:1.6;opacity:.85}
+.aud-details{
+ display:grid;grid-template-columns:1fr 1fr;gap:.75rem;
+}
+.ad{background:var(--wht);border-radius:var(--r8);padding:1rem}
+.ad-l{font-family:var(--fm);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#888;margin-bottom:.25rem}
+.ad-v{font-size:.82rem;font-weight:700;line-height:1.4}
+
+.a-ninos.aud-promise{background:#FFF9CC;border-left:4px solid var(--yellow)}
+.a-ninos.aud-block-header{border-left:5px solid var(--yellow);padding-left:.75rem}
+.a-familias.aud-promise{background:#FEE8E8;border-left:4px solid var(--coral)}
+.a-familias.aud-block-header{border-left:5px solid var(--coral);padding-left:.75rem}
+.a-adultos{background:var(--dark);padding:3rem 2rem;border-radius:var(--r16);margin-bottom:4rem}
+.a-adultos.aud-promise{background:rgba(255,255,255,.06)}
+.a-adultos.aud-block-header{border-left:5px solid #666;padding-left:.75rem}
+.a-adultos.aud-h2,.a-adultos.ad-v{color:var(--wht)}
+.a-adultos.ad-l{color:rgba(255,255,255,.4)}
+.a-adultos.ad{background:rgba(255,255,255,.07)}
+.a-fans.aud-promise{background:#F0EBF9}
+.a-fans.aud-block-header{border-left:5px solid var(--purple);padding-left:.75rem}
+
+.aud-extra{margin-top:1.25rem;border-radius:var(--r12);overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.12)}
+.aud-extra img{width:100%;display:block}
+.aud-extra-cap{padding:.75rem 1rem;background:var(--blk);font-size:.75rem;color:rgba(255,255,255,.6)}
+
+#identidad{background:var(--wht)}
+.id-sub{max-width:1200px;margin:0 auto;padding:0 2rem 3.5rem}
+.id-sub-title{font-family:var(--fd);font-size:1.4rem;margin-bottom:1rem;padding-bottom:.6rem;border-bottom:2px solid var(--gray2)}
+.id-sbs{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:start;margin-bottom:2rem}
+
+.palette-note{background:var(--yellow);border-radius:var(--r8);padding:.85rem 1.1rem;font-size:.78rem;font-weight:700;line-height:1.5;margin-bottom:1.25rem}
+.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;margin-bottom:1.75rem}
+.sw{border-radius:var(--r8);overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.1);cursor:pointer;transition:.2s}
+.sw:hover{transform:translateY(-3px)}
+.sw-b{height:90px}
+.sw-i{background:var(--wht);padding:.75rem}
+.sw-h{font-family:var(--fm);font-size:.78rem;font-weight:700}
+.sw-n{font-size:.75rem;font-weight:800;margin-top:1px}
+.sw-u{font-size:.65rem;color:#777;margin-top:1px}
+.din-swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-top:1.25rem}
+.dsw{border-radius:var(--r8);padding:1.1rem;color:var(--wht)}
+.dsw-h{font-family:var(--fm);font-size:.65rem;opacity:.7;margin-bottom:.45rem}
+.dsw-n{font-family:var(--fd);font-size:.95rem;margin-bottom:.15rem}
+.dsw-d{font-size:.7rem;opacity:.75}
+.hex-note{font-size:.65rem;color:#aaa;margin-top:.6rem}
+
+.id-row4{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;margin-bottom:2rem}
+.id-r4{border-radius:var(--r8);overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.id-r4 img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.id-r4-cap{padding:.65rem.85rem;background:var(--blk);font-size:.7rem;color:rgba(255,255,255,.6);font-family:var(--fm)}
+
+#voztono{background:var(--gray)}
+.vt-voz-hero{
+ background:var(--red);padding:0;overflow:hidden;
+ max-width:1200px;margin:0 auto;padding:0 2rem;
+}
+.vt-voz-wrap{
+ border-radius:var(--r16);overflow:hidden;
+ box-shadow:0 12px 40px rgba(0,0,0,.2);
+ position:relative;margin-bottom:2rem;
+}
+.vt-voz-img{width:100%;display:block}
+.vt-voz-overlay{
+ position:absolute;inset:0;
+ background:linear-gradient(to right,rgba(227,0,11,.82) 35%,transparent);
+ padding:2.5rem;display:flex;flex-direction:column;justify-content:center;
+}
+.vv-h{font-family:var(--fd);font-size:clamp(1.5rem,3vw,2.5rem);color:var(--wht);margin-bottom:.85rem}
+.vv-attrs{display:flex;flex-wrap:wrap;gap:.65rem}
+.vv-a{background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.25);padding:.7rem 1.5rem;border-radius:100px;color:var(--wht);font-weight:800;font-size:.88rem}
+.vt-diff{
+ display:grid;grid-template-columns:1fr 1fr;gap:1rem;
+ max-width:1200px;margin:0 auto 2rem;padding:0 2rem;
+}
+.vd{background:var(--wht);border-radius:var(--r12);padding:1.5rem;box-shadow:0 3px 14px rgba(0,0,0,.06)}
+.vd-l{font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.4rem;color:var(--red)}
+.vd-h{font-family:var(--fd);font-size:1.15rem;margin-bottom:.4rem}
+.vd-p{font-size:.83rem;color:#555;line-height:1.6}
+.vt-canales{max-width:1200px;margin:0 auto;padding:0 2rem}
+.vt-canal-wrap{
+ border-radius:var(--r16);overflow:hidden;
+ box-shadow:0 8px 32px rgba(0,0,0,.1);margin-bottom:2rem;
+}
+.vt-canal-img{width:100%;display:block}
+.vt-canal-analysis{
+ padding:1.5rem;background:var(--wht);
+ display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;
+}
+.vca{border-radius:var(--r8);padding:1rem;border-top:3px solid var(--red)}
+.vca-name{font-family:var(--fd);font-size:.95rem;margin-bottom:.3rem}
+.vca-tono{font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:.3rem}
+.vca-desc{font-size:.76rem;color:#555;line-height:1.5}
+
+.ecual-wrap{max-width:1200px;margin:0 auto;padding:0 2rem 2rem}
+.ecual-sbs{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start}
+.ecual-slide{border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.14)}
+.ecual-slide img{width:100%;display:block}
+.ecual-panel{background:var(--blk);color:var(--wht);border-radius:var(--r12);padding:1.75rem}
+.ecual-title{font-family:var(--fd);font-size:1.25rem;color:var(--yellow);margin-bottom:1.25rem}
+.ecual-ch{margin-bottom:1.1rem}
+.ecual-cn{font-size:.78rem;font-weight:700;margin-bottom:.4rem;color:var(--wht)}
+.ecual-bar{display:flex;align-items:center;gap:.6rem;margin-bottom:.25rem}
+.ecual-al{font-size:.65rem;color:rgba(255,255,255,.45);width:90px;flex-shrink:0}
+.ecual-track{flex:1;background:rgba(255,255,255,.1);border-radius:3px;height:6px;overflow:hidden}
+.ecual-fill{height:100%;border-radius:3px;background:var(--red)}
+
+.heroe-wrap{max-width:1200px;margin:0 auto 2rem;padding:0 2rem}
+.heroe-sbs{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start}
+.heroe-slide{border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.14)}
+.heroe-slide img{width:100%;display:block}
+.heroe-steps{background:var(--dark);border-radius:var(--r12);padding:1.75rem;display:flex;flex-direction:column;gap:1rem}
+.hs-title-big{font-family:var(--fd);font-size:1.2rem;color:var(--yellow);margin-bottom:.5rem}
+.hs-sub{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:1rem}
+.hs{position:relative;padding:1rem 1rem 1rem 3rem}
+.hs::before{
+ content:attr(data-n);position:absolute;left:.6rem;top:.85rem;
+ font-family:var(--fd);font-size:1.4rem;color:var(--yellow);line-height:1;
+}
+.hs-l{font-family:var(--fm);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:.2rem}
+.hs-n{font-family:var(--fd);font-size:.92rem;color:var(--wht);margin-bottom:.2rem}
+.hs-d{font-size:.76rem;color:rgba(255,255,255,.6);line-height:1.5}
+
+.conv-wrap{max-width:1200px;margin:0 auto;padding:0 2rem 4rem}
+.conv-sbs{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start}
+.conv-slide{border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.14)}
+.conv-slide img{width:100%;display:block}
+.conv-cards{display:flex;flex-direction:column;gap:.75rem}
+.cc{background:var(--wht);border-radius:var(--r8);padding:1.1rem;display:grid;grid-template-columns:40px 1fr;gap:.75rem;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.cc-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--wht);font-family:var(--fd);font-size:.9rem;flex-shrink:0}
+.cc-p{font-family:var(--fm);font-size:.58rem;letter-spacing:.12em;color:#999;text-transform:uppercase;margin-bottom:.15rem}
+.cc-t{font-size:.82rem;line-height:1.55;color:#333}
+.cc-tag{display:inline-block;background:var(--yellow);color:var(--blk);font-size:.62rem;font-weight:800;padding:2px 9px;border-radius:100px;margin-top:.4rem}
+
+#evidencia{background:var(--dark);color:var(--wht)}
+.ev-grid{
+ max-width:1200px;margin:0 auto;padding:0 2rem 5rem;
+ display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;
+}
+.ev{background:#222;border-radius:var(--r12);overflow:hidden;transition:.3s;cursor:pointer;position:relative}
+.ev:hover{transform:scale(1.02);box-shadow:0 16px 48px rgba(0,0,0,.5);z-index:2}
+.ev.wide{grid-column:span 2}
+.ev img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:.3s;display:block}
+.ev:hover img{transform:scale(1.03)}
+.ev-cap{padding:.85rem 1rem}
+.ev-cl{font-family:var(--fm);font-size:.58rem;color:var(--yellow);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.2rem}
+.ev-ct{font-size:.76rem;color:rgba(255,255,255,.6);line-height:1.4}
+.ev-ref{font-size:.6rem;color:rgba(255,255,255,.28);margin-top:.25rem;font-family:var(--fm)}
+
+#hallazgos{background:var(--yellow)}
+.hall-hero{
+ position:relative;max-width:1200px;margin:0 auto;padding:0 2rem 2rem;
+}
+.hall-slide-wrap{
+ border-radius:var(--r16);overflow:hidden;
+ box-shadow:0 12px 48px rgba(0,0,0,.25);
+ position:relative;
+}
+.hall-slide-wrap img{width:100%;display:block}
+.hall-inner{
+ max-width:1200px;margin:0 auto;padding:1.5rem 2rem 5rem;
+}
+.hall-title{font-family:var(--fd);font-size:1.5rem;margin-bottom:.35rem}
+.hall-sub{font-size:.88rem;opacity:.7;margin-bottom:2rem}
+.hall-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.hc{background:var(--wht);border-radius:var(--r12);padding:1.75rem;box-shadow:0 6px 24px rgba(0,0,0,.1);transition:.3s;position:relative;overflow:hidden}
+.hc:hover{transform:translateY(-5px)}
+.hc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.hc:nth-child(1)::before{background:var(--red)}
+.hc:nth-child(2)::before{background:var(--purple)}
+.hc:nth-child(3)::before{background:var(--teal)}
+.hc:nth-child(4)::before{background:var(--coral)}
+.hc:nth-child(5)::before{background:var(--dark)}
+.hc:nth-child(6)::before{background:#315C4A}
+.hc-ico{width:64px;height:52px;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;background:transparent;border-radius:0;padding:0}
+.hc-h{font-family:var(--fd);font-size:1.05rem;margin-bottom:.35rem}
+.hc-d{font-size:.8rem;color:#444;line-height:1.6}
+
+#cierre{background:var(--dark);color:var(--wht)}
+.cierre-37{
+ position:relative;max-width:1200px;margin:0 auto;padding:0 2rem 2rem;
+}
+.c37-slide{border-radius:var(--r16);overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.4)}
+.c37-slide img{width:100%;display:block}
+.c37-analysis{
+ background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+ border-radius:var(--r12);padding:2rem;margin-top:1.25rem;
+ display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;
+}
+.c37-item{border-left:3px solid var(--red);padding-left:1rem}
+.c37-n{font-family:var(--fd);font-size:.95rem;color:var(--yellow);margin-bottom:.25rem}
+.c37-d{font-size:.8rem;color:rgba(255,255,255,.65);line-height:1.5}
+.cierre-39{
+ position:relative;overflow:hidden;margin:2rem 2rem;
+ border-radius:var(--r16);
+}
+.c39-img{width:100%;display:block;max-height:70vh;object-fit:cover}
+.c39-overlay{
+ position:absolute;inset:0;
+ background:linear-gradient(to top,rgba(0,0,0,.88) 60%,rgba(0,0,0,.4));
+ display:flex;flex-direction:column;justify-content:flex-end;
+ padding:3rem;
+}
+.c39-q{font-family:var(--fd);font-size:clamp(1.8rem,4vw,3.2rem);color:var(--wht);line-height:1.05;margin-bottom:.85rem}
+.c39-q em{color:var(--yellow);font-style:normal}
+.c39-sub{font-size:.95rem;color:rgba(255,255,255,.7);max-width:680px;line-height:1.7}
+.cierre-40{
+ display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;
+ max-width:1200px;margin:2rem auto 0;padding:0 2rem 5rem;
+}
+.c40-slide{border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.c40-slide img{width:100%;display:block}
+.c40-text{}
+.c40-meta{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.5rem}
+.cm{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r8);padding:.85rem}
+.cm-l{font-family:var(--fm);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.cm-v{font-size:.85rem;font-weight:800;color:var(--wht);margin-top:3px}
+.c40-puntos{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r12);padding:1.75rem}
+.cp-title{font-family:var(--fd);font-size:1.4rem;color:var(--yellow);margin-bottom:1rem}
+.cp-list{list-style:none;display:flex;flex-direction:column;gap:.75rem}
+.cp-list li{display:flex;align-items:flex-start;gap:.6rem;font-size:.83rem;line-height:1.55;opacity:.8}
+.cp-list li::before{content:'▶';color:var(--red);font-size:.52rem;margin-top:5px;flex-shrink:0}
+
+footer{background:#050505;color:rgba(255,255,255,.35);text-align:center;padding:2rem;font-size:.7rem;line-height:1.7;border-top:2px solid var(--red)}
+
+#btt{position:fixed;bottom:1.75rem;right:1.75rem;width:44px;height:44px;background:var(--red);color:var(--wht);border:none;border-radius:var(--r8);font-size:1.1rem;cursor:pointer;z-index:999;opacity:0;transform:translateY(12px);transition:.3s;box-shadow:0 4px 14px rgba(227,0,11,.4)}
+#btt.vis{opacity:1;transform:none}
+#btt:hover{background:#b5000a;transform:translateY(-2px)}
+
+@media(max-width:1100px){
+ #sb{display:none!important}
+ #sb-btn{display:block}
+}
+@media(max-width:900px){
+.nav-links{display:none;flex-direction:column;position:fixed;top:54px;left:0;right:0;background:var(--blk);padding:.75rem;border-bottom:2px solid var(--red)}
+.nav-links.open{display:flex}
+.nav-links a{height:auto;line-height:2.2;padding:.25rem 1rem}
+.nav-tog{display:flex}
+.intro-pair,.intro-trio,.tesis-pair,.bc-module,.bc-module.flip,.aud-sbs,.aud-sbs.flip,.id-sbs,.vt-diff,.ecual-sbs,.heroe-sbs,.conv-sbs,.cierre-40,.sbs,.sbs.r{grid-template-columns:1fr}
+.bc-module.flip{direction:ltr}
+.vals-row{grid-template-columns:repeat(3,1fr)}
+.prio-grid,.sup-row,.swatches,.din-swatches,.vt-canal-analysis,.hall-grid,.id-row4,.aud-details,.c37-analysis,.c40-meta{grid-template-columns:1fr 1fr}
+.ev-grid{grid-template-columns:1fr}
+.ev.wide{grid-column:span 1}
+.tesis-slide-large.tesis-overlay{position:static;background:rgba(0,0,0,.75);padding:1.5rem}
+}
+@media(max-width:600px){
+.vals-row,.prio-grid,.sup-row,.swatches,.din-swatches,.vt-canal-analysis,.hall-grid,.id-row4,.aud-details,.c37-analysis,.c40-meta{grid-template-columns:1fr}
+.hero-meta{gap:.85rem}
+}
+
+#sb,#sb-btn{display:none!important}
+body{padding-left:0!important}
+
+.dref{display:none!important;visibility:hidden!important;height:0!important;overflow:hidden!important;margin:0!important;padding:0!important}
+
+.df-overlay{background:linear-gradient(transparent 70%,rgba(0,0,0,.45))!important;pointer-events:none}
+.df-label{display:none}
+
+.df img{aspect-ratio:16/9;object-fit:contain;background:#0f0f0f;height:auto;max-height:none}
+
+.eje-img{aspect-ratio:16/9;object-fit:cover;height:auto;max-height:none}
+.id-r4 img{aspect-ratio:16/9;object-fit:cover;height:auto;max-height:none}
+
+.ev img{aspect-ratio:16/9;object-fit:cover;height:auto;max-height:none;background:#111}
+
+.tesis-slide-large.tesis-overlay{
+ background:linear-gradient(to right,rgba(0,0,0,.82) 0%,rgba(0,0,0,.55) 50%,rgba(0,0,0,.0) 100%);
+ padding:2.5rem 3rem
+}
+
+@media(max-width:900px){
+.tesis-slide-large.tesis-overlay{
+ position:static;background:rgba(10,10,10,.9);padding:1.5rem
+ }
+}
+
+.vt-voz-overlay{
+ background:linear-gradient(to right,rgba(227,0,11,.75) 0%,rgba(0,0,0,.15) 80%)!important;
+ padding:2rem 2.5rem
+}
+
+.vt-canal-img{aspect-ratio:16/9;object-fit:contain;background:#0f0f0f;display:block;width:100%}
+
+.c39-img{object-fit:cover;max-height:68vh;width:100%;display:block}
+
+.tesis-slide-large img,
+.hall-slide-wrap img,
+.c37-slide img{aspect-ratio:16/9;object-fit:contain;background:#0f0f0f;display:block;width:100%;height:auto}
+
+.vt-voz-img{aspect-ratio:16/9;object-fit:contain;background:#0f0f0f;width:100%;display:block}
+
+.heroe-slide img,.ecual-slide img,.conv-slide img{aspect-ratio:16/9;object-fit:contain;background:#0f0f0f;width:100%;display:block;height:auto}
+
+.aud-extra img,.aud-overview img{aspect-ratio:16/9;object-fit:contain;background:#0f0f0f;width:100%;display:block}
+.intro-map-img{aspect-ratio:16/9;object-fit:contain;background:#f4f4f4;width:100%;display:block}
+
+.a-fans.aud-promise{background:linear-gradient(135deg,#2d1b5e,#4B2E91);color:var(--wht);border-radius:var(--r12)}
+.a-fans.aud-promise h4{color:var(--wht)}
+.a-fans.aud-promise p{color:rgba(255,255,255,.85)}
+.a-fans.ad{background:rgba(75,46,145,.1);border:1px solid rgba(75,46,145,.2)}
+.a-fans.ad-l{color:var(--purple)}
+.a-fans.ad-v{color:#2d1b5e}
+.a-fans.ac{background:#F0EBF9;border-left:3px solid var(--purple)}
+.a-fans.aud-block{background:linear-gradient(135deg,#f7f3ff 0%,#ede4fa 100%);border-radius:var(--r16);padding:2rem}
+
+.ecual-al{color:rgba(255,255,255,.75)!important;font-size:.7rem!important;font-weight:600}
+.ecual-cn{color:rgba(255,255,255,.9)!important;font-size:.82rem!important}
+
+.hero-scroll{
+ position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+ font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;
+ color:rgba(255,255,255,.9);display:flex;flex-direction:column;align-items:center;gap:6px;
+ animation:bounce 2s infinite;z-index:2;cursor:pointer;
+ background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.3);
+ border-radius:100px;padding:.55rem 1.4rem;backdrop-filter:blur(6px);
+ text-decoration:none;font-weight:800;transition:.2s
+}
+.hero-scroll:hover{background:var(--red);border-color:var(--red);color:var(--wht);transform:translateX(-50%) translateY(-2px)}
+.hero-scroll::after{content:'↓';font-size:.9rem;color:var(--yellow);line-height:1;margin-top:2px}
+
+.nav-phase-label{display:flex;align-items:center;padding:0.3rem}
+.nav-phase-tag{
+ font-family:var(--fm);font-size:.52rem;font-weight:700;letter-spacing:.12em;
+ padding:2px 7px;border-radius:100px;line-height:1.5;
+}
+.f1-tag{background:var(--red);color:var(--wht)}
+.f2-tag{background:var(--yellow);color:var(--blk)}
+.f3-tag{background:var(--teal);color:var(--wht)}
+.nav-divider{width:1px;height:26px;background:rgba(255,255,255,.18);margin:0.2rem;flex-shrink:0}
+.nav-links.nav-divider,.nav-links.nav-phase-label{list-style:none}
+.f3-nl{color:rgba(0,184,196,.55)!important}
+.f3-nl:hover,.f3-nl.act{color:var(--teal)!important;border-bottom-color:var(--teal)!important}
+.sb-f3{color:rgba(0,184,196,.5)!important}
+.sb-f3:hover,.sb-f3.act{color:var(--teal)!important;border-left-color:var(--teal)!important}
+.f2-nl{color:rgba(255,213,0,.55)!important}
+.f2-nl:hover,.f2-nl.act{color:var(--yellow)!important;border-bottom-color:var(--yellow)!important}
+.sb-f2{color:rgba(255,213,0,.5)!important}
+.sb-f2:hover,.sb-f2.act{color:var(--yellow)!important;border-left-color:var(--yellow)!important}
+@media(max-width:900px){
+.nav-phase-label,.nav-divider{display:none}
+.f2-nl{color:rgba(255,213,0,.75)!important;border-left:2px solid var(--yellow);padding-left:1rem}
+.f3-nl{color:rgba(0,184,196,.75)!important;border-left:2px solid var(--teal);padding-left:1rem}
+}
+
+#progress-bar{
+ position:fixed;top:54px;left:0;height:3px;width:0%;
+ background:linear-gradient(90deg,var(--red),var(--yellow));
+ z-index:1001;transition:width.1s linear;
+}
+
+.intro-map-footer{flex-wrap:wrap;gap:.5rem}
+.intro-map-footer p{font-size:.78rem;line-height:1.5}
+
+.bc-module > div:first-child{min-width:0}
+
+@media(max-width:900px){
+ 
+ div[style*="grid-template-columns:repeat(3,1fr)"],
+ div[style*="grid-template-columns:repeat(3, 1fr)"]{grid-template-columns:1fr!important}
+ 
+ div[style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important}
+.cierre-40{grid-template-columns:1fr!important}
+}
+@media(max-width:600px){
+.tq{font-size:1.3rem!important}
+.c39-img{max-height:45vh}
+.eje-img{aspect-ratio:16/9}
+.hero-meta{flex-direction:column;gap:.65rem;text-align:left}
+.hero-tags{gap:6px}
+.htag{font-size:.68rem;padding:4px 12px}
+.hall-grid{grid-template-columns:1fr!important}
+.id-sub-title{font-size:1.1rem}
+}
+@media(min-width:1100px){body{padding-left:0!important}}
+
+.df-overlay,.df-label{visibility:hidden;pointer-events:none}
+
+.tesis-slide-large{position:relative;border-radius:var(--r16);overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.4)}
+.tesis-slide-large img{width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#0f0f0f;height:auto}
+
+.cierre-39{margin:2rem;border-radius:var(--r16);overflow:hidden;position:relative}
+.c39-overlay{background:linear-gradient(to top,rgba(0,0,0,.92) 40%,rgba(0,0,0,.3) 85%,transparent)}
+
+.id-r4-cap{display:none}
+
+.aud-extra-cap{font-size:.7rem;color:rgba(255,255,255,.55)}
+
+@media(max-width:768px){
+.cierre-39 +.rev[style*="grid-template-columns:1fr 1fr"]{
+ grid-template-columns:1fr!important
+ }
+}
+
+.hero-h1{font-family:var(--fd);font-size:clamp(3rem,9vw,6.5rem);color:var(--wht);line-height:.9;margin-bottom:.3rem}
+.hero-h1 em{color:var(--yellow);font-style:normal}
+.hero-h2{font-family:var(--fd);font-size:clamp(.95rem,2.2vw,1.6rem);color:rgba(255,255,255,.82);margin-bottom:1.75rem;letter-spacing:.05em}
+
+.f2-banner{
+ background:var(--blk);color:var(--wht);padding:3rem 2rem;
+ text-align:center;border-top:4px solid var(--yellow);
+}
+.f2-banner-inner{max-width:900px;margin:0 auto}
+.f2-banner-fase{
+ display:inline-flex;align-items:center;gap:7px;
+ background:var(--yellow);color:var(--blk);
+ font-family:var(--fm);font-size:.65rem;font-weight:700;
+ letter-spacing:.15em;text-transform:uppercase;
+ padding:4px 14px;border-radius:100px;margin-bottom:1rem;
+}
+.f2-banner-h{font-family:var(--fd);font-size:clamp(1.5rem,3vw,2.5rem);margin-bottom:.5rem}
+.f2-banner-p{font-size:.9rem;color:rgba(255,255,255,.65);max-width:640px;margin:0 auto;line-height:1.65}
+
+#contentbranding{background:var(--wht)}
+.cb-intro{max-width:1200px;margin:0 auto;padding:0 2rem 2rem}
+.cb-key-hallazgo{
+ background:var(--yellow);border-radius:var(--r12);padding:1.5rem 2rem;
+ margin-bottom:2rem;
+}
+.cb-key-hallazgo p{font-size:.95rem;font-weight:800;line-height:1.6}
+.cb-key-hallazgo span{font-family:var(--fm);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;opacity:.65;display:block;margin-bottom:.4rem}
+
+.cb-paradigma{
+ max-width:1200px;margin:0 auto;padding:0 2rem 2rem;
+ display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:start;
+}
+
+.cb-pilares{max-width:1200px;margin:0 auto;padding:0 2rem 2rem}
+.pilares-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:1.5rem}
+.pilar-card{border-radius:var(--r16);overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.1);transition:.3s}
+.pilar-card:hover{transform:translateY(-4px)}
+.pilar-slide{width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#0f0f0f}
+.pilar-body{padding:1.5rem}
+.pilar-label{font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.35rem}
+.pilar-h{font-family:var(--fd);font-size:1.15rem;margin-bottom:.25rem}
+.pilar-tagline{font-weight:800;font-size:.9rem;margin-bottom:.5rem}
+.pilar-desc{font-size:.82rem;color:#555;line-height:1.6;margin-bottom:.75rem}
+.pilar-core{font-size:.75rem;font-family:var(--fm);padding:.4rem.75rem;border-radius:4px;background:rgba(0,0,0,.06);display:inline-block}
+
+.pilar-1.pilar-body{background:#fff9e6;border-top:4px solid var(--yellow)}
+.pilar-1.pilar-label{color:#b8940a}
+.pilar-2.pilar-body{background:#fff0ec;border-top:4px solid var(--coral)}
+.pilar-2.pilar-label{color:var(--coral)}
+.pilar-3.pilar-body{background:#f5f0ff;border-top:4px solid var(--purple)}
+.pilar-3.pilar-label{color:var(--purple)}
+.pilar-4.pilar-body{background:#f0f9ff;border-top:4px solid #0ea5e9}
+.pilar-4.pilar-label{color:#0369a1}
+
+.cb-evidencias{max-width:1200px;margin:0 auto;padding:0 2rem 3rem}
+.ev3-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1.5rem}
+.ev3-card{background:var(--blk);border-radius:var(--r12);overflow:hidden;transition:.3s}
+.ev3-card:hover{transform:translateY(-4px)}
+.ev3-img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;max-height:340px}
+.ev3-img.wide{aspect-ratio:16/9;max-height:220px}
+.ev3-body{padding:1.1rem}
+.ev3-label{font-family:var(--fm);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.25rem}
+.ev3-h{font-family:var(--fd);font-size:.95rem;color:var(--wht);margin-bottom:.3rem}
+.ev3-obs{font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.5}
+.ev3-pilar{display:inline-block;font-size:.65rem;font-weight:800;padding:2px 10px;border-radius:100px;margin-top:.5rem}
+
+.nota-meto{
+ max-width:1200px;margin:0 auto;padding:0 2rem 2rem;
+}
+.nota-meto-inner{
+ background:#f8f8f8;border-radius:var(--r12);
+ border-left:4px solid var(--red);padding:1.25rem 1.5rem;
+}
+.nota-meto-inner p:first-child{
+ font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;
+ text-transform:uppercase;color:var(--red);margin-bottom:.4rem;
+}
+.nota-meto-inner p:last-child{font-size:.82rem;line-height:1.7;color:#555}
+
+#calendario{background:var(--dark);color:var(--wht)}
+#calendario.s-h{color:var(--wht)}
+#calendario.s-d{color:rgba(255,255,255,.6)}
+.cal-intro{max-width:1200px;margin:0 auto;padding:0 2rem 2rem}
+.cal-slide-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;margin-bottom:2.5rem}
+.cal-context{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:1.75rem}
+.cal-context h4{font-family:var(--fd);font-size:1.1rem;color:var(--yellow);margin-bottom:.65rem}
+.cal-context p{font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.65;margin-bottom:.75rem}
+.cal-ritmo{background:var(--yellow);color:var(--blk);border-radius:var(--r8);padding:.85rem 1.1rem;font-size:.82rem;font-weight:800;line-height:1.5}
+
+.cal-table-wrap{max-width:1200px;margin:0 auto;padding:0 2rem 3rem;overflow-x:auto}
+.cal-table{width:100%;border-collapse:collapse;min-width:900px;font-size:.8rem}
+.cal-table th{
+ padding:.75rem.85rem;text-align:left;
+ font-family:var(--fm);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+ background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);
+ border-bottom:2px solid rgba(255,255,255,.1);
+}
+.cal-table td{
+ padding:.9rem.85rem;vertical-align:top;
+ border-bottom:1px solid rgba(255,255,255,.06);
+ color:rgba(255,255,255,.85);line-height:1.5;
+}
+.cal-table tr:hover td{background:rgba(255,255,255,.04)}
+.cal-day{font-family:var(--fd);font-size:.95rem;white-space:nowrap}
+.cal-pilar-badge{
+ display:inline-block;padding:3px 10px;border-radius:100px;
+ font-size:.68rem;font-weight:800;white-space:nowrap;
+}
+.cal-formato{font-family:var(--fm);font-size:.72rem;color:rgba(255,255,255,.55)}
+.cal-canal{font-family:var(--fm);font-size:.68rem;font-weight:700}
+.cal-copy{font-style:italic;font-size:.8rem;color:rgba(255,255,255,.7)}
+
+.bp-juego{background:rgba(255,213,0,.2);color:var(--yellow)}
+.bp-comunidad{background:rgba(243,111,115,.2);color:var(--coral)}
+.bp-entrete{background:rgba(75,46,145,.3);color:#c4b5fd}
+.bp-kidults{background:rgba(45,45,45,.6);color:#d1d5db;border:1px solid rgba(255,255,255,.15)}
+.bp-fans{background:rgba(75,46,145,.25);color:#a78bfa}
+.bp-emocional{background:rgba(249,115,22,.2);color:#fdba74}
+.bp-sintesis{background:rgba(227,0,11,.2);color:#fca5a5}
+
+.cal-latam{max-width:1200px;margin:0 auto 3rem;padding:0 2rem}
+.latam-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.25rem}
+.latam-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:1.25rem}
+.latam-num{font-family:var(--fd);font-size:2rem;color:var(--yellow);line-height:1;margin-bottom:.3rem}
+.latam-h{font-family:var(--fd);font-size:.95rem;margin-bottom:.25rem}
+.latam-p{font-size:.8rem;color:rgba(255,255,255,.65);line-height:1.5}
+
+#herramientas{background:var(--gray)}
+.hta-sistema{max-width:1200px;margin:0 auto;padding:0 2rem 2rem}
+.hta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:1.5rem}
+.hta-card{background:var(--wht);border-radius:var(--r16);overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:.3s}
+.hta-card:hover{transform:translateY(-4px)}
+.hta-head{padding:1.25rem 1.5rem;display:flex;align-items:center;gap:.85rem}
+.hta-icon{font-size:1.75rem}
+.hta-hname{font-family:var(--fd);font-size:1.15rem}
+.hta-hrole{font-size:.72rem;font-family:var(--fm);letter-spacing:.1em;text-transform:uppercase;opacity:.65}
+.hta-body{padding:0 1.5rem 1.5rem}
+.hta-desc{font-size:.85rem;color:#555;line-height:1.65;margin-bottom:.9rem}
+.hta-items{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.hta-items li{font-size:.8rem;color:#444;display:flex;align-items:flex-start;gap:.5rem;line-height:1.45}
+.hta-items li::before{content:'→';color:var(--red);font-size:.75rem;flex-shrink:0;margin-top:1px}
+.hta-card.figma.hta-head{background:linear-gradient(135deg,#7c3aed,#4B2E91);color:var(--wht)}
+.hta-card.notion.hta-head{background:var(--blk);color:var(--wht)}
+.hta-card.github.hta-head{background:var(--red);color:var(--wht)}
+.hta-card.ghpages.hta-head{background:var(--yellow);color:var(--blk)}
+
+.hta-flujo{max-width:1200px;margin:0 auto;padding:0 2rem 2rem}
+.flujo-steps{display:flex;align-items:center;gap:0;margin-top:1.5rem;overflow-x:auto;padding-bottom:.5rem}
+.flujo-step{
+ background:var(--wht);border-radius:var(--r12);padding:1.25rem;
+ min-width:220px;box-shadow:0 3px 14px rgba(0,0,0,.07);flex-shrink:0;
+}
+.flujo-arrow{font-size:1.5rem;color:var(--red);padding:0.5rem;flex-shrink:0}
+.flujo-n{font-family:var(--fd);font-size:1.8rem;color:var(--yellow);line-height:1;margin-bottom:.2rem}
+.flujo-h{font-family:var(--fd);font-size:.95rem;margin-bottom:.3rem}
+.flujo-p{font-size:.78rem;color:#555;line-height:1.5}
+
+.f2-cierre{
+ background:var(--blk);color:var(--wht);padding:4rem 2rem;
+ text-align:center;border-top:4px solid var(--yellow);
+}
+.f2-cierre-inner{max-width:900px;margin:0 auto}
+.f2-cierre h2{font-family:var(--fd);font-size:clamp(1.5rem,3vw,2.5rem);margin-bottom:1rem}
+.f2-cierre h2 em{color:var(--yellow);font-style:normal}
+.f2-cierre-pills{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:1.5rem}
+.f2-cierre-pill{
+ background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+ color:rgba(255,255,255,.85);padding:.6rem 1.25rem;border-radius:100px;
+ font-size:.82rem;font-weight:700;
+}
+
+@media(max-width:900px){
+.cb-paradigma,.pilares-grid,.cal-slide-row,.hta-grid,.latam-grid{grid-template-columns:1fr}
+.ev3-grid{grid-template-columns:1fr}
+.flujo-steps{flex-direction:column;align-items:stretch}
+.flujo-arrow{transform:rotate(90deg);text-align:center}
+.flujo-step{min-width:unset}
+}
+@media(max-width:600px){
+.cal-table{font-size:.72rem}
+.cal-table th,.cal-table td{padding:.6rem.5rem}
+}
+
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<nav id="nav">
+ <a href="#hero" class="nav-logo">
+ <div class="nav-brick"></div>
+ <span class="nav-brand">LEGO <em>BRAND BOOK</em></span>
+ </a>
+ <ul class="nav-links" id="navL">
+ <li class="nav-phase-label">
+ <span class="nav-phase-tag f1-tag">F1</span>
+ </li>
+ <li><a href="#intro" class="nl">Intro</a></li>
+ <li><a href="#tesis" class="nl">Tesis</a></li>
+ <li><a href="#brandcore" class="nl">Núcleo de marca</a></li>
+ <li><a href="#audiencias" class="nl">Audiencias</a></li>
+ <li><a href="#identidad" class="nl">Identidad</a></li>
+ <li><a href="#voztono" class="nl">Voz y tono</a></li>
+ <li><a href="#hallazgos" class="nl">Hallazgos</a></li>
+ <li><a href="#cierre" class="nl">Cierre</a></li>
+ <li class="nav-divider" aria-hidden="true"></li>
+ <li class="nav-phase-label">
+ <a href="#fase2" class="nav-phase-tag f2-tag" style="cursor:pointer;text-decoration:none">F2</a>
+ </li>
+ <li><a href="#fase2" class="nl f2-nl">Fase 2</a></li>
+ <li><a href="#contentbranding" class="nl f2-nl">Contenido</a></li>
+ <li><a href="#calendario" class="nl f2-nl">Calendario</a></li>
+ <li><a href="#herramientas" class="nl f2-nl">Gestión</a></li>
+ <li class="nav-divider" aria-hidden="true"></li>
+ <li class="nav-phase-label">
+ <a href="#fase3" class="nav-phase-tag f3-tag" style="cursor:pointer;text-decoration:none">F3</a>
+ </li>
+ <li><a href="#brief" class="nl f3-nl">Brief</a></li>
+ <li><a href="#tactica" class="nl f3-nl">Campaña</a></li>
+ <li><a href="#pitch" class="nl f3-nl">Pitch</a></li>
+ </ul>
+ <button class="nav-tog" id="navTog"><span></span><span></span><span></span></button>
+</nav>
+
+<nav id="sb">
+ <div class="sb-lbl" style="color:var(--red);letter-spacing:.25em">FASE 1</div>
+ <a href="#hero" class="sb-a"><span class="sb-num">00</span>Portada</a>
+ <a href="#intro" class="sb-a"><span class="sb-num">01</span>Introducción</a>
+ <a href="#tesis" class="sb-a"><span class="sb-num">02</span>Idea central</a>
+ <a href="#brandcore" class="sb-a"><span class="sb-num">03</span>Núcleo de marca</a>
+ <a href="#audiencias" class="sb-a"><span class="sb-num">04</span>Audiencias</a>
+ <a href="#identidad" class="sb-a"><span class="sb-num">05</span>Identidad Visual</a>
+ <a href="#voztono" class="sb-a"><span class="sb-num">06</span>Voz y tono</a>
+ <a href="#hallazgos" class="sb-a"><span class="sb-num">08</span>Hallazgos</a>
+ <a href="#cierre" class="sb-a"><span class="sb-num">09</span>Cierre</a>
+ <div style="height:1px;background:rgba(255,213,0,.25);margin:.6rem.8rem"></div>
+ <div class="sb-lbl" style="color:var(--yellow);letter-spacing:.25em">FASE 2</div>
+ <a href="#fase2" class="sb-a sb-f2"><span class="sb-num">10</span>Introducción F2</a>
+ <a href="#contentbranding" class="sb-a sb-f2"><span class="sb-num">11</span>Contenido de marca</a>
+ <a href="#calendario" class="sb-a sb-f2"><span class="sb-num">12</span>Calendario</a>
+ <a href="#herramientas" class="sb-a sb-f2"><span class="sb-num">13</span>Herramientas</a>
+ <div style="height:1px;background:rgba(0,184,196,.25);margin:.6rem.8rem"></div>
+ <div class="sb-lbl" style="color:var(--teal);letter-spacing:.25em">FASE 3</div>
+ <a href="#fase3" class="sb-a sb-f3"><span class="sb-num">14</span>Intro F3</a>
+ <a href="#brief" class="sb-a sb-f3"><span class="sb-num">15</span>Brief de campaña</a>
+ <a href="#tactica" class="sb-a sb-f3"><span class="sb-num">16</span>Acciones e indicadores</a>
+ <a href="#pitch" class="sb-a sb-f3"><span class="sb-num">17</span>El Pitch</a>
+</nav>
+<button id="sb-btn" onclick="document.getElementById('sb').classList.toggle('open')">☰ Índice</button>
+
+<section id="hero">
+ 
+ <div class="hero-slide"></div>
+ 
+ <div class="hb-brick" style="top:11%;left:3%;animation:lf-a 8s ease-in-out infinite"><svg viewBox="0 0 56 40" fill="none" width="56" height="40"><rect x="4" y="16" width="48" height="22" rx="4" fill="#FFD500"/><rect x="4" y="34" width="48" height="4" rx="1" fill="#c9a800"/><circle cx="19" cy="16" r="9" fill="#FFD500" stroke="#c9a800" stroke-width="2"/><circle cx="19" cy="16" r="5.5" fill="#ffe640"/><circle cx="37" cy="16" r="9" fill="#FFD500" stroke="#c9a800" stroke-width="2"/><circle cx="37" cy="16" r="5.5" fill="#ffe640"/></svg></div>
+ <div class="hb-brick" style="top:7%;right:4%;animation:lf-b 7s ease-in-out infinite 1.5s"><svg viewBox="0 0 56 40" fill="none" width="56" height="40"><rect x="4" y="16" width="48" height="22" rx="4" fill="#ffffff"/><rect x="4" y="34" width="48" height="4" rx="1" fill="#cccccc"/><circle cx="19" cy="16" r="9" fill="#fff" stroke="#ccc" stroke-width="2"/><circle cx="19" cy="16" r="5.5" fill="#f0f0f0"/><circle cx="37" cy="16" r="9" fill="#fff" stroke="#ccc" stroke-width="2"/><circle cx="37" cy="16" r="5.5" fill="#f0f0f0"/></svg></div>
+ <div class="hb-brick" style="top:70%;left:1.5%;animation:lf-c 9s ease-in-out infinite 0.5s"><svg viewBox="0 0 36 34" fill="none" width="36" height="34"><rect x="3" y="14" width="30" height="18" rx="3" fill="#FFD500"/><rect x="3" y="28" width="30" height="4" rx="1" fill="#c9a800"/><circle cx="18" cy="14" r="8" fill="#FFD500" stroke="#c9a800" stroke-width="1.5"/><circle cx="18" cy="14" r="5" fill="#ffe640"/></svg></div>
+ <div class="hb-brick" style="top:62%;right:2%;animation:lf-d 6.5s ease-in-out infinite 2s"><svg viewBox="0 0 36 34" fill="none" width="36" height="34"><rect x="3" y="14" width="30" height="18" rx="3" fill="#ffffff"/><rect x="3" y="28" width="30" height="4" rx="1" fill="#cccccc"/><circle cx="18" cy="14" r="8" fill="#fff" stroke="#ccc" stroke-width="1.5"/><circle cx="18" cy="14" r="5" fill="#f0f0f0"/></svg></div>
+ <div class="hb-brick" style="top:40%;left:0%;animation:lf-e 10s ease-in-out infinite 3s"><svg viewBox="0 0 76 40" fill="none" width="76" height="40"><rect x="4" y="16" width="68" height="22" rx="4" fill="#FFD500"/><rect x="4" y="34" width="68" height="4" rx="1" fill="#c9a800"/><circle cx="16" cy="16" r="9" fill="#FFD500" stroke="#c9a800" stroke-width="2"/><circle cx="16" cy="16" r="5.5" fill="#ffe640"/><circle cx="38" cy="16" r="9" fill="#FFD500" stroke="#c9a800" stroke-width="2"/><circle cx="38" cy="16" r="5.5" fill="#ffe640"/><circle cx="60" cy="16" r="9" fill="#FFD500" stroke="#c9a800" stroke-width="2"/><circle cx="60" cy="16" r="5.5" fill="#ffe640"/></svg></div>
+ <div class="hb-brick" style="top:82%;right:5%;animation:lf-f 7.5s ease-in-out infinite 1s"><svg viewBox="0 0 56 40" fill="none" width="56" height="40"><rect x="4" y="16" width="48" height="22" rx="4" fill="#ffffff"/><rect x="4" y="34" width="48" height="4" rx="1" fill="#cccccc"/><circle cx="19" cy="16" r="9" fill="#fff" stroke="#ccc" stroke-width="2"/><circle cx="19" cy="16" r="5.5" fill="#f0f0f0"/><circle cx="37" cy="16" r="9" fill="#fff" stroke="#ccc" stroke-width="2"/><circle cx="37" cy="16" r="5.5" fill="#f0f0f0"/></svg></div>
+ 
+ <div class="hero-body">
+ <div class="hero-fase">Fase 1 — Revisión de marca</div>
+ <h1 class="hero-h1">LEGO:<br><em>Brand Book</em><br>digital</h1>
+ <p class="hero-h2">Brand Book digital</p>
+ <div class="hero-tags">
+ <span class="htag">Núcleo de marca</span>
+ <span class="htag">Identidad visual</span>
+ <span class="htag">Voz y contenido</span>
+ <span class="htag">Audiencias</span>
+ </div>
+ <div class="hero-meta">
+ <div class="hm"><div class="hm-l">Autora</div><div class="hm-v">Paula Andrea Osorio Franco</div></div>
+ <div class="hm"><div class="hm-l">Carné</div><div class="hm-v">20014957</div></div>
+ <div class="hm"><div class="hm-l">Maestría</div><div class="hm-v">Marketing Digital</div></div>
+ <div class="hm"><div class="hm-l">Curso</div><div class="hm-v">Branding Digital · U. Galileo</div></div>
+ <div class="hm"><div class="hm-l">Marca</div><div class="hm-v">LEGO — Grupo #2</div></div>
+ </div>
+ <p class="hero-note">⚠️ Proyecto académico no oficial. LEGO® es marca registrada de The LEGO Group.</p>
+ </div>
+ <a href="#intro" class="hero-scroll">Explorar</a>
+</section>
+
+<section id="intro">
+ <div class="sh rev">
+ <div class="s-tag">01 — Introducción</div>
+ <h2 class="s-h">Método y <span style="color:var(--red)">enfoque</span></h2>
+ <p class="s-d">Revisión visual de la marca, basada en los canales digitales públicos de LEGO, sus fuentes oficiales y ejemplos concretos de comunicación.</p>
+ </div>
+
+ 
+ <div class="rev" style="max-width:1200px;margin:0 auto 2rem;padding:0 2rem">
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.12);position:relative">
+ <img src="assets/slide_01.jpg" alt="Portada original de la presentación" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#E3000B">
+ <div style="background:var(--blk);padding:.85rem 1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem">
+ <span style="font-family:var(--fd);color:var(--yellow);font-size:.95rem">Fase #1 — Brand Book digital</span>
+ <span style="font-family:var(--fm);font-size:.6rem;color:rgba(255,255,255,.45);letter-spacing:.1em;text-transform:uppercase">Portada de la presentación base</span>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="intro-pair rev">
+ <div>
+ <div class="dref dk">Ficha académica y alcance del proyecto</div>
+ <div class="df">
+ <img src="assets/slide_02.jpg" alt="Ficha académica y enfoque del trabajo — Diapositiva 2">
+ <div class="df-overlay"><span class="df-label">Fase 1 — Revisión visual</span></div>
+ </div>
+ </div>
+ <div>
+ <div class="dref dk">Introducción y metodología</div>
+ <div class="df">
+ <img src="assets/slide_03.jpg" alt="Introducción y metodología — Diapositiva 3">
+ <div class="df-overlay"><span class="df-label">3 líneas de análisis</span></div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="intro-trio rev">
+ <div class="eje-card">
+ <div class="dref" style="color:rgba(255,213,0,.5);padding:.75rem.75rem 0">Línea 1</div>
+ <img class="eje-img" src="assets/slide_09.jpg" alt="Núcleo de marca">
+ <div class="eje-body">
+ <div class="eje-num">1</div>
+ <div class="eje-name">Núcleo de marca</div>
+ <div class="eje-desc">Propósito, valores y arquetipo. Lo que define cómo LEGO toma decisiones de marca.</div>
+ </div>
+ </div>
+ <div class="eje-card">
+ <div class="dref" style="color:rgba(255,213,0,.5);padding:.75rem.75rem 0">Línea 2</div>
+ <img class="eje-img" src="assets/slide_20.jpg" alt="Identidad Visual">
+ <div class="eje-body">
+ <div class="eje-num">2</div>
+ <div class="eje-name">Identidad visual adaptable</div>
+ <div class="eje-desc">Logo, paleta, tipografía e interfaz. Cómo la marca mantiene su identidad visual aunque se vea diferente según la audiencia.</div>
+ </div>
+ </div>
+ <div class="eje-card">
+ <div class="dref" style="color:rgba(255,213,0,.5);padding:.75rem.75rem 0">Línea 3</div>
+ <img class="eje-img" src="assets/slide_29.jpg" alt="Tono Voz Narrativa">
+ <div class="eje-body">
+ <div class="eje-num">3</div>
+ <div class="eje-name">Voz y tono</div>
+ <div class="eje-desc">Cómo habla LEGO, en qué tono y por qué cambia según el canal.</div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="intro-map rev">
+ <div class="dref dk" style="padding:0 0.5rem">Mapa de secciones del entregable</div>
+ <div class="intro-map-inner">
+ <img class="intro-map-img" src="assets/slide_36.jpg" alt="Mapa de secciones del entregable — Diapositiva 36">
+ <div class="intro-map-footer">
+ <span>↗</span>
+ <p>Muestra cómo está organizado el Brand Book, desde la idea central hasta la campaña.</p>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section id="tesis">
+ <div class="sh rev">
+ <div class="s-tag y">02 — Idea central</div>
+ <h2 class="s-h" style="color:var(--wht)">Idea principal del análisis</h2>
+ <p class="s-d w">El punto de partida para leer toda la marca.</p>
+ </div>
+
+ 
+ <div class="tesis-hero rev">
+ <div class="tesis-slide-large">
+ <img src="assets/slide_08.jpg" alt="Idea central del análisis de LEGO">
+ </div>
+ 
+ <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,213,0,.18);border-radius:var(--r12);padding:2rem 2.5rem;margin-top:1.25rem">
+ <blockquote class="tq" style="margin-bottom:1rem">"LEGO no se limita a vender juguetes: ofrece formas de crear, aprender y compartir."</blockquote>
+ <p style="font-size:.88rem;line-height:1.7;color:rgba(255,255,255,.75);max-width:780px;margin-bottom:1.25rem">Esta es la conclusión que guía el trabajo. En digital, LEGO mantiene una idea clara: una misma pieza puede servir para jugar, aprender, compartir en familia, decorar o formar parte de una comunidad.</p>
+ <div class="t-pills">
+ <span class="tp">Imaginar mundos</span>
+ <span class="tp">Aprender jugando</span>
+ <span class="tp">Compartir en familia</span>
+ <span class="tp">Decorar y relajarse</span>
+ <span class="tp">Crear comunidad</span>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="tesis-pair rev">
+ <div>
+ <div class="dref">Lo que cambia según la audiencia</div>
+ <div class="df">
+ <img src="assets/slide_05.jpg" alt="Lo que cambia según la audiencia — Diapositiva 5">
+ <div class="df-overlay"><span class="df-label">Una marca para distintas edades</span></div>
+ </div>
+ </div>
+ <div style="display:flex;flex-direction:column;gap:1rem;">
+ <div class="ac">
+ <div class="ac-tag">Lectura del análisis</div>
+ <h3 class="ac-h">Una misma marca, cuatro usos distintos</h3>
+ <p class="ac-p">La marca mantiene su base, pero la forma de presentarse cambia según la edad, el interés y el momento de vida de cada persona.</p>
+ </div>
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
+ <div class="ac" style="padding:1.1rem;background:#FFD500;border-left:none">
+ <div class="ac-tag" style="color:rgba(0,0,0,.55)">Niños</div>
+ <p style="font-size:.82rem;font-weight:800;color:#000">Imaginar y jugar libremente.</p>
+ </div>
+ <div class="ac" style="padding:1.1rem;background:#F36F73;border-left:none">
+ <div class="ac-tag" style="color:rgba(255,255,255,.75)">Familias</div>
+ <p style="font-size:.82rem;font-weight:800;color:#fff">Compartir tiempo en familia.</p>
+ </div>
+ <div class="ac dk" style="padding:1.1rem;border-left:none;background:#1A1A1A">
+ <div class="ac-tag">Adultos</div>
+ <p style="font-size:.82rem;font-weight:700;color:var(--wht)">Pausar, armar y decorar.</p>
+ </div>
+ <div class="ac" style="padding:1.1rem;background:#4B2E91;border-left:none">
+ <div class="ac-tag" style="color:rgba(255,255,255,.65)">Comunidades</div>
+ <p style="font-size:.82rem;font-weight:800;color:#fff">Participar y sentirse parte.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section id="brandcore">
+ <div class="sh rev">
+ <div class="s-tag">03 — Núcleo de marca</div>
+ <h2 class="s-h">Base de la marca</h2>
+ <p class="s-d">Inspirar la creatividad en las personas que usan LEGO.</p>
+ </div>
+
+ <div class="bc-seq">
+
+ 
+ <div class="bc-module rev">
+ <div>
+ <div class="dref dk">Núcleo de marca en el sitio oficial</div>
+ <div class="df">
+ <img src="assets/slide_09.jpg" alt="Núcleo de marca: propósito e imaginación — Diapositiva 9">
+ <div class="df-overlay"><span class="df-label">01. Núcleo de marca — Propósito + El Creador</span></div>
+ </div>
+ </div>
+ <div style="display:flex;flex-direction:column;gap:1rem;">
+ <div class="ac" style="text-align:center;background:var(--blk);color:var(--wht)">
+ <div style="width:140px;height:140px;border-radius:50%;border:4px solid var(--yellow);background:rgba(255,213,0,.08);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:.88rem;color:var(--yellow);text-align:center;padding:1rem;line-height:1.3;margin:0 auto 1rem">Inspirar el desarrollo creativo</div>
+ <div class="ac-tag" style="color:rgba(255,255,255,.4)">Propósito de marca</div>
+ <h3 class="ac-h" style="color:var(--wht)">Idea que se repite</h3>
+ <p class="ac-p">Ese propósito no aparece solo en una página institucional. También se nota en el diseño del sitio, en la forma de ordenar los productos y en el tono que usan en redes.</p>
+ </div>
+ <div class="ac" style="background:var(--red);color:var(--wht);overflow:hidden">
+ <div class="ac-tag" style="color:rgba(255,255,255,.6)">Arquetipo principal</div>
+ <h3 class="ac-h" style="color:var(--wht)">El Creador</h3>
+ <p class="ac-p" style="color:rgba(255,255,255,.92)">LEGO no entrega una experiencia cerrada. La propuesta cobra sentido cuando la persona arma, cambia y personaliza lo que tiene frente a ella.</p>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="bc-module flip rev">
+ <div style="display:flex;flex-direction:column;gap:1rem;">
+ <div class="ac y">
+ <div class="ac-tag" style="opacity:.6">Valores oficiales de LEGO</div>
+ <h3 class="ac-h">Los seis valores oficiales</h3>
+ <p class="ac-p">Estos son los valores que LEGO declara de forma oficial. En el análisis se resaltan los que se observan con más claridad en su contenido digital.</p>
+ </div>
+ <div class="bc-adn" style="padding:1.25rem">
+ <div class="adn-title">Valores más visibles</div>
+ <div class="prio-grid">
+ <div class="pc y"><div class="pc-n">Imaginación</div><div class="pc-d">El producto invita a crear; no trae un significado cerrado.</div></div>
+ <div class="pc" style="background:var(--red);color:var(--wht)"><div class="pc-n">Creatividad</div><div class="pc-d" style="color:rgba(255,255,255,.8)">Se expresa en sets, retos, comunidades y LEGO Ideas.</div></div>
+ <div class="pc" style="background:var(--dark);color:var(--wht)"><div class="pc-n">Aprendizaje</div><div class="pc-d" style="color:rgba(255,255,255,.75)">Aprender mientras se arma, se desarma y se vuelve a intentar.</div></div>
+ </div>
+ <div class="sup-row">
+ <div class="spc"><div class="spc-n">Diversión</div><div class="spc-d">Aporta energía, juego y disfrute.</div></div>
+ <div class="spc"><div class="spc-n">Cuidado</div><div class="spc-d">Conecta con comunidad, familia y cuidado del entorno.</div></div>
+ <div class="spc"><div class="spc-n">Calidad</div><div class="spc-d">"Solo lo mejor es suficiente."</div></div>
+ </div>
+ </div>
+ </div>
+ <div>
+ <div class="dref dk">Cómo aparecen estos valores en digital</div>
+ <div class="df">
+ <img src="assets/slide_10.jpg" alt="Rasgos principales de LEGO en digital: valores vs. priorización — Diapositiva 10">
+ <div class="df-overlay"><span class="df-label">Valores de marca en digital</span></div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="rev" style="margin-bottom:3rem">
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.15);margin-bottom:1.5rem">
+ <img src="assets/slide_11.jpg" alt="Los valores oficiales sostienen una marca lúdica, confiable y formativa" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#0f0f0f">
+ </div>
+ <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+ <div class="ac">
+ <div class="ac-tag">Observación 1 — Imaginación y creatividad</div>
+ <h3 class="ac-h">Juego libre y exploración</h3>
+ <p class="ac-p">El juego libre explica buena parte de la marca. LEGO propone un proceso, pero deja abierto el resultado.</p>
+ </div>
+ <div class="ac">
+ <div class="ac-tag">Observación 2 — Diversión y aprendizaje</div>
+ <h3 class="ac-h">Aprender probando y construyendo</h3>
+ <p class="ac-p">Aprender con LEGO también implica probar, equivocarse, desarmar y volver a intentarlo.</p>
+ </div>
+ <div class="ac">
+ <div class="ac-tag">Observación 3 — Cuidado y calidad</div>
+ <h3 class="ac-h">Calidad y mejora constante</h3>
+ <p class="ac-p">En LEGO, el cuidado se relaciona con la calidad, la seguridad y la experiencia de quien usa el producto. “Solo lo mejor es suficiente” funciona como estándar de trabajo.</p>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="bc-module flip rev">
+ <div style="display:flex;flex-direction:column;gap:.85rem;">
+ <div class="ac dk">
+ <div class="ac-tag">Personalidad de la marca</div>
+ <h3 class="ac-h" style="color:var(--yellow)">El Creador y cuatro apoyos de personalidad</h3>
+ <p class="ac-p">Los otros arquetipos ayudan a adaptar el mensaje según la audiencia, pero el Creador sigue siendo el centro.</p>
+ </div>
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:.65rem;">
+ <div style="background:var(--dark2);border-radius:var(--r8);padding:1rem;border-left:3px solid var(--yellow)">
+ <div style="font-family:var(--fd);font-size:.85rem;color:var(--yellow);margin-bottom:.2rem">Inocente</div>
+ <div style="font-size:.72rem;color:rgba(255,255,255,.6)">Audiencia infantil. Alegría, optimismo, ternura.</div>
+ </div>
+ <div style="background:var(--dark2);border-radius:var(--r8);padding:1rem;border-left:3px solid var(--coral)">
+ <div style="font-family:var(--fd);font-size:.85rem;color:var(--coral);margin-bottom:.2rem">Mago</div>
+ <div style="font-size:.72rem;color:rgba(255,255,255,.6)">Fans que valoran la experiencia y el detalle.</div>
+ </div>
+ <div style="background:var(--dark2);border-radius:var(--r8);padding:1rem;border-left:3px solid var(--teal)">
+ <div style="font-family:var(--fd);font-size:.85rem;color:var(--teal);margin-bottom:.2rem">Sabio</div>
+ <div style="font-size:.72rem;color:rgba(255,255,255,.6)">Padres, educación y aprendizaje.</div>
+ </div>
+ <div style="background:var(--dark2);border-radius:var(--r8);padding:1rem;border-left:3px solid #8BC34A">
+ <div style="font-family:var(--fd);font-size:.85rem;color:#8BC34A;margin-bottom:.2rem">Amigo</div>
+ <div style="font-size:.72rem;color:rgba(255,255,255,.6)">Fans, comunidad y co-creación.</div>
+ </div>
+ </div>
+ </div>
+ <div>
+ <div class="dref dk">Arquetipo principal y apoyos</div>
+ <div class="df">
+ <img src="assets/slide_12.jpg" alt="El alma de la marca: Arquetipo El Creador con satelites — Diapositiva 12">
+ <div class="df-overlay"><span class="df-label">El Creador + Inocente + Mago + Sabio + Amigo</span></div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="bc-module rev" style="margin-bottom:4rem">
+ <div>
+ <div class="dref dk">Cómo se ve el Creador en digital</div>
+ <div class="df">
+ <img src="assets/slide_13.jpg" alt="El Creador en digital: pieza, usuario y resultado propio">
+ <div class="df-overlay"><span class="df-label">Pieza + usuario + resultado propio</span></div>
+ </div>
+ </div>
+ <div style="display:flex;flex-direction:column;gap:1rem;">
+ <div class="ac">
+ <div class="ac-tag">El Creador en los canales digitales</div>
+ <h3 class="ac-h">Armar, personalizar y compartir</h3>
+ <p class="ac-p">En digital, LEGO no se queda en “comprá esto”. Ofrece piezas, instrucciones, ideas y comunidad para que cada persona construya algo propio.</p>
+ </div>
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1)">
+ <div style="background:var(--red);padding:.75rem 1.25rem;display:flex;align-items:center;gap:.75rem">
+ <svg viewBox="0 0 56 40" fill="none" style="width:32px;height:22px;flex-shrink:0"><rect x="4" y="16" width="48" height="22" rx="4" fill="rgba(255,255,255,.25)"/><rect x="4" y="34" width="48" height="4" rx="1" fill="rgba(0,0,0,.2)"/><circle cx="19" cy="16" r="9" fill="rgba(255,255,255,.2)" stroke="rgba(0,0,0,.15)" stroke-width="2"/><circle cx="19" cy="16" r="5.5" fill="rgba(255,255,255,.35)"/><circle cx="37" cy="16" r="9" fill="rgba(255,255,255,.2)" stroke="rgba(0,0,0,.15)" stroke-width="2"/><circle cx="37" cy="16" r="5.5" fill="rgba(255,255,255,.35)"/></svg>
+ <div style="font-family:var(--fm);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.85);font-weight:700">Por qué el Creador queda al centro</div>
+ </div>
+ <div style="background:#fff5f5;padding:1.25rem 1.5rem;border:1px solid rgba(227,0,11,.12);border-top:none">
+ <p style="font-size:.88rem;line-height:1.7;color:#2d2d2d">La transformación y el aprendizaje aparecen en la marca, pero dependen de que alguien arme algo. Sin esa acción del usuario, el set se queda como una caja.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ </div>
+</section>
+
+<section id="audiencias">
+ <div class="sh rev">
+ <div class="s-tag">04 — Audiencias</div>
+ <h2 class="s-h">Una misma marca para distintos públicos</h2>
+ <p class="s-d">Cómo cambia la comunicación según la persona a la que se dirige.</p>
+ </div>
+
+ 
+ <div class="aud-overview rev">
+ <div class="dref dk">LEGO para distintas generaciones</div>
+ <div class="df">
+ <img src="assets/slide_04.jpg" alt="El sistema multi-generacional: 4 audiencias — Diapositiva 4">
+ <div class="df-overlay"><span class="df-label">Cuatro audiencias, una misma marca</span></div>
+ </div>
+ </div>
+
+ <div class="wrap" style="padding-top:2.5rem;padding-bottom:0">
+
+ 
+ <div class="aud-block a-ninos rev">
+ <div class="aud-block-header">
+ <div class="aud-dot" style="background:var(--yellow)"></div>
+ <h3 class="aud-h2">Niños</h3>
+ <span style="font-family:var(--fm);font-size:.6rem;color:#888;text-transform:uppercase;letter-spacing:.12em">Público principal</span>
+ </div>
+ <div class="aud-sbs">
+ <div>
+ <div class="dref dk">Núcleo de marca aplicado: audiencia infantil</div>
+ <div class="df">
+ <img src="assets/slide_15.jpg" alt="LEGO para niños: juego libre y creatividad">
+ <div class="df-overlay"><span class="df-label">Inspirar, formar y liberar el potencial creativo</span></div>
+ </div>
+ <div class="aud-extra">
+ <img src="assets/slide_14.jpg" alt="Una marca con distintos usos según la audiencia">
+ <div class="aud-extra-cap">“Crea tus propios mundos”. Niños como público central.</div>
+ </div>
+ </div>
+ <div class="aud-info">
+ <div class="aud-promise">
+ <h4>Promesa de marca</h4>
+ <p>La promesa para niños es simple: crear mundos propios a través del juego, la exploración y el descubrimiento.</p>
+ </div>
+ <div class="aud-details">
+ <div class="ad"><div class="ad-l">Rol de LEGO</div><div class="ad-v">Impulsor del juego espontáneo</div></div>
+ <div class="ad"><div class="ad-l">Tono visual</div><div class="ad-v">Amarillo brillante y colores primarios</div></div>
+ <div class="ad"><div class="ad-l">Experiencia digital</div><div class="ad-v">Fotografías de juego espontáneo y sets preescolares</div></div>
+ <div class="ad"><div class="ad-l">Posibilidad</div><div class="ad-v">Imaginar mundos propios</div></div>
+ </div>
+ <div class="ac" style="background:var(--yellow)">
+ <div class="ac-tag">Lectura del análisis</div>
+ <p class="ac-p">LEGO no impone una única forma de jugar. Entrega piezas, ideas y acompañamiento para que el niño explore desde su propio ritmo.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="aud-block a-familias rev">
+ <div class="aud-block-header">
+ <div class="aud-dot" style="background:var(--coral)"></div>
+ <h3 class="aud-h2">Familias</h3>
+ <span style="font-family:var(--fm);font-size:.6rem;color:#888;text-transform:uppercase;letter-spacing:.12em">Público principal</span>
+ </div>
+ <div class="aud-sbs flip">
+ <div class="aud-info">
+ <div class="aud-promise">
+ <h4>Promesa de marca</h4>
+ <p>La promesa para familias es jugar y crear juntos. LEGO Builder refuerza esa experiencia porque permite armar en compañía, incluso desde dispositivos distintos.</p>
+ </div>
+ <div class="aud-details">
+ <div class="ad"><div class="ad-l">Rol de LEGO</div><div class="ad-v">Puente para compartir en familia</div></div>
+ <div class="ad"><div class="ad-l">Tono visual</div><div class="ad-v">Coral familiar y turquesa</div></div>
+ <div class="ad"><div class="ad-l">Experiencia digital</div><div class="ad-v">Escenas cálidas, hogar y colaboración</div></div>
+ <div class="ad"><div class="ad-l">Posibilidad</div><div class="ad-v">Compartir tiempo de calidad</div></div>
+ </div>
+ <div class="ac" style="background:#FFF0F0">
+ <div class="ac-tag">Lectura del análisis</div>
+ <p class="ac-p">En familia, LEGO se entiende como tiempo compartido. No se trata solo de comprar un set, sino de crear un momento juntos.</p>
+ </div>
+ </div>
+ <div>
+ <div class="dref dk">El juego familiar en el sitio oficial</div>
+ <div class="df">
+ <img src="assets/slide_16.jpg" alt="El juego se convierte en vínculo, aprendizaje y tiempo compartido — Diapositiva 16">
+ <div class="df-overlay"><span class="df-label">Jugar juntos y construir en compañía</span></div>
+ </div>
+ <div class="aud-extra">
+ <img src="assets/slide_06.jpg" alt="Sistema digital como espacio de juego compartido — Diapositiva 6">
+ <div class="aud-extra-cap">Creatividad compartida con LEGO Builder.</div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="a-adultos rev" style="max-width:1200px;margin:0 auto 4rem;padding:3rem 2rem;border-radius:var(--r16)">
+ <div class="aud-block-header" style="margin-bottom:1.5rem">
+ <div class="aud-dot" style="background:#666"></div>
+ <h3 class="aud-h2" style="color:var(--wht)">Adultos / Kidults</h3>
+ <span style="font-family:var(--fm);font-size:.6rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.12em">Adults Welcome — público adulto</span>
+ </div>
+ <div class="aud-sbs">
+ <div>
+ <div class="dref" style="padding-bottom:.5rem">Adults Welcome en el sitio oficial</div>
+ <div class="df">
+ <img src="assets/slide_17.jpg" alt="LEGO también construye calma, nostalgia, diseño y expresión personal — Diapositiva 17">
+ <div class="df-overlay"><span class="df-label">Adults Welcome · pausa creativa para adultos</span></div>
+ </div>
+ <div class="aud-extra" style="margin-top:1rem">
+ <img src="assets/slide_18.jpg" alt="El adulto como audiencia con estética propia — Diapositiva 18">
+ <div class="aud-extra-cap">Diseño sobrio, pausa creativa y piezas de colección.</div>
+ </div>
+ </div>
+ <div class="aud-info">
+ <div class="aud-promise" style="background:rgba(255,255,255,.07);border-radius:var(--r12);padding:1.5rem">
+ <h4 style="color:var(--wht)">Promesa de marca</h4>
+ <p style="color:rgba(255,255,255,.8)">Para adultos, LEGO se presenta como una forma de desconexión, diseño y nostalgia. Armar un set ya no se lee como juego infantil, sino como una pausa personal.</p>
+ </div>
+ <div class="aud-details">
+ <div class="ad"><div class="ad-l">Rol de LEGO</div><div class="ad-v">Objeto de diseño y expresión personal</div></div>
+ <div class="ad"><div class="ad-l">Tono visual</div><div class="ad-v">Negro, gris oscuro y una estética más sobria.</div></div>
+ <div class="ad"><div class="ad-l">Experiencia digital</div><div class="ad-v">Sets de arquitectura, botánica y coleccionables presentados como objetos de diseño.</div></div>
+ <div class="ad"><div class="ad-l">Posibilidad</div><div class="ad-v">Pausar, coleccionar y decorar</div></div>
+ </div>
+ <div class="ac dk">
+ <div class="ac-tag">Lectura del análisis</div>
+ <p class="ac-p">En Adults Welcome, LEGO habla al adulto desde el diseño, la nostalgia y el tiempo personal. La marca muestra sets de arquitectura, cine, cultura pop, autos y botánica como piezas para armar con calma.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="aud-block a-fans rev" style="background:linear-gradient(135deg,#f5f0ff 0%,#ede4fa 100%);border-radius:var(--r16);padding:2rem;margin-bottom:4rem">
+ <div class="aud-block-header">
+ <div class="aud-dot" style="background:var(--purple)"></div>
+ <h3 class="aud-h2" style="color:#2d1b5e">Fans & Comunidades</h3>
+ <span style="font-family:var(--fm);font-size:.6rem;color:var(--purple);text-transform:uppercase;letter-spacing:.12em;font-weight:700">Comunidad fiel</span>
+ </div>
+ <div class="aud-sbs flip">
+ <div class="aud-info">
+ <div class="aud-promise">
+ <h4>Promesa de marca</h4>
+ <p>La comunidad puede votar, participar y proponer ideas dentro de los espacios de LEGO, tanto en línea como en eventos.</p>
+ </div>
+ <div class="aud-details">
+ <div class="ad"><div class="ad-l">Rol de LEGO</div><div class="ad-v">Espacio para proponer ideas</div></div>
+ <div class="ad"><div class="ad-l">Tono visual</div><div class="ad-v">Morado Insiders, eventos y franquicias.</div></div>
+ <div class="ad"><div class="ad-l">Experiencia digital</div><div class="ad-v">En línea: LEGO Ideas. Presencial: eventos como BrickBuilt Sydney.</div></div>
+ <div class="ad"><div class="ad-l">Posibilidad</div><div class="ad-v">Proponer y pertenecer</div></div>
+ </div>
+ <div class="ac" style="background:rgba(75,46,145,.08);border-left:3px solid var(--purple)">
+ <div class="ac-tag" style="color:var(--purple)">Lectura del análisis</div>
+ <p class="ac-p">LEGO permite que sus fans participen más allá de la compra. En LEGO Ideas, una propuesta puede llegar a ser evaluada por la marca si alcanza suficiente apoyo de la comunidad.</p>
+ </div>
+ </div>
+ <div>
+ 
+ <div class="df">
+ <img src="assets/slide_19.jpg" alt="La marca convierte usuarios en creadores y participantes">
+ </div>
+ </div>
+ </div>
+ </div>
+
+ </div>
+</section>
+
+<section id="identidad">
+ <div class="sh rev">
+ <div class="s-tag">05 — Identidad visual adaptable</div>
+ <h2 class="s-h">El logo <span style="color:var(--red)">que se mantiene</span></h2>
+ <p class="s-d">LEGO conserva el mismo logo. Lo que cambia es el entorno visual: colores, fondos, fotografías y tono gráfico según la audiencia.</p>
+ </div>
+
+ 
+ <div class="id-sub rev">
+ <div class="id-sub-title">El logo de LEGO</div>
+ <div class="id-sbs">
+ <div>
+ <div class="dref dk">El logo en distintos formatos</div>
+ <div class="df">
+ <img src="assets/slide_07.jpg" alt="El ancla visual: logo 1:1, header móvil, avatar, favicon — Diapositiva 7">
+ <div class="df-overlay"><span class="df-label">Formato cuadrado · encabezado · avatar · favicon</span></div>
+ </div>
+ </div>
+ <div>
+ <div class="dref dk">La identidad visual en digital</div>
+ <div class="df">
+ <img src="assets/slide_20.jpg" alt="Identidad visual flexible: header, avatar Instagram, favicon — Diapositiva 20">
+ <div class="df-overlay"><span class="df-label">Encabezado móvil · avatar de Instagram · favicon</span></div>
+ </div>
+ </div>
+ </div>
+ <div class="id-sbs" style="margin-top:1.25rem">
+ <div>
+ <div class="dref dk">Cómo se adapta el logo</div>
+ <div class="df">
+ <img src="assets/slide_21.jpg" alt="El logo funciona como ancla visual estable en todo el sistema — Diapositiva 21">
+ <div class="df-overlay"><span class="df-label">Claro/oscuro · de ícono pequeño a pieza principal</span></div>
+ </div>
+ </div>
+ <div style="display:flex;flex-direction:column;gap:.85rem">
+ <div class="ac">
+ <div class="ac-tag">Lectura del análisis</div>
+ <h3 class="ac-h">El logo como ancla de reconocimiento</h3>
+ <p class="ac-p">El logo funciona en tamaños muy distintos: desde el encabezado móvil y el favicon hasta el avatar de redes o una pieza exterior. Su forma cuadrada ayuda a reconocerlo rápido.</p>
+ </div>
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem">
+ <div class="ac" style="padding:1rem;background:#f9f9f9"><div class="ac-tag">Header móvil</div><p style="font-size:.8rem">Ancla fija con íconos simples</p></div>
+ <div class="ac" style="padding:1rem;background:#f9f9f9"><div class="ac-tag">Avatar social</div><p style="font-size:.8rem">Pasa de cuadrado a círculo sin perder lectura</p></div>
+ <div class="ac" style="padding:1rem;background:#f9f9f9"><div class="ac-tag">Favicon</div><p style="font-size:.8rem">Versión mínima para pestañas del navegador</p></div>
+ <div class="ac" style="padding:1rem;background:#f9f9f9"><div class="ac-tag">Adaptabilidad</div><p style="font-size:.8rem">Claro, oscuro y distintos tamaños</p></div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="id-sub rev" style="background:var(--gray);padding:2rem;border-radius:var(--r16);max-width:1200px;margin:0 auto 2rem">
+ <div class="id-sub-title">Paleta de colores</div>
+ <div class="palette-note">⚠️ Los valores HEX/RGB son referenciales, obtenidos por revisión visual. No son una guía oficial interna de LEGO.</div>
+ <div class="id-sbs">
+ <div>
+ <div class="dref dk">Paleta de colores por audiencia</div>
+ <div class="df" style="margin-bottom:1rem">
+ <img src="assets/slide_22.jpg" alt="Flexibilidad visual: paleta maestra y paletas por audiencia — Diapositiva 22">
+ <div class="df-overlay"><span class="df-label">Paleta base y colores por audiencia</span></div>
+ </div>
+ <div class="dref dk">El color por audiencia</div>
+ <div class="df">
+ <img src="assets/slide_23.jpg" alt="El color como guía visual por audiencia — Diapositiva 23">
+ <div class="df-overlay"><span class="df-label">Morado Insiders · coral familiar · negro para adultos</span></div>
+ </div>
+ </div>
+ <div>
+ <div class="swatches" style="grid-template-columns:1fr 1fr">
+ <div class="sw" onclick="copyHex(this,'#E3000B')"><div class="sw-b" style="background:#E3000B"></div><div class="sw-i"><div class="sw-h">#E3000B *</div><div class="sw-n">LEGO Red</div><div class="sw-u">Color de reconocimiento</div></div></div>
+ <div class="sw" onclick="copyHex(this,'#FFD500')"><div class="sw-b" style="background:#FFD500"></div><div class="sw-i"><div class="sw-h">#FFD500 *</div><div class="sw-n">LEGO Yellow</div><div class="sw-u">Energía y acento visual</div></div></div>
+ <div class="sw" onclick="copyHex(this,'#FFFFFF')"><div class="sw-b" style="background:#fff;border:1px solid #e0e0e0"></div><div class="sw-i"><div class="sw-h">#FFFFFF *</div><div class="sw-n">LEGO White</div><div class="sw-u">Base para interfaz</div></div></div>
+ <div class="sw" onclick="copyHex(this,'#000000')"><div class="sw-b" style="background:#000"></div><div class="sw-i"><div class="sw-h">#000000 *</div><div class="sw-n">LEGO Black</div><div class="sw-u">Contraste para lectura</div></div></div>
+ </div>
+ <div class="din-swatches" style="grid-template-columns:1fr 1fr">
+ <div class="dsw" style="background:#F36F73"><div class="dsw-h">#F36F73 *</div><div class="dsw-n">Familias</div><div class="dsw-d">Cercanía visual</div></div>
+ <div class="dsw" style="background:#2D2D2D"><div class="dsw-h">#2D2D2D *</div><div class="dsw-n">Adults Welcome</div><div class="dsw-d">Sobriedad visual</div></div>
+ <div class="dsw" style="background:#FFD500;color:#000"><div class="dsw-h" style="color:rgba(0,0,0,.45)">#FFD500 *</div><div class="dsw-n">Preschool</div><div class="dsw-d">Infancia y exploración</div></div>
+ <div class="dsw" style="background:#4B2E91"><div class="dsw-h">#4B2E91 *</div><div class="dsw-n">Insiders</div><div class="dsw-d">Comunidad y pertenencia</div></div>
+ </div>
+ <p class="hex-note">* Valores referenciales de revisión visual. No es guía oficial de LEGO.</p>
+ <div class="dref dk" style="margin-top:1rem">Ejemplos visuales por audiencia</div>
+ <div class="df" style="margin-top:.5rem">
+ <img src="assets/slide_24.jpg" alt="LEGO adapta el color según audiencia sin perder reconocimiento — Diapositiva 24">
+ <div class="df-overlay"><span class="df-label">Familias · adultos · comunidad</span></div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="id-sub rev">
+ <div class="id-sub-title">Tipografía: orden y lectura</div>
+ <div class="id-sbs">
+ <div>
+ <div class="dref dk">Tipografía del sistema</div>
+ <div class="df">
+ <img src="assets/slide_25.jpg" alt="La tipografía ordena la experiencia y mantiene legibilidad en móvil — Diapositiva 25">
+ <div class="df-overlay"><span class="df-label">Titulares, botones y textos de lectura</span></div>
+ </div>
+ </div>
+ <div style="display:flex;flex-direction:column;gap:1rem">
+ <div class="ac" style="background:var(--blk);color:var(--wht)">
+ <div class="ac-tag" style="color:rgba(255,255,255,.4)">Sistema tipográfico web</div>
+ <div style="font-family:var(--fd);font-size:2.2rem;color:var(--yellow);line-height:1;margin-bottom:.5rem">Aa Titulares</div>
+ <div style="font-size:.72rem;opacity:.55;margin-bottom:1rem;font-family:var(--fm)">Títulos y llamados a la acción — mayor peso visual</div>
+ <div style="font-family:var(--fb);font-size:1.1rem;font-weight:700;margin-bottom:.4rem">Aa Texto</div>
+ <div style="font-size:.72rem;opacity:.55;font-family:var(--fm)">Texto e interfaz — lectura clara en distintos tamaños</div>
+ </div>
+ <div class="ac">
+ <div class="ac-tag">Jerarquías y roles</div>
+ <div style="display:flex;flex-direction:column;gap:.5rem;margin-top:.35rem">
+ <div style="display:flex;align-items:baseline;gap:.75rem;padding-bottom:.4rem;border-bottom:1px solid #f0f0f0"><span style="font-family:var(--fm);font-size:.58rem;color:#aaa;width:45px">H1</span><span style="font-family:var(--fd);font-size:1.8rem">Portada</span></div>
+ <div style="display:flex;align-items:baseline;gap:.75rem;padding-bottom:.4rem;border-bottom:1px solid #f0f0f0"><span style="font-family:var(--fm);font-size:.58rem;color:#aaa;width:45px">H2</span><span style="font-family:var(--fd);font-size:1.3rem">Sección</span></div>
+ <div style="display:flex;align-items:baseline;gap:.75rem;padding-bottom:.4rem;border-bottom:1px solid #f0f0f0"><span style="font-family:var(--fm);font-size:.58rem;color:#aaa;width:45px">Body</span><span style="font-size:.9rem">Texto de lectura cómoda</span></div>
+ <div style="display:flex;align-items:baseline;gap:.75rem"><span style="font-family:var(--fm);font-size:.58rem;color:#aaa;width:45px">Label</span><span style="font-family:var(--fm);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:#888">ETIQUETA</span></div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="id-sub rev">
+ <div class="id-sub-title">Interfaz móvil y e-commerce</div>
+ <div class="id-row4">
+ <div class="id-r4">
+ <img src="assets/slide_26.jpg" alt="La identidad visual en e-commerce: filtros, tarjetas, llamados a la acción — Diapositiva 26">
+ 
+ </div>
+ <div class="id-r4">
+ <img src="assets/slide_27.jpg" alt="Interfaz: equilibrio entre juego y orden — Diapositiva 27">
+ 
+ </div>
+ <div class="id-r4">
+ <img src="assets/slide_28.jpg" alt="Espectro visual por audiencia — Diapositiva 28">
+ 
+ </div>
+ <div class="id-r4" style="overflow:hidden">
+ <div style="background:var(--blk);height:100%;padding:1.25rem;display:flex;flex-direction:column;justify-content:center">
+ <div style="font-family:var(--fd);font-size:.95rem;color:var(--yellow);margin-bottom:.75rem">Principios de experiencia observados</div>
+ <div style="display:flex;flex-direction:column;gap:.45rem">
+ <div style="font-size:.75rem;color:rgba(255,255,255,.7);border-left:2px solid var(--red);padding-left:.5rem">Tipografía redondeada y títulos fuertes</div>
+ <div style="font-size:.75rem;color:rgba(255,255,255,.7);border-left:2px solid var(--yellow);padding-left:.5rem">Cabeza de minifigura como ícono de usuario</div>
+ <div style="font-size:.75rem;color:rgba(255,255,255,.7);border-left:2px solid var(--teal);padding-left:.5rem">Tarjetas limpias con el set como protagonista</div>
+ <div style="font-size:.75rem;color:rgba(255,255,255,.7);border-left:2px solid var(--coral);padding-left:.5rem">Botones redondeados y fáciles de reconocer</div>
+ </div>
+ </div>
+ 
+ </div>
+ </div>
+ </div>
+
+</section>
+
+<section id="voztono">
+ <div class="sh rev">
+ <div class="s-tag">06 — Voz y tono</div>
+ <h2 class="s-h">Voz y tono de la marca</h2>
+ <p class="s-d">La marca conserva una voz reconocible, pero ajusta el tono según el canal.</p>
+ </div>
+
+ 
+ <div class="rev" style="max-width:1200px;margin:0 auto;padding:0 2rem 1.5rem">
+ 
+ <div style="border-radius:var(--r16);overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.2);margin-bottom:1.25rem">
+ <img src="assets/slide_29.jpg" alt="Voz de marca LEGO: lúdica, inspiradora y cercana" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#0f0f0f">
+ </div>
+ 
+ <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem">
+ <div style="background:var(--red);border-radius:var(--r12);padding:1.25rem;color:var(--wht);display:flex;flex-direction:column;gap:.4rem">
+ <div style="font-family:var(--fm);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;opacity:.7">Rasgo 1</div>
+ <div style="font-family:var(--fd);font-size:1.1rem">Lúdica</div>
+ <div style="font-size:.8rem;opacity:.85;line-height:1.55">Propone retos e invitaciones breves. El mensaje deja espacio para jugar.</div>
+ </div>
+ <div style="background:var(--dark);border-radius:var(--r12);padding:1.25rem;color:var(--wht);border:1px solid rgba(255,213,0,.25);display:flex;flex-direction:column;gap:.4rem">
+ <div style="font-family:var(--fm);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;opacity:.7">Rasgo 2</div>
+ <div style="font-family:var(--fd);font-size:1.1rem;color:var(--yellow)">Inspiradora</div>
+ <div style="font-size:.8rem;opacity:.8;line-height:1.55">No promete un resultado cerrado; propone un inicio.</div>
+ </div>
+ <div style="background:var(--wht);border-radius:var(--r12);padding:1.25rem;border-left:4px solid var(--yellow);display:flex;flex-direction:column;gap:.4rem">
+ <div style="font-family:var(--fm);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:#999">Rasgo 3</div>
+ <div style="font-family:var(--fd);font-size:1.1rem">Cercana</div>
+ <div style="font-size:.8rem;color:#555;line-height:1.55">Busca sonar cercana, no como una marca que solo quiere vender.</div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="vt-diff rev">
+ <div class="vd">
+ <div class="vd-l">Una voz estable con tonos distintos</div>
+ <div class="vd-h">Personalidad reconocible</div>
+ <div class="vd-p">LEGO mantiene una personalidad lúdica, cercana y activa. Esa base se reconoce tanto en Instagram como en LinkedIn.</div>
+ </div>
+ <div class="vd">
+ <div class="vd-l" style="color:var(--purple)">Cómo cambia el tono</div>
+ <div class="vd-h">Ajuste según el canal</div>
+ <div class="vd-p">El tono cambia según la plataforma: Instagram es más visual y directo; LinkedIn es más institucional; el sitio web mezcla ambos según la sección.</div>
+ </div>
+ </div>
+
+ 
+ <div class="vt-canales rev">
+ <div class="dref dk">El tono por canal</div>
+ <div class="vt-canal-wrap">
+ <img class="vt-canal-img" src="assets/slide_30.jpg" alt="Adaptación del tono por canal digital — Diapositiva 30">
+ </div>
+ <div class="dref dk" style="margin-top:1.25rem">Misma voz, tono ajustado</div>
+ <div class="vt-canal-wrap">
+ <img class="vt-canal-img" src="assets/slide_31.jpg" alt="Vocalización de marca: voz constante, tono adaptativo — Diapositiva 31">
+ <div class="vt-canal-analysis">
+ <div class="vca">
+ <div class="vca-name">📸 Instagram</div>
+ <div class="vca-tono">Visual, participativo y juguetón</div>
+ <div class="vca-desc">Activa la observación con retos, descubrimientos y mensajes breves.</div>
+ </div>
+ <div class="vca">
+ <div class="vca-name">👥 Facebook</div>
+ <div class="vca-tono">Comunitario e informativo</div>
+ <div class="vca-desc">Agrupa conversaciones entre fans, eventos y contenido de comunidad.</div>
+ </div>
+ <div class="vca">
+ <div class="vca-name">💼 LinkedIn</div>
+ <div class="vca-tono">Institucional y cercano</div>
+ <div class="vca-desc">Comunica valores corporativos, cultura interna y temas de familia.</div>
+ </div>
+ <div class="vca">
+ <div class="vca-name">🌐 Sitio Web</div>
+ <div class="vca-tono">Orientación por audiencia</div>
+ <div class="vca-desc">Ajusta el tono según si habla a niños, familias, adultos o fans.</div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="ecual-wrap rev">
+ <div class="dref dk">Cómo cambia el tono por canal</div>
+ <div class="ecual-sbs">
+ <div class="ecual-slide">
+ <img src="assets/slide_35.jpg" alt="El ecualizador de canales: voz vs tono — Diapositiva 35">
+ </div>
+ <div class="ecual-panel">
+ <div class="ecual-title">Comparación de tono</div>
+ <div class="ecual-ch">
+ <div class="ecual-cn">📸 Instagram — Tono más lúdico</div>
+ <div class="ecual-bar"><span class="ecual-al">Lúdico</span><div class="ecual-track"><div class="ecual-fill" style="width:90%"></div></div></div>
+ <div class="ecual-bar"><span class="ecual-al">Comunitario</span><div class="ecual-track"><div class="ecual-fill" style="width:45%;background:#888"></div></div></div>
+ <div class="ecual-bar"><span class="ecual-al">Institucional</span><div class="ecual-track"><div class="ecual-fill" style="width:10%;background:#888"></div></div></div>
+ </div>
+ <div class="ecual-ch">
+ <div class="ecual-cn">👥 Facebook — Tono más comunitario</div>
+ <div class="ecual-bar"><span class="ecual-al">Lúdico</span><div class="ecual-track"><div class="ecual-fill" style="width:50%"></div></div></div>
+ <div class="ecual-bar"><span class="ecual-al">Comunitario</span><div class="ecual-track"><div class="ecual-fill" style="width:88%;background:#888"></div></div></div>
+ <div class="ecual-bar"><span class="ecual-al">Institucional</span><div class="ecual-track"><div class="ecual-fill" style="width:28%;background:#888"></div></div></div>
+ </div>
+ <div class="ecual-ch">
+ <div class="ecual-cn">💼 LinkedIn — Tono más institucional</div>
+ <div class="ecual-bar"><span class="ecual-al">Lúdico</span><div class="ecual-track"><div class="ecual-fill" style="width:22%"></div></div></div>
+ <div class="ecual-bar"><span class="ecual-al">Comunitario</span><div class="ecual-track"><div class="ecual-fill" style="width:40%;background:#888"></div></div></div>
+ <div class="ecual-bar"><span class="ecual-al">Institucional</span><div class="ecual-track"><div class="ecual-fill" style="width:90%;background:#888"></div></div></div>
+ </div>
+ <div class="ecual-ch">
+ <div class="ecual-cn">🌐 Sitio Web — mezcla según la sección</div>
+ <div class="ecual-bar"><span class="ecual-al">Lúdico</span><div class="ecual-track"><div class="ecual-fill" style="width:55%"></div></div></div>
+ <div class="ecual-bar"><span class="ecual-al">Comunitario</span><div class="ecual-track"><div class="ecual-fill" style="width:55%;background:#888"></div></div></div>
+ <div class="ecual-bar"><span class="ecual-al">Institucional</span><div class="ecual-track"><div class="ecual-fill" style="width:55%;background:#888"></div></div></div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="conv-wrap rev">
+ <div class="dref dk">Ejemplos por canal</div>
+ <div class="conv-sbs">
+ <div class="conv-slide">
+ <img src="assets/slide_32.jpg" alt="La voz es lúdica, inspiradora y cercana; el tono cambia según el canal — Diapositiva 32">
+ </div>
+ <div class="conv-cards">
+ <div class="cc">
+ <div class="cc-av" style="background:linear-gradient(135deg,#f09433,#dc2743)">IG</div>
+ <div><div class="cc-p">Instagram — Post observado</div><div class="cc-t">"Zoom and explore our Hogwarts castle. Zoom y explora. 😎" — Activa el juego visual sin texto largo. 1,552 Me gusta.</div><span class="cc-tag">Lúdico · Descubrimiento</span></div>
+ </div>
+ <div class="cc">
+ <div class="cc-av" style="background:#1877F2">FB</div>
+ <div><div class="cc-p">Facebook — Respuesta en comentario observada</div><div class="cc-t">LEGO Brand respondió: "Una verdadera amistad 💚✨" — Diálogo emocional cálido y humano con el fan.</div><span class="cc-tag">Comunitario · Emocional</span></div>
+ </div>
+ <div class="cc">
+ <div class="cc-av" style="background:#0A66C2">IN</div>
+ <div><div class="cc-p">LinkedIn — The LEGO Group</div><div class="cc-t">"Why build a family-friendly workplace? For us, it's simple — by supporting families, parents, and caregivers in the workplace, we can have a…"</div><span class="cc-tag">Institucional · Humano</span></div>
+ </div>
+ <div class="cc">
+ <div class="cc-av" style="background:var(--blk)">WB</div>
+ <div><div class="cc-p">Sitio Web — Sección Preescolar observada</div><div class="cc-t">"¡Te damos la bienvenida al maravilloso (y a veces un poco caótico) mundo de la edad preescolar! Una vez que, con tu ayuda, tu bebé tome impulso, te sorprenderá lo lejos que puede llegar."</div><span class="cc-tag">Familiar · Cercano · Empático</span></div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="heroe-wrap rev">
+ <div class="dref dk">El usuario como protagonista del relato</div>
+ <div class="heroe-sbs">
+ <div>
+ <div class="heroe-slide" style="margin-bottom:1rem">
+ <img src="assets/slide_33.jpg" alt="El flujograma narrativo: usuario como héroe — Diapositiva 33">
+ </div>
+ <div class="heroe-slide">
+ <img src="assets/slide_34.jpg" alt="Cada persona tiene un mundo por construir — Diapositiva 34">
+ </div>
+ </div>
+ <div class="heroe-steps">
+ <div class="hs-title-big">El usuario lleva la acción; LEGO acompaña</div>
+ <div class="hs-sub">En el contenido de LEGO, la marca acompaña. La acción la lleva la persona: construir, personalizar y compartir.</div>
+ <div class="hs" data-n="1">
+ <div class="hs-l">El Problema</div>
+ <div class="hs-n">La situación del usuario</div>
+ <div class="hs-d">Puede ser un niño buscando qué hacer, una familia que quiere compartir tiempo o un adulto que llega cansado a casa.</div>
+ </div>
+ <div class="hs" data-n="2">
+ <div class="hs-l">El Guía</div>
+ <div class="hs-n">LEGO ofrece una estructura</div>
+ <div class="hs-d">No entrega todo resuelto; ofrece piezas, ideas y contexto para que la persona construya su propia versión.</div>
+ </div>
+ <div class="hs" data-n="3">
+ <div class="hs-l">La Acción</div>
+ <div class="hs-n">Escoger, armar y personalizar</div>
+ <div class="hs-d">Escoger un set, abrir la experiencia, construir paso a paso y hacerlo propio.</div>
+ </div>
+ <div class="hs" data-n="4">
+ <div class="hs-l">El resultado</div>
+ <div class="hs-n">El Éxito</div>
+ <div class="hs-d">Convertir piezas simples en historias, tiempo familiar, calma o recuerdos.</div>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section id="hallazgos">
+ <div class="sh rev">
+ <div class="s-tag">08 — Hallazgos principales</div>
+ <h2 class="s-h">Hallazgos <span style="color:var(--red)">principales</span></h2>
+ <p class="s-d">Qué hace que LEGO se reconozca con facilidad en sus distintos canales.</p>
+ </div>
+
+ 
+ <div class="hall-hero rev">
+ <div class="dref dk">Resumen</div>
+ <div class="hall-slide-wrap">
+ <img src="assets/slide_38.jpg" alt="Hallazgos principales — Diapositiva 38">
+ </div>
+ </div>
+
+ <div class="hall-inner">
+ <div class="hall-title">Seis hallazgos del análisis</div>
+ <div class="hall-sub">A partir de la revisión visual de los canales digitales públicos de LEGO.</div>
+ <div class="hall-grid rev">
+ <div class="hc"><div class="hc-ico"><svg viewBox="0 0 60 52" fill="none"><polygon points="4,16 30,4 56,16 30,28" fill="#ff2222"/><polygon points="4,16 4,42 30,54 30,28" fill="#a00008"/><polygon points="30,28 30,54 56,42 56,16" fill="#cc0008"/><ellipse cx="20" cy="16" rx="9" ry="4.5" fill="#E3000B"/><ellipse cx="20" cy="16" rx="7" ry="3.5" fill="#ff5555"/><ellipse cx="20" cy="16" rx="4" ry="2" fill="#ff2222" opacity=".5"/><ellipse cx="40" cy="16" rx="9" ry="4.5" fill="#E3000B"/><ellipse cx="40" cy="16" rx="7" ry="3.5" fill="#ff5555"/><ellipse cx="40" cy="16" rx="4" ry="2" fill="#ff2222" opacity=".5"/></svg></div><h4 class="hc-h">Núcleo de marca aplicado en digital</h4><p class="hc-d">Imaginación, creatividad y aprendizaje aparecen en el diseño, en el contenido y en la forma de presentar los productos.</p></div>
+ <div class="hc"><div class="hc-ico"><svg viewBox="0 0 60 52" fill="none"><polygon points="4,16 30,4 56,16 30,28" fill="#6644bb"/><polygon points="4,16 4,42 30,54 30,28" fill="#33207a"/><polygon points="30,28 30,54 56,42 56,16" fill="#4d33a0"/><ellipse cx="20" cy="16" rx="9" ry="4.5" fill="#4B2E91"/><ellipse cx="20" cy="16" rx="7" ry="3.5" fill="#9977ee"/><ellipse cx="20" cy="16" rx="4" ry="2" fill="#6644bb" opacity=".5"/><ellipse cx="40" cy="16" rx="9" ry="4.5" fill="#4B2E91"/><ellipse cx="40" cy="16" rx="7" ry="3.5" fill="#9977ee"/><ellipse cx="40" cy="16" rx="4" ry="2" fill="#6644bb" opacity=".5"/></svg></div><h4 class="hc-h">Usuario como participante activo</h4><p class="hc-d">LEGO abre espacios para que los usuarios propongan, creen y participen. LEGO Ideas es el ejemplo más claro.</p></div>
+ <div class="hc"><div class="hc-ico"><svg viewBox="0 0 60 52" fill="none"><polygon points="4,16 30,4 56,16 30,28" fill="#333333"/><polygon points="4,16 4,42 30,54 30,28" fill="#000000"/><polygon points="30,28 30,54 56,42 56,16" fill="#1a1a1a"/><ellipse cx="20" cy="16" rx="9" ry="4.5" fill="#222222"/><ellipse cx="20" cy="16" rx="7" ry="3.5" fill="#555555"/><ellipse cx="20" cy="16" rx="4" ry="2" fill="#333333" opacity=".5"/><ellipse cx="40" cy="16" rx="9" ry="4.5" fill="#222222"/><ellipse cx="40" cy="16" rx="7" ry="3.5" fill="#555555"/><ellipse cx="40" cy="16" rx="4" ry="2" fill="#333333" opacity=".5"/></svg></div><h4 class="hc-h">Logo reconocible en cualquier formato</h4><p class="hc-d">El logo de LEGO no necesita versiones alternativas. La versión original funciona igual en una valla publicitaria que en el ícono de una pestaña del navegador.</p></div>
+ <div class="hc"><div class="hc-ico"><svg viewBox="0 0 60 52" fill="none"><polygon points="4,16 30,4 56,16 30,28" fill="#ffe033"/><polygon points="4,16 4,42 30,54 30,28" fill="#c9a800"/><polygon points="30,28 30,54 56,42 56,16" fill="#e6bf00"/><ellipse cx="20" cy="16" rx="9" ry="4.5" fill="#FFD500"/><ellipse cx="20" cy="16" rx="7" ry="3.5" fill="#fff066"/><ellipse cx="20" cy="16" rx="4" ry="2" fill="#ffe033" opacity=".5"/><ellipse cx="40" cy="16" rx="9" ry="4.5" fill="#FFD500"/><ellipse cx="40" cy="16" rx="7" ry="3.5" fill="#fff066"/><ellipse cx="40" cy="16" rx="4" ry="2" fill="#ffe033" opacity=".5"/></svg></div><h4 class="hc-h">Identidad visual adaptable</h4><p class="hc-d">Los colores cambian según la audiencia, pero la estructura visual y el logo mantienen el reconocimiento de la marca.</p></div>
+ <div class="hc"><div class="hc-ico"><svg viewBox="0 0 60 52" fill="none"><polygon points="4,16 30,4 56,16 30,28" fill="#ff4444"/><polygon points="4,16 4,42 30,54 30,28" fill="#8b0000"/><polygon points="30,28 30,54 56,42 56,16" fill="#b00000"/><ellipse cx="20" cy="16" rx="9" ry="4.5" fill="#cc0000"/><ellipse cx="20" cy="16" rx="7" ry="3.5" fill="#ff7777"/><ellipse cx="20" cy="16" rx="4" ry="2" fill="#ff4444" opacity=".5"/><ellipse cx="40" cy="16" rx="9" ry="4.5" fill="#cc0000"/><ellipse cx="40" cy="16" rx="7" ry="3.5" fill="#ff7777"/><ellipse cx="40" cy="16" rx="4" ry="2" fill="#ff4444" opacity=".5"/></svg></div><h4 class="hc-h">Voz clara y tono adaptable</h4><p class="hc-d">La personalidad se mantiene lúdica, inspiradora y cercana. Lo que cambia es el tono según el canal y la audiencia.</p></div>
+ <div class="hc"><div class="hc-ico"><svg viewBox="0 0 60 52" fill="none"><polygon points="4,16 30,4 56,16 30,28" fill="#448866"/><polygon points="4,16 4,42 30,54 30,28" fill="#1e3b30"/><polygon points="30,28 30,54 56,42 56,16" fill="#2d5544"/><ellipse cx="20" cy="16" rx="9" ry="4.5" fill="#315C4A"/><ellipse cx="20" cy="16" rx="7" ry="3.5" fill="#77bb99"/><ellipse cx="20" cy="16" rx="4" ry="2" fill="#448866" opacity=".5"/><ellipse cx="40" cy="16" rx="9" ry="4.5" fill="#315C4A"/><ellipse cx="40" cy="16" rx="7" ry="3.5" fill="#77bb99"/><ellipse cx="40" cy="16" rx="4" ry="2" fill="#448866" opacity=".5"/></svg></div><h4 class="hc-h">Relato centrado en el usuario</h4><p class="hc-d">LEGO entrega herramientas e ideas. Quien completa la experiencia es el usuario.</p></div>
+ </div>
+ </div>
+</section>
+
+<section id="cierre">
+ <div class="sh rev">
+ <div class="s-tag y">09 — Cierre del análisis</div>
+ <h2 class="s-h" style="color:var(--wht)">Consistencia <em style="color:var(--yellow);font-style:normal">sin perder flexibilidad</em></h2>
+ <p class="s-d w">Lo más importante después de revisar la presencia digital de LEGO.</p>
+ </div>
+
+ 
+ <div class="cierre-37 rev">
+ <div class="dref">LEGO visto como marca completa</div>
+ <div class="c37-slide">
+ <img src="assets/slide_37.jpg" alt="El sistema LEGO: la marca es coherencia en cada punto de contacto — Diapositiva 37">
+ </div>
+ <div class="c37-analysis">
+ <div class="c37-item">
+ <div class="c37-n">01 Núcleo de marca</div>
+ <div class="c37-d">El propósito de la marca y cómo orienta identidad y contenido.</div>
+ </div>
+ <div class="c37-item">
+ <div class="c37-n">02 Identidad Visual</div>
+ <div class="c37-d">Logo fijo, paletas por audiencia e interfaz pensada para móvil.</div>
+ </div>
+ <div class="c37-item">
+ <div class="c37-n">03 Experiencia y relato</div>
+ <div class="c37-d">El usuario va al centro. LEGO funciona como punto de partida.</div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="cierre-39 rev">
+ <img class="c39-img" src="assets/slide_39.jpg" alt="Consistencia sin perder flexibilidad">
+ </div>
+ 
+ <div class="rev" style="max-width:1200px;margin:0 auto;padding:1.5rem 2rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start">
+ <div style="border-left:4px solid var(--yellow);padding-left:1.5rem">
+ <div style="font-family:var(--fm);font-size:.6rem;color:rgba(255,255,255,.4);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.75rem">Conclusión del análisis</div>
+ <blockquote style="font-family:var(--fd);font-size:clamp(1.1rem,2vw,1.6rem);color:var(--wht);line-height:1.15;margin-bottom:.85rem">"LEGO logra <span style="color:var(--yellow)">mantenerse reconocible sin sentirse rígido</span> porque tiene una base de marca clara y la adapta según la audiencia a la que habla."</blockquote>
+ </div>
+ <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:1.5rem">
+ <div style="font-family:var(--fm);font-size:.6rem;color:rgba(255,255,255,.4);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.75rem">Lectura de cierre</div>
+ <p style="font-size:.88rem;color:rgba(255,255,255,.78);line-height:1.7">Lo que funciona en LEGO es que no presenta el producto de una sola manera. Puede ser juego para un niño, tiempo familiar, pieza de diseño para un adulto o comunidad para un fan; pero siempre se reconoce como LEGO.</p>
+ </div>
+ </div>
+
+ 
+ <div class="cierre-40 rev">
+ <div>
+ <div class="dref">Cierre del análisis</div>
+ <div class="c40-slide">
+ <img src="assets/slide_40.jpg" alt="LEGO como marca de juego, diseño, familia y comunidad">
+ </div>
+ </div>
+ <div class="c40-text">
+ <div class="c40-meta">
+ <div class="cm"><div class="cm-l">Autora</div><div class="cm-v">Paula Andrea Osorio Franco</div></div>
+ <div class="cm"><div class="cm-l">Carné</div><div class="cm-v">20014957</div></div>
+ <div class="cm"><div class="cm-l">Entregable</div><div class="cm-v">Fase 1 — Branding Digital</div></div>
+ <div class="cm"><div class="cm-l">Idea central</div><div class="cm-v">LEGO — Brand Book digital</div></div>
+ <div class="cm"><div class="cm-l">Metodología</div><div class="cm-v">Revisión de marca</div></div>
+ <div class="cm"><div class="cm-l">Maestría</div><div class="cm-v">Marketing Digital — U. Galileo</div></div>
+ </div>
+ <div class="c40-puntos">
+ <h3 class="cp-title">Reflexión final</h3>
+ <ul class="cp-list">
+ <li>El núcleo de marca funciona como guía: da dirección sin controlar cada detalle.</li>
+ <li>El logo es lo único que se mantiene en ningún canal ni formato.</li>
+ <li>El color ayuda a que la misma marca se sienta distinta según la audiencia.</li>
+ <li>La voz no cambia. El tono sí, según el canal.</li>
+ <li>El usuario lleva la acción. LEGO pone las piezas y las ideas.</li>
+ <li>“Solo lo mejor es suficiente” se nota en el producto, el empaque, el contenido digital y la relación con los fans.</li>
+ <li>LEGO vende piezas, pero la experiencia final depende de lo que cada persona construye con ellas: juego, familia, colección o pausa.</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+</section>
+
+<footer>
+ <p>Brand Book digital y propuesta de campaña — LEGO</p>
+ <p>Paula Andrea Osorio Franco · Carné: 20014957 · Maestría en Marketing Digital · Curso: Branding Digital · Universidad Galileo</p>
+ <p style="margin-top:.6rem;font-size:.65rem;opacity:.55">⚠️ Proyecto académico no oficial. Imágenes usadas únicamente como apoyo visual para analizar los canales digitales públicos de LEGO. Los valores HEX/RGB son referenciales de revisión visual, no guía oficial interna de LEGO. LEGO® es una marca registrada de The LEGO Group.</p>
+</footer>
+
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Volver arriba">↑</button>
+
+<section id="fase2" class="f2-banner rev">
+ <div class="f2-banner-inner">
+ <div class="f2-banner-fase">Fase 2 — Contenido de marca</div>
+ <h2 class="f2-banner-h">De documentar la marca a usarla en contenido.</h2>
+ <p class="f2-banner-p">La Fase 2 parte de la Fase 1. Aquí la identidad deja de estar solo en el documento y se convierte en publicaciones, canales y rutinas de trabajo.</p>
+ </div>
+ <div style="max-width:1200px;margin:2rem auto 0;padding:0 2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start">
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.35)">
+ <img src="assets/f2_slide_02.jpg" alt="Tesis de continuidad : Fase 1 diagnóstico, Fase 2 sistema" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+ </div>
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.35)">
+ <img src="assets/f2_slide_03.jpg" alt="Base y expresión digital" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+ </div>
+ </div>
+</section>
+
+<section id="contentbranding">
+ <div class="sh rev">
+ <div class="s-tag">10 — Contenido de marca</div>
+ <h2 class="s-h">Pilares de <span style="color:var(--red)">Contenido</span></h2>
+ <p class="s-d">Cómo LEGO usa contenido para entretener, educar y conectar sin convertir cada publicación en una venta directa.</p>
+ </div>
+
+ 
+ <div class="nota-meto rev">
+ <div class="nota-meto-inner">
+ <p>Nota sobre el uso académico de imágenes</p>
+ <p>Las imágenes de esta sección son capturas y referencias visuales de canales públicos de LEGO, como su sitio oficial y sus redes sociales. Se usan solo con fines académicos y de análisis. Este proyecto no es oficial ni tiene fines comerciales.</p>
+ </div>
+ </div>
+
+ 
+ <div class="cb-intro rev">
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:start;margin-bottom:2rem">
+ <div>
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
+ <img src="assets/f2_slide_05.jpg" alt="¿Qué es el Contenido de marca en LEGO? — Diapositiva 5" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+ </div>
+ </div>
+ <div style="display:flex;flex-direction:column;gap:1rem;justify-content:center">
+ <div style="background:var(--blk);border-radius:var(--r12);padding:1.5rem 2rem">
+ <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:.6rem">Lectura del análisis</div>
+ <p style="font-size:.92rem;font-weight:800;color:var(--wht);line-height:1.55">El contenido no es solo apoyo para ventas. Es la forma en que la marca aparece todos los días frente a la gente.</p>
+ </div>
+ <div style="background:var(--wht);border-radius:var(--r12);padding:1.5rem;box-shadow:0 3px 14px rgba(0,0,0,.06)">
+ <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#888;margin-bottom:.5rem">Lo observado en sus canales</div>
+ <p style="font-size:.88rem;line-height:1.65;color:#444">LEGO no publica solo fotos de producto. Sus contenidos hablan de imaginar, construir, compartir y participar.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="cb-paradigma rev">
+ <div>
+ <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">El contenido de LEGO en acción</div>
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
+ <img src="assets/f2_slide_06.jpg" alt="Paradigma del contenido LEGO: narrativa centrada en el usuario" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+ </div>
+ </div>
+ <div style="display:flex;flex-direction:column;gap:1rem">
+ <div style="background:var(--blk);border-radius:var(--r12);padding:1.75rem;color:var(--wht)">
+ <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.5rem">Relato centrado en el usuario</div>
+ <h3 style="font-family:var(--fd);font-size:1.2rem;color:var(--yellow);margin-bottom:.65rem">El producto no es el centro; facilita la experiencia.</h3>
+ <p style="font-size:.85rem;color:rgba(255,255,255,.8);line-height:1.65">LEGO entretiene antes de vender. Quien sigue la marca en redes no siempre llega con intención de compra.</p>
+ </div>
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+ <div style="background:#fff9e6;border-radius:var(--r8);padding:1rem;border-left:3px solid var(--yellow)">
+ <div style="font-family:var(--fd);font-size:.85rem;margin-bottom:.25rem">1. Juego y aprendizaje</div>
+ <div style="font-size:.75rem;color:#555">Construir también es descubrir.</div>
+ </div>
+ <div style="background:#fff0ec;border-radius:var(--r8);padding:1rem;border-left:3px solid var(--coral)">
+ <div style="font-family:var(--fd);font-size:.85rem;margin-bottom:.25rem">2. Comunidad</div>
+ <div style="font-size:.75rem;color:#555">Espacios donde la comunidad se reúne.</div>
+ </div>
+ <div style="background:#f5f0ff;border-radius:var(--r8);padding:1rem;border-left:3px solid var(--purple)">
+ <div style="font-family:var(--fd);font-size:.85rem;margin-bottom:.25rem">3. Entretenimiento</div>
+ <div style="font-size:.75rem;color:#555">Historias antes que venta directa.</div>
+ </div>
+ <div style="background:#f0f9ff;border-radius:var(--r8);padding:1rem;border-left:3px solid #0ea5e9">
+ <div style="font-family:var(--fd);font-size:.85rem;margin-bottom:.25rem">4. Conexión emocional</div>
+ <div style="font-size:.75rem;color:#555">Contenido ligado a momentos de vida.</div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="cb-pilares rev">
+ <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.75rem">Los 4 pilares del contenido</div>
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14);margin-bottom:2rem">
+ <img src="assets/f2_slide_07.jpg" alt="Síntesis : los 4 pilares de contenido — Diapositiva 7" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#0f0f0f">
+ </div>
+
+ 
+ <h3 style="font-family:var(--fd);font-size:1.4rem;margin-bottom:.25rem">Los cuatro pilares en detalle</h3>
+ <p style="font-size:.85rem;color:#666;margin-bottom:1.5rem">Cada pilar se apoya en capturas del contenido público de LEGO.</p>
+ <div class="pilares-grid">
+
+ 
+ <div class="pilar-card pilar-1">
+ <img class="pilar-slide" src="assets/f2_slide_11.jpg" alt="Pilar 1: Juego y Aprendizaje — Diapositiva 11">
+ <div class="pilar-body">
+ <div class="pilar-label">Pilar 1</div>
+ <div class="pilar-h">Juego y Aprendizaje</div>
+ <div class="pilar-tagline">Construir para descubrir.</div>
+ <p class="pilar-desc">El juego se presenta como una forma natural de aprender, experimentar y desarrollar creatividad. No se siente como una clase formal; empieza con una pieza y permite probar, equivocarse y volver a intentar.</p>
+ <div class="pilar-core">Conexión con la marca: imaginación, creatividad y aprendizaje.</div>
+ </div>
+ </div>
+
+ 
+ <div class="pilar-card pilar-2">
+ <img class="pilar-slide" src="assets/f2_slide_12.jpg" alt="Pilar 2: Comunidad y Participación — Diapositiva 12">
+ <div class="pilar-body">
+ <div class="pilar-label">Pilar 2</div>
+ <div class="pilar-h">Comunidad y Participación</div>
+ <div class="pilar-tagline">Punto de encuentro.</div>
+ <p class="pilar-desc">LEGO invita a participar en espacios creados por fans. En LEGO Ideas, el paso de fan a creador es parte de la propuesta. La comunidad no solo observa; también aporta.</p>
+ <div class="pilar-core">Conexión con la marca: creatividad colaborativa y aprendizaje compartido.</div>
+ </div>
+ </div>
+
+ 
+ <div class="pilar-card pilar-3">
+ <img class="pilar-slide" src="assets/f2_slide_13.jpg" alt="Pilar 3: Entretenimiento de marca — Diapositiva 13">
+ <div class="pilar-body">
+ <div class="pilar-label">Pilar 3</div>
+ <div class="pilar-h">Entretenimiento de marca</div>
+ <div class="pilar-tagline">Historias antes que venta directa.</div>
+ <p class="pilar-desc">El producto aparece dentro de historias, retos o escenas. La relación con la audiencia no se limita a comprar y vender; busca afinidad.</p>
+ <div class="pilar-core">Conexión con la marca: diversión y disfrute.</div>
+ </div>
+ </div>
+
+ 
+ <div class="pilar-card pilar-4">
+ <img class="pilar-slide" src="assets/f2_slide_14.jpg" alt="Pilar 4: Conexión Emocional y Familiar — Diapositiva 14">
+ <div class="pilar-body">
+ <div class="pilar-label">Pilar 4</div>
+ <div class="pilar-h">Conexión Emocional y Familiar</div>
+ <div class="pilar-tagline">Crear recuerdos.</div>
+ <p class="pilar-desc">El producto aparece como una forma de conectar personas: en familia, en el trabajo o en momentos cotidianos. “Construir juntos también es una forma de crear recuerdos”.</p>
+ <div class="pilar-core">Conexión con la marca: cuidado, comunidad y vínculos.</div>
+ </div>
+ </div>
+
+ </div>
+ </div>
+
+ 
+ <div class="cb-evidencias rev">
+ <h3 style="font-family:var(--fd);font-size:1.4rem;margin-bottom:.25rem">Ejemplos observados</h3>
+ <p style="font-size:.85rem;color:#666;margin-bottom:1.5rem">Capturas del contenido público de LEGO que respaldan cada observación.</p>
+
+ 
+ <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Ejemplo: experiencia compartida</div>
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;margin-bottom:2rem">
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
+ <img src="assets/f2_slide_08.jpg" alt="Ejemplo principal: la experiencia compartida — Diapositiva 8" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+ </div>
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.08)">
+ <img src="assets/bv_01_brickbuilt_sydney_post.jpg" alt="Post original Brickbuilt Sydney — Biblioteca visual" style="width:100%;display:block;object-fit:cover;max-height:340px">
+ <div style="padding:.75rem 1rem;background:var(--blk);font-size:.72rem;color:rgba(255,255,255,.55);font-family:var(--fm)">Captura: post oficial de LEGO en Facebook — Brickbuilt Sydney</div>
+ </div>
+ </div>
+
+ 
+ <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Ejemplo: entretenimiento y vínculo</div>
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14);margin-bottom:2rem">
+ <img src="assets/f2_slide_09.jpg" alt="Ejemplo secundaria: entretenimiento y vínculo — Diapositiva 9" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+ </div>
+
+ 
+ <div class="ev3-grid">
+
+ <div class="ev3-card">
+ <img class="ev3-img wide" src="assets/bv_08_disney_main_street_instagram.jpg" alt="LEGO Disney Main Street Instagram — Captura original">
+ <div class="ev3-body">
+ <div class="ev3-label" style="color:var(--yellow)">Pilar 1 — Juego y Aprendizaje</div>
+ <div class="ev3-h">LEGO Disney Main Street</div>
+ <p class="ev3-obs">La publicación invita a buscar personajes escondidos. Es participación activa con poco texto.</p>
+ <span class="ev3-pilar" style="background:rgba(255,213,0,.2);color:var(--yellow)">Instagram · Juego visual</span>
+ </div>
+ </div>
+
+ <div class="ev3-card">
+ <img class="ev3-img wide" src="assets/bv_03_entertainment_social_post.jpg" alt="LEGO entretenimiento social — Captura original">
+ <div class="ev3-body">
+ <div class="ev3-label" style="color:#c4b5fd">Pilar 3 — Entretenimiento</div>
+ <div class="ev3-h">Narrativa audiovisual</div>
+ <p class="ev3-obs">El producto aparece dentro de una historia. El formato usa sorpresa y humor para mantener la atención.</p>
+ <span class="ev3-pilar" style="background:rgba(75,46,145,.3);color:#c4b5fd">Facebook · Video narrativo</span>
+ </div>
+ </div>
+
+ <div class="ev3-card">
+ <img class="ev3-img wide" src="assets/bv_05_family_friendly_linkedin.jpg" alt="LEGO Family Friendly LinkedIn — Captura original">
+ <div class="ev3-body">
+ <div class="ev3-label" style="color:#fdba74">Pilar 4 — Conexión Emocional</div>
+ <div class="ev3-h">Family Friendly Workplace</div>
+ <p class="ev3-obs">El contenido corporativo pone el foco en las familias dentro del entorno laboral. Conecta con padres y cuidadores.</p>
+ <span class="ev3-pilar" style="background:rgba(249,115,22,.2);color:#fdba74">LinkedIn · Cultura corporativa</span>
+ </div>
+ </div>
+
+ </div>
+
+ 
+ <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin:.5rem 0.5rem">Ejemplo digital adicional</div>
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14);margin-bottom:2rem">
+ <img src="assets/f2_slide_10.jpg" alt="Ejemplo digital: el sistema en acción — Diapositiva 10" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f4f4f4">
+ </div>
+
+ 
+ <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">E-commerce con tono de marca</div>
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start">
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
+ <img src="assets/f2_slide_15.jpg" alt="E-commerce funcional: la venta sin perder la magia — Diapositiva 15" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f4f4f4">
+ </div>
+ <div style="display:flex;flex-direction:column;gap:.85rem;justify-content:center">
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.1)">
+ <img src="assets/bv_07_gift_card_ecommerce.jpg" alt="Gift card LEGO e-commerce — Captura original" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f4f4f4">
+ <div style="padding:.65rem 1rem;background:var(--blk);font-size:.7rem;color:rgba(255,255,255,.55);font-family:var(--fm)">Captura: tarjetas regalo en LEGO.com</div>
+ </div>
+ <div style="background:var(--wht);border-radius:var(--r12);padding:1.25rem;box-shadow:0 3px 14px rgba(0,0,0,.06)">
+ <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#888;margin-bottom:.4rem">Lectura del análisis</div>
+ <p style="font-size:.85rem;line-height:1.65;color:#444">Incluso en e-commerce, LEGO mantiene su tono. No presenta una tarjeta regalo como saldo, sino como una forma de regalar la experiencia de construir.</p>
+ </div>
+ </div>
+ </div>
+
+ </div>
+</section>
+
+<section id="calendario">
+ <div class="sh rev">
+ <div class="s-tag y">11 — Calendario Editorial</div>
+ <h2 class="s-h" style="color:var(--wht)">Calendario <em style="color:var(--yellow);font-style:normal"></em></h2>
+ <p class="s-d w">Ejemplo de calendario editorial de una semana, pensado para Latinoamérica y Guatemala.</p>
+ </div>
+
+ 
+ <div class="cal-intro rev">
+ <div class="cal-slide-row">
+ <div>
+ <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem">Calendario editorial LATAM</div>
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.4)">
+ <img src="assets/f2_slide_16.jpg" alt="Calendario editorial LATAM — semana tipo" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+ </div>
+ </div>
+ <div class="cal-context">
+ <h4>Ritmo de publicación</h4>
+ <p>La semana alterna contenidos para educar, entretener, conectar y activar. Así el calendario no depende solo de publicar productos.</p>
+ <div class="cal-ritmo">Secuencia de la semana: educar, entretener, conectar, activar, co-crear, emocionar y cerrar</div>
+ </div>
+ </div>
+
+ 
+ <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem">Semana del 1 al 7 de junio — ejemplo</div>
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.4);margin-bottom:2rem">
+ <img src="assets/f2_slide_17.jpg" alt="Calendario táctico ensamblando la semana — Diapositiva 17" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+ </div>
+ </div>
+
+ 
+ <div class="cal-table-wrap rev">
+ <div style="font-family:var(--fm);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem">Ejemplo semanal completo — 1 al 7 de junio</div>
+ <table class="cal-table">
+ <thead>
+ <tr>
+ <th>Fecha</th>
+ <th>Pilar</th>
+ <th>Objetivo</th>
+ <th>Texto / idea central</th>
+ <th>Formato</th>
+ <th>Canal</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td><div class="cal-day">1 Jun</div><div style="font-size:.7rem;color:rgba(255,255,255,.45)">Domingo</div></td>
+ <td><span class="cal-pilar-badge bp-juego">Juego y Aprendizaje</span></td>
+ <td>Mostrar que construir también es aprender.</td>
+ <td><div class="cal-copy">"A veces aprender empieza con una pieza. Construir permite probar, equivocarse y volver a intentarlo."</div></td>
+ <td><div class="cal-formato">Carrusel educativo</div></td>
+ <td><div class="cal-canal" style="color:var(--yellow)">IG / FB</div></td>
+ </tr>
+ <tr>
+ <td><div class="cal-day">2 Jun</div><div style="font-size:.7rem;color:rgba(255,255,255,.45)">Lunes</div></td>
+ <td><span class="cal-pilar-badge bp-comunidad">Comunidad</span></td>
+ <td>Invitar a compartir recuerdos.</td>
+ <td><div class="cal-copy">"¿Cuál fue la primera construcción LEGO que recuerdas?"</div></td>
+ <td><div class="cal-formato">Story (Caja de preguntas)</div></td>
+ <td><div class="cal-canal" style="color:var(--coral)">IG Stories</div></td>
+ </tr>
+ <tr>
+ <td><div class="cal-day">3 Jun</div><div style="font-size:.7rem;color:rgba(255,255,255,.45)">Martes</div></td>
+ <td><span class="cal-pilar-badge bp-entrete">Entretenimiento</span></td>
+ <td>Mantener una relación cercana y lúdica.</td>
+ <td><div class="cal-copy">"Una historia pequeña puede empezar con una gran imaginación."</div></td>
+ <td><div class="cal-formato">Reel / Video corto</div></td>
+ <td><div class="cal-canal" style="color:#a78bfa">IG / YT Shorts</div></td>
+ </tr>
+ <tr>
+ <td><div class="cal-day">4 Jun</div><div style="font-size:.7rem;color:rgba(255,255,255,.45)">Miércoles</div></td>
+ <td><span class="cal-pilar-badge bp-kidults">Exploración Kidults</span></td>
+ <td>Conectar desde la pausa creativa.</td>
+ <td><div class="cal-copy">"Construir también puede ser una forma de desconectarse un momento."</div></td>
+ <td><div class="cal-formato">Carrusel Lifestyle</div></td>
+ <td><div class="cal-canal" style="color:#d1d5db">IG / FB</div></td>
+ </tr>
+ <tr>
+ <td><div class="cal-day">5 Jun</div><div style="font-size:.7rem;color:rgba(255,255,255,.45)">Jueves</div></td>
+ <td><span class="cal-pilar-badge bp-fans">Comunidad y Fans</span></td>
+ <td>Reforzar la co-creación.</td>
+ <td><div class="cal-copy">"De fan a creador: las mejores ideas nacen en la comunidad."</div></td>
+ <td><div class="cal-formato">Post / contenido generado por usuarios</div></td>
+ <td><div class="cal-canal" style="color:#a78bfa">FB / Web</div></td>
+ </tr>
+ <tr>
+ <td><div class="cal-day">6 Jun</div><div style="font-size:.7rem;color:rgba(255,255,255,.45)">Viernes</div></td>
+ <td><span class="cal-pilar-badge bp-emocional">Conexión Emocional</span></td>
+ <td>Reforzar el tiempo en familia.</td>
+ <td><div class="cal-copy">"Construir juntos también es una forma de crear recuerdos."</div></td>
+ <td><div class="cal-formato">Mini video familiar</div></td>
+ <td><div class="cal-canal" style="color:#fdba74">FB / IG</div></td>
+ </tr>
+ <tr>
+ <td><div class="cal-day">7 Jun</div><div style="font-size:.7rem;color:rgba(255,255,255,.45)">Sábado</div></td>
+ <td><span class="cal-pilar-badge bp-sintesis">Síntesis de marca</span></td>
+ <td>Unir los temas trabajados durante la semana.</td>
+ <td><div class="cal-copy">"Una semana, muchas formas de construir: jugar, aprender, compartir y crear."</div></td>
+ <td><div class="cal-formato">Carrusel resumen</div></td>
+ <td><div class="cal-canal" style="color:var(--yellow)">IG / FB</div></td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+
+ 
+ <div class="cal-intro rev" style="padding-top:0">
+ <div class="cal-slide-row">
+ <div>
+ <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem">Días 1 al 4 — contenido en detalle</div>
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.4)">
+ <img src="assets/f2_slide_18.jpg" alt="El sistema en acción: calendario semanal días 1-4 — Diapositiva 18" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+ </div>
+ </div>
+ <div>
+ <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem">Días 5 al 7 — contenido en detalle</div>
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.4)">
+ <img src="assets/f2_slide_19.jpg" alt="El sistema en acción: calendario semanal días 5-7 — Diapositiva 19" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#111">
+ </div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="cal-latam rev">
+ <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.75rem">Aplicación a Latinoamérica y Guatemala</div>
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.4);margin-bottom:1.5rem">
+ <img src="assets/f2_slide_20.jpg" alt="Aterrizaje: contexto LatAm y Guatemala — Diapositiva 20" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
+ </div>
+ <div class="latam-grid">
+ <div class="latam-card">
+ <div class="latam-num">01</div>
+ <div class="latam-h">Lenguaje cercano</div>
+ <p class="latam-p">La voz debe sonar local. No basta con traducir del inglés; hay que escribir de una forma que se sienta natural en la región.</p>
+ </div>
+ <div class="latam-card">
+ <div class="latam-num">02</div>
+ <div class="latam-h">Familia y comunidad</div>
+ <p class="latam-p">En Latinoamérica, la familia tiene mucho peso. Los fines de semana y los momentos entre generaciones son espacios donde LEGO puede conectar mejor.</p>
+ </div>
+ <div class="latam-card">
+ <div class="latam-num">03</div>
+ <div class="latam-h">Fechas y disponibilidad local</div>
+ <p class="latam-p">El calendario debe considerar fechas locales, como Día del Niño, Día de la Madre o vacaciones escolares, además de la disponibilidad real de sets en Guatemala.</p>
+ </div>
+ <div class="latam-card">
+ <div class="latam-num">04</div>
+ <div class="latam-h">Hábitos digitales</div>
+ <p class="latam-p">En Latinoamérica, Facebook e Instagram siguen teniendo mucho alcance. Los formatos cortos, como reels y carruseles, funcionan bien para consumo desde el celular.</p>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section id="herramientas">
+ <div class="sh rev">
+ <div class="s-tag">12 — Herramientas de trabajo</div>
+ <h2 class="s-h">Gestión <span style="color:var(--red)">del trabajo</span> de marca</h2>
+ <p class="s-d">Estas herramientas ordenan el Brand Book, el calendario, los recursos visuales y los cambios del proyecto en un mismo lugar.</p>
+ </div>
+
+ 
+ <div class="hta-sistema rev">
+ <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Herramientas de trabajo</div>
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;margin-bottom:2rem">
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
+ <img src="assets/f2_slide_21.jpg" alt="Sistema tecnológico de gestión ágil — Diapositiva 21" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
+ </div>
+ <div>
+ <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Cómo se ordena el trabajo</div>
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
+ <img src="assets/f2_slide_22.jpg" alt="Infraestructura de gestión colaborativa — Diapositiva 22" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="hta-grid">
+
+ <div class="hta-card figma">
+ <div class="hta-head">
+ <div class="hta-icon">🎨</div>
+ <div>
+ <div class="hta-hname">Figma</div>
+ <div class="hta-hrole">Diseño — biblioteca visual</div>
+ </div>
+ </div>
+ <div class="hta-body">
+ <p class="hta-desc">Aquí se guardan paletas, componentes y recursos gráficos para que el equipo creativo trabaje desde una misma base.</p>
+ <ul class="hta-items">
+ <li>Paletas de color y recursos de diseño</li>
+ <li>Componentes reutilizables: botones, tarjetas y encabezados</li>
+ <li>Guías de tipografía y uso de logo</li>
+ <li>Biblioteca de íconos y elementos visuales</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="hta-card notion">
+ <div class="hta-head">
+ <div class="hta-icon">📋</div>
+ <div>
+ <div class="hta-hname">Notion</div>
+ <div class="hta-hrole">Planificación — coordinación editorial</div>
+ </div>
+ </div>
+ <div class="hta-body">
+ <p class="hta-desc">Organiza publicaciones, responsables, aprobaciones, fechas y referencias.</p>
+ <ul class="hta-items">
+ <li>Calendario editorial con estados de publicación</li>
+ <li>Registro de aprobaciones de contenido</li>
+ <li>Base de referencias y ejemplos</li>
+ <li>Seguimiento de cambios por fase</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="hta-card github">
+ <div class="hta-head">
+ <div class="hta-icon">💾</div>
+ <div>
+ <div class="hta-hname">GitHub</div>
+ <div class="hta-hrole">Repositorio central</div>
+ </div>
+ </div>
+ <div class="hta-body">
+ <p class="hta-desc">Guarda el HTML, las imágenes y el historial de cambios.</p>
+ <ul class="hta-items">
+ <li>Control de versiones por fase</li>
+ <li>Almacenamiento de recursos visuales</li>
+ <li>Historial de cambios aprobados</li>
+ <li>Rama principal protegida para la versión publicada</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="hta-card ghpages">
+ <div class="hta-head">
+ <div class="hta-icon">🌐</div>
+ <div>
+ <div class="hta-hname">GitHub Pages</div>
+ <div class="hta-hrole">Sitio publicado</div>
+ </div>
+ </div>
+ <div class="hta-body">
+ <p class="hta-desc">El Brand Book queda publicado como sitio web y puede abrirse desde cualquier dispositivo con el enlace.</p>
+ <ul class="hta-items">
+ <li>Publicación después de actualizar GitHub</li>
+ <li>Enlace público para equipos o agencias</li>
+ <li>Compatible con navegador y celular</li>
+ <li>Este mismo sitio: paulaosoriof86.github.io/brandbook</li>
+ </ul>
+ </div>
+ </div>
+
+ </div>
+ </div>
+
+ 
+ <div class="hta-sistema rev">
+ <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Flujo de trabajo del equipo</div>
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14);margin-bottom:2rem">
+ <img src="assets/f2_slide_23.jpg" alt="Arquitectura colaborativa del Brand Book — Diapositiva 23" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
+ </div>
+ </div>
+
+ 
+ <div class="hta-flujo rev">
+ <h3 style="font-family:var(--fd);font-size:1.4rem;margin-bottom:.25rem">Flujo de trabajo</h3>
+ <p style="font-size:.85rem;color:#666;margin-bottom:1.25rem">Cómo se mantiene actualizado el Brand Book.</p>
+ <div class="flujo-steps">
+ <div class="flujo-step">
+ <div class="flujo-n">01</div>
+ <div class="flujo-h">Figma</div>
+ <p class="flujo-p">Diseño actualiza componentes, colores o tipografías cuando hace falta.</p>
+ </div>
+ <div class="flujo-arrow">→</div>
+ <div class="flujo-step">
+ <div class="flujo-n">02</div>
+ <div class="flujo-h">Notion</div>
+ <p class="flujo-p">El equipo editorial registra tareas, revisa textos y coordina publicaciones.</p>
+ </div>
+ <div class="flujo-arrow">→</div>
+ <div class="flujo-step">
+ <div class="flujo-n">03</div>
+ <div class="flujo-h">GitHub</div>
+ <p class="flujo-p">El equipo técnico ajusta el HTML, integra recursos y sube la versión actualizada.</p>
+ </div>
+ <div class="flujo-arrow">→</div>
+ <div class="flujo-step">
+ <div class="flujo-n">04</div>
+ <div class="flujo-h">GitHub Pages</div>
+ <p class="flujo-p">Cuando se actualiza GitHub, el sitio queda disponible para los equipos que necesiten consultarlo.</p>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="hta-sistema rev">
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;margin-bottom:2rem">
+ <div>
+ <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Cierre de la fase 2</div>
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
+ <img src="assets/f2_slide_25.jpg" alt="Cierre de la Fase 2 — Diapositiva 25" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
+ </div>
+ </div>
+ <div>
+ <div class="dref" style="font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.4);margin-bottom:.5rem">Resumen de la fase 2</div>
+ <div style="border-radius:var(--r12);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.14)">
+ <img src="assets/f2_slide_26.jpg" alt="La síntesis: un Brand Book Vivo — Diapositiva 26" style="width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f8f8f8">
+ </div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="f2-cierre rev">
+ <div class="f2-cierre-inner">
+ <h2>Una marca que no logra convertirse en <em>contenido usable</em> se queda solo en el documento.</h2>
+ <p style="font-size:.9rem;color:rgba(255,255,255,.65);line-height:1.7;max-width:680px;margin:0 auto">LEGO usa cada canal para invitar a participar. Por eso, el Brand Book tiene sentido si se vuelve una referencia de trabajo, no solo un archivo bonito.</p>
+ <div class="f2-cierre-pills">
+ <span class="f2-cierre-pill">Contenido activo</span>
+ <span class="f2-cierre-pill">Consistencia entre canales</span>
+ <span class="f2-cierre-pill">Gestión ordenada</span>
+ </div>
+ </div>
+ </div>
+
+</section>
+
+<section id="fase3" class="rev" style="background:#0a1628;color:var(--wht);padding:3.5rem 2rem;text-align:center;border-top:4px solid var(--teal);">
+ <div style="max-width:900px;margin:0 auto">
+ <div style="display:inline-flex;align-items:center;gap:7px;background:var(--teal);color:var(--wht);font-family:var(--fm);font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:1rem;">Fase 3 — Reto de campaña</div>
+ <h2 style="font-family:var(--fd);font-size:clamp(1.5rem,3vw,2.6rem);margin-bottom:.6rem;">Del Brand Book al <span style="color:var(--teal)">mercado guatemalteco.</span></h2>
+ <p style="font-size:.9rem;color:rgba(255,255,255,.6);max-width:640px;margin:0 auto;line-height:1.7;">Con la marca ya analizada, el siguiente paso es aplicar la propuesta en Guatemala: hablarle al profesional de 30 a 45 años y mostrarle que LEGO también puede ser una opción para adultos.</p>
+ </div>
+</section>
+
+<section id="brief" style="background:#0f1e35;padding-bottom:4rem;">
+
+ <div class="sh rev" style="padding-bottom:.5rem;">
+ <div class="s-tag y">15 — Brief de campaña</div>
+ <h2 class="s-h" style="color:var(--wht);">Construí algo <span style="color:var(--teal)">tuyo hoy.</span></h2>
+ <p class="s-d w">“Construí” en vos guatemalteco permite una lectura cercana: puede hablar de una carrera, de una vida ocupada o de armar algo propio al final del día.</p>
+ </div>
+
+ 
+ <div class="wrap rev" style="margin-bottom:2rem;">
+ <div style="background:#162540;border-radius:var(--r16);padding:2rem 2.5rem;border-left:5px solid var(--teal);">
+ <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem;">Reto de comunicación</div>
+ <h3 style="font-family:var(--fd);font-size:1.5rem;color:var(--wht);margin-bottom:.8rem;">En Guatemala, LEGO todavía se percibe principalmente como juguete para niños o como producto para coleccionistas.</h3>
+ <p style="font-size:.9rem;color:rgba(255,255,255,.65);line-height:1.75;">El profesional guatemalteco de 30 a 45 años, que trabaja en oficina o en modalidad híbrida, no suele pensar en LEGO como una opción para él. Las líneas Botanicals, Architecture y Star Wars ya tienen el nivel de detalle y diseño para ese público. El reto es cambiar la percepción: dejar de verlo solo como juguete y presentarlo como una forma de pausa, concentración y disfrute personal.</p>
+ </div>
+ </div>
+
+ 
+ <div class="wrap rev" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem;">
+
+ <div style="background:#1a2e4a;border-radius:var(--r16);padding:2rem;">
+ <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.6rem;">Público principal</div>
+ <div style="font-family:var(--fd);font-size:1.2rem;color:var(--wht);margin-bottom:1rem;">Profesional guatemalteco de 30 a 45 años</div>
+ <div style="display:flex;flex-direction:column;gap:.7rem;">
+ <div style="display:flex;gap:.8rem;align-items:flex-start;">
+ <div style="width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:.35rem;"></div>
+ <p style="font-size:.85rem;color:rgba(255,255,255,.7);line-height:1.6;">Trabaja en oficina o en modalidad híbrida. Tiene días con muchas reuniones, correos y pocas pausas reales.</p>
+ </div>
+ <div style="display:flex;gap:.8rem;align-items:flex-start;">
+ <div style="width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:.35rem;"></div>
+ <p style="font-size:.85rem;color:rgba(255,255,255,.7);line-height:1.6;">Usa LinkedIn e Instagram y consume contenido sobre bienestar, productividad o diseño.</p>
+ </div>
+ <div style="display:flex;gap:.8rem;align-items:flex-start;">
+ <div style="width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:.35rem;"></div>
+ <p style="font-size:.85rem;color:rgba(255,255,255,.7);line-height:1.6;">Tiene capacidad de gasto. Un set entre Q350 y Q900 puede ser razonable si entiende qué valor personal le aporta.</p>
+ </div>
+ <div style="display:flex;gap:.8rem;align-items:flex-start;">
+ <div style="width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:.35rem;"></div>
+ <p style="font-size:.85rem;color:rgba(255,255,255,.7);line-height:1.6;">Puede haber crecido con LEGO, pero lo dejó atrás al llegar a la adultez. Ahí hay nostalgia, aunque todavía no esté activada.</p>
+ </div>
+ </div>
+ </div>
+
+ <div style="background:var(--teal);border-radius:var(--r16);padding:2rem;">
+ <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(0,0,0,.5);margin-bottom:.6rem;">Hallazgo del consumidor</div>
+ <div style="font-family:var(--fd);font-size:1.3rem;color:var(--blk);margin-bottom:1rem;line-height:1.2;">"Paso todo el día tomando decisiones. Al llegar a casa, quiero hacer algo con las manos y dejar de pensar en trabajo."</div>
+ <p style="font-size:.85rem;color:rgba(0,0,0,.65);line-height:1.65;">El profesional guatemalteco no necesariamente busca otra actividad exigente después del trabajo. Busca algo físico, sin pantalla y con concentración tranquila. Armar piezas permite usar las manos y salir por un momento del modo laboral.</p>
+ </div>
+ </div>
+
+ 
+ <div class="wrap rev" style="margin-bottom:2rem;">
+ <div style="background:var(--yellow);border-radius:var(--r16);padding:2.5rem;text-align:center;">
+ <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(0,0,0,.45);margin-bottom:.75rem;">Idea principal</div>
+ <div style="font-family:var(--fd);font-size:clamp(2rem,5vw,3.5rem);color:var(--blk);line-height:1;margin-bottom:.75rem;">"Construí algo tuyo hoy."</div>
+ <p style="font-size:.9rem;color:rgba(0,0,0,.6);max-width:600px;margin:0 auto;line-height:1.7;">La frase funciona porque suena local y cercana. Puede hablar de construir una carrera o de armar algo propio en casa. No se siente como una traducción; parte del mercado guatemalteco.</p>
+ </div>
+ </div>
+
+ 
+ <div class="wrap rev">
+ <div style="font-family:var(--fm);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;">Condiciones que no se pueden perder</div>
+ <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+
+ <div style="background:#162540;border-radius:var(--r12);padding:1.25rem;border-top:3px solid var(--red);">
+ <div style="font-family:var(--fd);font-size:.95rem;color:var(--wht);margin-bottom:.4rem;">Logo LEGO visible</div>
+ <p style="font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.6;">Usar el logo rojo sobre fondo blanco o negro, sin versiones no autorizadas.</p>
+ </div>
+
+ <div style="background:#162540;border-radius:var(--r12);padding:1.25rem;border-top:3px solid var(--yellow);">
+ <div style="font-family:var(--fd);font-size:.95rem;color:var(--wht);margin-bottom:.4rem;">Paleta maestra intacta</div>
+ <p style="font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.6;">Mantener rojo, amarillo, negro y blanco como base. Los colores por audiencia funcionan solo como acento.</p>
+ </div>
+
+ <div style="background:#162540;border-radius:var(--r12);padding:1.25rem;border-top:3px solid var(--teal);">
+ <div style="font-family:var(--fd);font-size:.95rem;color:var(--wht);margin-bottom:.4rem;">El usuario construye</div>
+ <p style="font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.6;">En las piezas de campaña, la acción la lleva el profesional. LEGO acompaña la experiencia.</p>
+ </div>
+
+ <div style="background:#162540;border-radius:var(--r12);padding:1.25rem;border-top:3px solid var(--coral);">
+ <div style="font-family:var(--fd);font-size:.95rem;color:var(--wht);margin-bottom:.4rem;">Sin lenguaje infantil</div>
+ <p style="font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.6;">La campaña le habla a adultos con un tono tranquilo, directo y con algo de humor, sin parecer publicidad de juguetería.</p>
+ </div>
+
+ <div style="background:#162540;border-radius:var(--r12);padding:1.25rem;border-top:3px solid var(--purple);">
+ <div style="font-family:var(--fd);font-size:.95rem;color:var(--wht);margin-bottom:.4rem;">Referencia local real</div>
+ <p style="font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.6;">El contexto debe sentirse reconocible para alguien que vive en Guatemala: oficina, tráfico, casa y rutina diaria.</p>
+ </div>
+
+ <div style="background:#162540;border-radius:var(--r12);padding:1.25rem;border-top:3px solid rgba(255,255,255,.2);">
+ <div style="font-family:var(--fd);font-size:.95rem;color:var(--wht);margin-bottom:.4rem;">Líneas adult-first</div>
+ <p style="font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.6;">Usar Botanicals, Architecture y Star Wars 18+. No mezclar con sets infantiles dentro de la misma campaña.</p>
+ </div>
+
+ </div>
+ </div>
+
+</section>
+
+<section id="tactica" style="background:#f8f8f8;padding-bottom:4rem;">
+
+ <div class="sh rev">
+ <div class="s-tag" style="color:var(--teal);">16 — Ejecución de campaña</div>
+ <h2 class="s-h">Cómo llega <span style="color:var(--teal)">la campaña</span> al profesional guatemalteco.</h2>
+ <p class="s-d">La propuesta usa dos canales, dos tipos de contenido, microinfluencers adecuados e indicadores centrados en recordación, no solo en clics.</p>
+ </div>
+
+ 
+ <div class="wrap rev" style="margin-bottom:2.5rem;">
+ <div style="background:#0f1e35;border-radius:var(--r16);padding:2rem 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
+ <div>
+ <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.6rem;">Esta campaña trabaja marca porque...</div>
+ <div style="display:flex;flex-direction:column;gap:.8rem;">
+ <div style="display:flex;gap:.75rem;align-items:flex-start;">
+ <div style="color:var(--teal);font-size:1rem;flex-shrink:0;">✓</div>
+ <p style="font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.6;">El objetivo es que el adulto guatemalteco empiece a ver LEGO de otra manera. No se busca una compra inmediata.</p>
+ </div>
+ <div style="display:flex;gap:.75rem;align-items:flex-start;">
+ <div style="color:var(--teal);font-size:1rem;flex-shrink:0;">✓</div>
+ <p style="font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.6;">Las piezas cuentan una situación antes de vender. No hay precio visible ni llamado urgente de compra.</p>
+ </div>
+ <div style="display:flex;gap:.75rem;align-items:flex-start;">
+ <div style="color:var(--teal);font-size:1rem;flex-shrink:0;">✓</div>
+ <p style="font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.6;">El indicador principal es que la gente recuerde el anuncio, no que haga clic de inmediato.</p>
+ </div>
+ </div>
+ </div>
+ <div>
+ <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--coral);margin-bottom:.6rem;">Y no se plantea como venta inmediata porque...</div>
+ <div style="display:flex;flex-direction:column;gap:.8rem;">
+ <div style="display:flex;gap:.75rem;align-items:flex-start;">
+ <div style="color:var(--coral);font-size:1rem;flex-shrink:0;">✗</div>
+ <p style="font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.6;">No se mide por ventas de la primera semana.</p>
+ </div>
+ <div style="display:flex;gap:.75rem;align-items:flex-start;">
+ <div style="color:var(--coral);font-size:1rem;flex-shrink:0;">✗</div>
+ <p style="font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.6;">No usa persecución publicitaria agresiva ni frases de urgencia como “últimas unidades” u “oferta válida hoy”.</p>
+ </div>
+ <div style="display:flex;gap:.75rem;align-items:flex-start;">
+ <div style="color:var(--coral);font-size:1rem;flex-shrink:0;">✗</div>
+ <p style="font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.6;">El costo por clic y la tasa de clics no son lo principal. Primero importan alcance y recordación.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="wrap rev" style="margin-bottom:2.5rem;">
+ <div style="font-family:var(--fm);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#888;margin-bottom:1.25rem;">Canales seleccionados — medios pagados</div>
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+
+ 
+ <div style="background:var(--wht);border-radius:var(--r16);overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.08);">
+ <div style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);padding:1.25rem 1.5rem;">
+ <div style="font-family:var(--fd);font-size:1.3rem;color:var(--wht);">Instagram</div>
+ <div style="font-family:var(--fm);font-size:.6rem;color:rgba(255,255,255,.7);letter-spacing:.12em;text-transform:uppercase;">Anuncios pagados — stories y reels</div>
+ </div>
+ <div style="padding:1.5rem;">
+ <div style="margin-bottom:1.1rem;">
+ <div style="font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:.3rem;">Objetivo</div>
+ <p style="font-size:.85rem;color:#333;line-height:1.6;">Alcance y reconocimiento de marca. La idea es que el profesional de 30 a 45 años vea LEGO en un contexto distinto al de juguetería.</p>
+ </div>
+ <div style="margin-bottom:1.1rem;">
+ <div style="font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:.3rem;">Segmentación</div>
+ <p style="font-size:.85rem;color:#333;line-height:1.6;">Ciudad de Guatemala. 28 a 45 años. Intereses: diseño, bienestar, arquitectura, tecnología, Star Wars y coleccionables. Se excluyen intereses centrados en juguetes infantiles.</p>
+ </div>
+ <div>
+ <div style="font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:.3rem;">Formatos</div>
+ <p style="font-size:.85rem;color:#333;line-height:1.6;">Reels de 15 a 30 segundos mostrando manos, piezas y resultado. Stories con texto directo: <em>"Llegaste a casa. Ya es hora de construir algo tuyo."</em> Sin producción excesiva: debe sentirse cercano y real.</p>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div style="background:var(--wht);border-radius:var(--r16);overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.08);">
+ <div style="background:#0077b5;padding:1.25rem 1.5rem;">
+ <div style="font-family:var(--fd);font-size:1.3rem;color:var(--wht);">LinkedIn</div>
+ <div style="font-family:var(--fm);font-size:.6rem;color:rgba(255,255,255,.7);letter-spacing:.12em;text-transform:uppercase;">Anuncios pagados — imagen y video</div>
+ </div>
+ <div style="padding:1.5rem;">
+ <div style="margin-bottom:1.1rem;">
+ <div style="font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:.3rem;">Objetivo</div>
+ <p style="font-size:.85rem;color:#333;line-height:1.6;">Presentar LEGO como una opción de pausa y bienestar. Llegar al profesional que ya busca formas de desconectarse, pero no ha pensado en LEGO.</p>
+ </div>
+ <div style="margin-bottom:1.1rem;">
+ <div style="font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:.3rem;">Segmentación</div>
+ <p style="font-size:.85rem;color:#333;line-height:1.6;">Guatemala. Cargos: gerente, coordinador, director o analista senior. Industrias: banca, tecnología, retail y consultoría.</p>
+ </div>
+ <div>
+ <div style="font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:.3rem;">Formatos</div>
+ <p style="font-size:.85rem;color:#333;line-height:1.6;">Imagen única con contraste claro: escritorio cargado vs. set LEGO Botanicals armado. Texto corto: <em>"Reuniones: 8. Correos: 47. Algo construido con tus manos: 0."</em> Video de 30 segundos con subtítulos.</p>
+ </div>
+ </div>
+ </div>
+
+ </div>
+ </div>
+
+ 
+ <div class="wrap rev" style="margin-bottom:2.5rem;">
+ <div style="font-family:var(--fm);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#888;margin-bottom:.6rem;">Piezas de campaña — ejemplos visuales</div>
+ <p style="font-size:.88rem;color:#666;line-height:1.7;max-width:760px;margin-bottom:1.5rem;">Estas piezas muestran cómo se llevaría la idea a medios digitales: poco texto, contraste entre la rutina cargada y una pausa más tranquila, y un tono pensado para adultos profesionales en Guatemala.</p>
+ <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;align-items:start;background:#fff;border-radius:var(--r16);padding:2rem;box-shadow:0 8px 28px rgba(0,0,0,.06);overflow:hidden;">
+
+ <div style="min-width:0;">
+ <div style="font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:.75rem;">Instagram Story</div>
+ <div style="width:100%;max-width:300px;margin:0 auto;background:#111;border-radius:22px;overflow:hidden;box-shadow:0 14px 42px rgba(0,0,0,.25);aspect-ratio:9/16;position:relative;display:flex;flex-direction:column;">
+ 
+ <div style="padding:.65rem .85rem .35rem;display:flex;align-items:center;gap:.5rem;z-index:2;position:relative;">
+ <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);display:flex;align-items:center;justify-content:center;">
+ <div style="width:22px;height:22px;border-radius:50%;background:#E3000B;border:2px solid #111;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:.4rem;color:#fff;">L</div>
+ </div>
+ <span style="font-size:.55rem;color:rgba(255,255,255,.8);font-weight:700;font-family:var(--fb);">lego</span>
+ <span style="font-size:.48rem;color:rgba(255,255,255,.4);margin-left:auto;font-family:var(--fb);">Ahora</span>
+ </div>
+ 
+ <div style="flex:1;background:linear-gradient(160deg,#0f1e35 0%,#1a2e4a 60%,#0a1628 100%);display:flex;flex-direction:column;justify-content:space-between;padding:1.1rem;position:relative;overflow:hidden;">
+ <div style="display:flex;gap:.5rem;justify-content:flex-end;opacity:.3;padding:.2rem 0;">
+ <div style="display:flex;flex-direction:column;gap:2px;"><div style="width:32px;height:5px;background:var(--yellow);border-radius:1px;"></div><div style="width:32px;height:18px;background:var(--yellow);border-radius:2px;"></div></div>
+ <div style="display:flex;flex-direction:column;gap:2px;margin-top:8px;"><div style="width:20px;height:5px;background:var(--red);border-radius:1px;"></div><div style="width:20px;height:12px;background:var(--red);border-radius:2px;"></div></div>
+ </div>
+ <div style="text-align:center;"><div style="display:inline-block;background:rgba(0,184,196,.15);border:1px solid rgba(0,184,196,.3);color:var(--teal);font-family:var(--fm);font-size:.45rem;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:100px;">Adults Welcome · Guatemala</div></div>
+ <div>
+ <div style="font-family:var(--fd);font-size:1.05rem;color:rgba(255,255,255,.8);line-height:1.1;margin-bottom:.5rem;">Llegaste a casa.</div>
+ <div style="font-family:var(--fd);font-size:1.42rem;color:var(--yellow);line-height:1.05;margin-bottom:.6rem;">Ya es hora de construir algo tuyo.</div>
+ <div style="width:36px;height:3px;background:var(--teal);margin-bottom:.55rem;border-radius:2px;"></div>
+ <div style="font-family:var(--fm);font-size:.42rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);">LEGO Botanicals · Architecture · Star Wars</div>
+ </div>
+ </div>
+ </div>
+ <p style="font-size:.78rem;color:#777;text-align:center;margin:.75rem auto 0;line-height:1.55;max-width:330px;">Formato vertical para captar atención rápida después del trabajo.</p>
+ </div>
+
+ <div style="min-width:0;">
+ <div style="font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:.75rem;">LinkedIn</div>
+ <div style="background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 8px 26px rgba(0,0,0,.13);max-width:420px;margin:0 auto;">
+ <div style="padding:.75rem .9rem;display:flex;align-items:center;gap:.6rem;border-bottom:1px solid #f0f0f0;">
+ <div style="width:34px;height:34px;border-radius:50%;background:#E3000B;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:.62rem;color:#fff;flex-shrink:0;">L</div>
+ <div><div style="font-size:.68rem;font-weight:800;color:#191919;font-family:var(--fb);">LEGO</div><div style="font-size:.56rem;color:#666;font-family:var(--fb);">Contenido patrocinado · Guatemala</div></div>
+ </div>
+ <div style="background:linear-gradient(135deg,#0f1e35,#1a2e4a);padding:1.7rem 1.35rem;min-height:155px;display:flex;flex-direction:column;justify-content:center;">
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:.85rem;">
+ <div style="background:rgba(255,255,255,.06);border-radius:6px;padding:.65rem;text-align:center;"><div style="font-family:var(--fm);font-size:.45rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.25rem;">Tu día</div><div style="font-family:var(--fd);font-size:.78rem;color:var(--coral);line-height:1.12;">Reuniones: 8<br>Correos: 47<br>Builds: 0</div></div>
+ <div style="background:rgba(255,213,0,.1);border-radius:6px;padding:.65rem;text-align:center;border:1px solid rgba(255,213,0,.2);"><div style="font-family:var(--fm);font-size:.45rem;color:rgba(255,213,0,.5);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.25rem;">Esta noche</div><div style="font-family:var(--fd);font-size:.86rem;color:var(--yellow);line-height:1.2;">Construí algo tuyo.</div></div>
+ </div>
+ <div style="font-size:.64rem;color:rgba(255,255,255,.45);font-family:var(--fb);text-align:center;">LEGO Botanicals · Architecture · Star Wars 18+</div>
+ </div>
+ <div style="padding:.7rem .9rem;border-top:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center;gap:.75rem;"><div style="font-size:.62rem;color:#0077b5;font-weight:700;font-family:var(--fb);">Saber más</div><div style="font-size:.56rem;color:#999;font-family:var(--fb);">lego.com/gt</div></div>
+ </div>
+ <p style="font-size:.78rem;color:#777;text-align:center;margin:.75rem auto 0;line-height:1.55;max-width:430px;">Formato sobrio para conectar con el profesional desde su rutina laboral.</p>
+ </div>
+
+ </div>
+ </div>
+
+ <div class="wrap rev" style="margin-bottom:2.5rem;">
+ <div style="font-family:var(--fm);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#888;margin-bottom:1.25rem;">Microinfluencers — sector profesional en Guatemala</div>
+ <div style="background:var(--wht);border-radius:var(--r16);padding:2rem;box-shadow:0 6px 24px rgba(0,0,0,.07);">
+ <p style="font-size:.9rem;color:#444;line-height:1.75;margin-bottom:1.25rem;">No se busca un influencer masivo de entretenimiento. Se busca un profesional guatemalteco con una comunidad pequeña o mediana, entre 5,000 y 25,000 seguidores, que hable de trabajo, rutina, bienestar o diseño.</p>
+ <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+
+ <div style="background:#f4f4f4;border-radius:var(--r12);padding:1.25rem;">
+ <div style="font-family:var(--fd);font-size:.95rem;margin-bottom:.3rem;">Perfil tipo 1</div>
+ <div style="font-family:var(--fm);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:#888;margin-bottom:.6rem;">Bienestar y rutinas</div>
+ <p style="font-size:.82rem;color:#555;line-height:1.6;">Profesional que comparte rutinas, descanso mental o desconexión digital. Su contenido puede ubicarse en casa, oficina o lugares reconocibles de la ciudad.</p>
+ </div>
+
+ <div style="background:#f4f4f4;border-radius:var(--r12);padding:1.25rem;">
+ <div style="font-family:var(--fd);font-size:.95rem;margin-bottom:.3rem;">Perfil tipo 2</div>
+ <div style="font-family:var(--fm);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:#888;margin-bottom:.6rem;">Diseño y arquitectura</div>
+ <p style="font-size:.82rem;color:#555;line-height:1.6;">Arquitecto, diseñador o ingeniero guatemalteco con presencia en Instagram o LinkedIn. En ese perfil, un set Architecture se entiende de forma natural.</p>
+ </div>
+
+ <div style="background:#f4f4f4;border-radius:var(--r12);padding:1.25rem;">
+ <div style="font-family:var(--fd);font-size:.95rem;margin-bottom:.3rem;">Perfil tipo 3</div>
+ <div style="font-family:var(--fm);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:#888;margin-bottom:.6rem;">Cultura pop y coleccionismo</div>
+ <p style="font-size:.82rem;color:#555;line-height:1.6;">Fan de Star Wars o cultura geek con comunidad local. Si ya compra y muestra sets LEGO, la colaboración se siente creíble.</p>
+ </div>
+
+ </div>
+ <p style="font-size:.8rem;color:#999;margin-top:1rem;line-height:1.5;">El criterio es simple: el set debe tener sentido en la vida de esa persona. Si la conexión se siente forzada, no es el perfil adecuado.</p>
+ </div>
+ </div>
+
+ 
+ <div class="wrap rev" style="margin-bottom:2.5rem;">
+ <div style="font-family:var(--fm);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#888;margin-bottom:1.25rem;">Indicadores — lo que mide esta campaña</div>
+ <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+
+ <div style="background:var(--blk);border-radius:var(--r12);padding:1.5rem;text-align:center;">
+ <div style="font-family:var(--fd);font-size:2rem;color:var(--teal);margin-bottom:.25rem;">Recuerdo del anuncio</div>
+ <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.6rem;">Indicador principal</div>
+ <p style="font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.6;">Mide cuántas personas recuerdan el anuncio dos días después de verlo. Meta: que al menos el 65% del grupo expuesto lo recuerde frente al grupo de control.</p>
+ </div>
+
+ <div style="background:var(--blk);border-radius:var(--r12);padding:1.5rem;text-align:center;">
+ <div style="font-family:var(--fd);font-size:2rem;color:var(--yellow);margin-bottom:.25rem;">Alcance</div>
+ <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.6rem;">Cobertura</div>
+ <p style="font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.6;">Personas distintas alcanzadas en Ciudad de Guatemala dentro del segmento objetivo. Meta: entre 80,000 y 120,000 en cuatro semanas.</p>
+ </div>
+
+ <div style="background:var(--blk);border-radius:var(--r12);padding:1.5rem;text-align:center;">
+ <div style="font-family:var(--fd);font-size:2rem;color:var(--coral);margin-bottom:.25rem;">Frecuencia</div>
+ <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.6rem;">Impactos</div>
+ <p style="font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.6;">Promedio de veces que cada persona ve el anuncio. Meta: entre 3 y 4 veces durante la campaña, para reforzar recordación sin saturar.</p>
+ </div>
+
+ <div style="background:var(--blk);border-radius:var(--r12);padding:1.5rem;text-align:center;">
+ <div style="font-family:var(--fd);font-size:2rem;color:var(--purple);margin-bottom:.25rem;">Interacción</div>
+ <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.6rem;">Calidad</div>
+ <p style="font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.6;">Guardados, compartidos y comentarios en contenidos de microinfluencers. Guardar una publicación puede decir más que un like porque muestra interés real en la idea.</p>
+ </div>
+
+ <div style="background:var(--blk);border-radius:var(--r12);padding:1.5rem;text-align:center;">
+ <div style="font-family:var(--fd);font-size:1.8rem;color:var(--teal);margin-bottom:.25rem;">Clics útiles</div>
+ <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.6rem;">Apoyo</div>
+ <p style="font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.6;">Clics hacia la información de líneas para adultos o sets 18+. Se revisan como señal de interés, no como indicador principal de venta inmediata.</p>
+ </div>
+
+ <div style="background:var(--blk);border-radius:var(--r12);padding:1.5rem;text-align:center;">
+ <div style="font-family:var(--fd);font-size:2rem;color:var(--wht);margin-bottom:.25rem;">Percepción</div>
+ <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.6rem;">Cambio de percepción</div>
+ <p style="font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.6;">Encuesta posterior: ¿la persona considera que LEGO puede ser una opción para adultos? ¿Lo asocia con descanso o bienestar? Así se mide el cambio de percepción.</p>
+ </div>
+
+ </div>
+ </div>
+
+ 
+ <div class="wrap rev">
+ <div style="background:linear-gradient(135deg,#0f1e35 0%,#162540 100%);border-radius:var(--r16);padding:2.5rem;text-align:center;border:1px solid rgba(0,184,196,.2);">
+ <div style="font-family:var(--fd);font-size:clamp(1.3rem,3vw,2rem);color:var(--wht);margin-bottom:.75rem;">La campaña no se centra en vender un set. <span style="color:var(--teal)">Le recuerda al profesional guatemalteco que también puede construir algo para sí mismo.</span></div>
+ <p style="font-size:.88rem;color:rgba(255,255,255,.55);max-width:620px;margin:0 auto;line-height:1.75;">En Guatemala, muchos adultos siguen viendo LEGO como algo para niños. El obstáculo principal no es solo el precio, sino la percepción. Si el profesional empieza a verlo como una pausa útil y disfrutable, la conversación cambia.</p>
+ <div style="display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:1.5rem;">
+ <span style="background:rgba(0,184,196,.15);color:var(--teal);border:1px solid rgba(0,184,196,.3);padding:5px 16px;border-radius:100px;font-family:var(--fm);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;">Marca antes que venta inmediata</span>
+ <span style="background:rgba(0,184,196,.15);color:var(--teal);border:1px solid rgba(0,184,196,.3);padding:5px 16px;border-radius:100px;font-family:var(--fm);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;">Contexto guatemalteco reconocible</span>
+ <span style="background:rgba(0,184,196,.15);color:var(--teal);border:1px solid rgba(0,184,196,.3);padding:5px 16px;border-radius:100px;font-family:var(--fm);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;">Recordación antes que conversión</span>
+ <span style="background:rgba(0,184,196,.15);color:var(--teal);border:1px solid rgba(0,184,196,.3);padding:5px 16px;border-radius:100px;font-family:var(--fm);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;">Usuario como protagonista</span>
+ </div>
+ </div>
+ </div>
+
+ 
+ <div class="wrap" style="margin-top:3rem;padding-top:2rem;border-top:1px solid #ddd;text-align:center;">
+ <p style="font-size:.75rem;color:#999;line-height:1.6;">Proyecto académico no oficial — Paula Andrea Osorio Franco · Carné 20014957 · Branding Digital · Maestría en Marketing Digital · Universidad Galileo · 2026<br>LEGO® es marca registrada de The LEGO Group. Las imágenes utilizadas corresponden a material de auditoría académica con fines educativos no comerciales.</p>
+ </div>
+
+</section>
+
+<section id="pitch" style="background:#0a1628;padding-bottom:4rem;border-top:4px solid var(--teal);">
+
+  <div class="sh rev">
+    <div class="s-tag" style="background:var(--teal);color:var(--wht);">17 — El Pitch</div>
+    <h2 class="s-h" style="color:var(--wht);">La presentación <span style="color:var(--teal)">en video.</span></h2>
+    <p class="s-d w">El video reúne la explicación final del Brand Book, el brief creativo y la propuesta táctica de campaña para Guatemala.</p>
+  </div>
+
+  <div class="wrap rev" style="margin-bottom:3rem;">
+    <div style="background:#162540;border-radius:var(--r16);padding:1.5rem;border:1px solid rgba(0,184,196,.25);box-shadow:0 10px 35px rgba(0,0,0,.22);">
+      <div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;text-align:center;">Video final — enlace de entrega</div>
+      <a id="video-entrega-link" href="https://youtu.be/Y2Q_v1x5zY8" target="_blank" rel="noopener" style="display:block;position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--r12);overflow:hidden;background:linear-gradient(135deg,#071225,#13284a);margin-bottom:1rem;border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 0 80px rgba(0,184,196,.08);">
+        <div style="position:absolute;inset:0;background:radial-gradient(circle at 25% 30%,rgba(0,184,196,.24),transparent 36%),radial-gradient(circle at 80% 70%,rgba(255,213,0,.14),transparent 34%);"></div>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;">
+          <div style="width:86px;height:86px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;box-shadow:0 14px 38px rgba(0,184,196,.28);margin-bottom:1.1rem;">
+            <span style="display:block;width:0;height:0;border-top:18px solid transparent;border-bottom:18px solid transparent;border-left:28px solid #0a1628;margin-left:7px;"></span>
+          </div>
+          <div style="font-family:var(--fd);font-size:clamp(1.5rem,3.2vw,2.8rem);color:var(--wht);line-height:1;margin-bottom:.65rem;">Ver pitch final</div>
+          <p style="font-size:.95rem;color:rgba(255,255,255,.72);max-width:620px;line-height:1.6;">Presentación final del proyecto. El botón abre el video en YouTube en una pestaña nueva.</p>
+        </div>
+      </a>
+      <div style="text-align:center;">
+        <a href="https://youtu.be/Y2Q_v1x5zY8" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--teal);color:#0a1628;border-radius:999px;padding:.75rem 1.35rem;font-family:var(--fd);font-size:1rem;box-shadow:0 10px 26px rgba(0,184,196,.22);margin-bottom:.75rem;">
+          Ver video en YouTube
+        </a>
+        <p style="font-size:.75rem;color:rgba(255,255,255,.38);line-height:1.6;">Paula Andrea Osorio Franco · Branding Digital · Universidad Galileo · 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" style="margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);text-align:center;">
+    <p style="font-size:.75rem;color:rgba(255,255,255,.3);line-height:1.6;">Proyecto académico no oficial — Paula Andrea Osorio Franco · Carné 20014957 · Branding Digital · Maestría en Marketing Digital · Universidad Galileo · 2026<br>LEGO® es marca registrada de The LEGO Group. Las imágenes utilizadas corresponden a material de auditoría académica con fines educativos no comerciales.</p>
+  </div>
+
+</section>
+
+<script>
+// NAV TOGGLE
+document.getElementById('navTog').addEventListener('click',()=>document.getElementById('navL').classList.toggle('open'));
+document.querySelectorAll('.nl').forEach(a=>a.addEventListener('click',()=>document.getElementById('navL').classList.remove('open')));
+
+// ACTIVE NAV & SIDEBAR
+const sects=document.querySelectorAll('section[id]');
+const nls=document.querySelectorAll('.nl');
+const sba=document.querySelectorAll('.sb-a');
+const io=new IntersectionObserver(e=>{
+ e.forEach(x=>{
+ if(x.isIntersecting){
+ const id=x.target.id;
+ nls.forEach(a=>{a.classList.remove('act');if(a.getAttribute('href')==='#'+id)a.classList.add('act')});
+ sba.forEach(a=>{a.classList.remove('act');if(a.getAttribute('href')==='#'+id)a.classList.add('act')});
+ }
+ });
+},{threshold:.2});
+sects.forEach(s=>io.observe(s));
+
+// BACK TO TOP
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('vis',scrollY>400));
+
+// PROGRESS BAR
+const pb=document.getElementById('progress-bar');
+window.addEventListener('scroll',()=>{
+ const h=document.documentElement;
+ const pct=(h.scrollTop||document.body.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+ pb.style.width=Math.min(pct,100)+'%';
+});
+
+// REVEAL
+const revs=document.querySelectorAll('.rev');
+const ro=new IntersectionObserver(e=>{
+ e.forEach((x,i)=>{if(x.isIntersecting){setTimeout(()=>x.target.classList.add('in'),i*40);ro.unobserve(x.target)}});
+},{threshold:.07});
+revs.forEach(r=>ro.observe(r));
+
+// COPY HEX
+function copyHex(el,hex){
+ navigator.clipboard.writeText(hex).then(()=>{
+ const u=el.querySelector('.sw-u');
+ if(u){const orig=u.textContent;u.textContent='¡Copiado!';u.style.color='var(--red)';setTimeout(()=>{u.textContent=orig;u.style.color=''},1400)}
+ });
+}
+</script>
+</body>
+</html>
